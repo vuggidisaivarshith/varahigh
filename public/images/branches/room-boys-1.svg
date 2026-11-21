@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
   <defs>
     <linearGradient id="bgRoom" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#142B45"/>
-      <stop offset="100%" stop-color="#1F3C5F"/>
+      <stop offset="0%" stop-color="#302343"/>
+      <stop offset="100%" stop-color="#45335C"/>
     </linearGradient>
   </defs>
   <rect width="800" height="600" fill="url(#bgRoom)"/>
   <g text-anchor="middle">
     <text x="400" y="270" font-family="Georgia, serif" font-size="34" font-weight="bold" fill="#FFFFFF">SPACIOUS 2-SHARING ROOM</text>
-    <text x="400" y="305" font-family="Courier, monospace" font-size="14" font-weight="bold" fill="#D6A85F" letter-spacing="3">ATTACHED PRIVATE BATHROOM &amp; GEYSER</text>
-    <text x="400" y="340" font-family="sans-serif" font-size="13" fill="#E5E0D7" opacity="0.8">Lockable Wardrobes, Study Desks, and Bedside Power Points</text>
+    <text x="400" y="305" font-family="Courier, monospace" font-size="14" font-weight="bold" fill="#C6A46A" letter-spacing="3">ATTACHED PRIVATE BATHROOM &amp; GEYSER</text>
+    <text x="400" y="340" font-family="sans-serif" font-size="13" fill="#E9E1ED" opacity="0.8">Lockable Wardrobes, Study Desks, and Bedside Power Points</text>
   </g>
 </svg>

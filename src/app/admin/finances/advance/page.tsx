@@ -34,15 +34,15 @@ export default function AdminAdvancePage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E5E0D7] pb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E9E1ED] pb-4">
         <div>
-          <span className="badge-mono border-[#D6A85F] text-[#142B45]">
+          <span className="badge-mono border-[#C6A46A] text-[#302343]">
             ADVANCE LIABILITY LEDGER
           </span>
-          <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#142B45] mt-1">
+          <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#302343] mt-1">
             Advance Rent Management
           </h1>
-          <p className="text-xs text-[#718096]">
+          <p className="text-xs text-[#766D7C]">
             Tracks resident advance deposits and automated cycle invoice deductions.
           </p>
         </div>
@@ -58,33 +58,33 @@ export default function AdminAdvancePage() {
 
       {/* Metrics Banner */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="card-editorial p-5 bg-[#FFFFFF] border border-[#E5E0D7]">
-          <span className="badge-mono text-[9px] border-[#D6A85F]">LIABILITY BALANCE</span>
-          <p className="font-serif text-3xl font-bold text-[#142B45] font-mono mt-1">
+        <div className="card-editorial p-5 bg-[#FFFFFF] border border-[#E9E1ED]">
+          <span className="badge-mono text-[9px] border-[#C6A46A]">LIABILITY BALANCE</span>
+          <p className="font-serif text-3xl font-bold text-[#302343] font-mono mt-1">
             ₹{Math.max(0, totalAdvanceHeld).toLocaleString()}
           </p>
-          <p className="text-[11px] text-[#718096] mt-0.5">Prepaid resident rent held</p>
+          <p className="text-[11px] text-[#766D7C] mt-0.5">Prepaid resident rent held</p>
         </div>
-        <div className="card-editorial p-5 bg-[#FFFFFF] border border-[#E5E0D7]">
-          <span className="badge-mono text-[9px] border-[#D6A85F]">ACTIVE CREDITS</span>
-          <p className="font-serif text-3xl font-bold text-[#477B70] font-mono mt-1">
+        <div className="card-editorial p-5 bg-[#FFFFFF] border border-[#E9E1ED]">
+          <span className="badge-mono text-[9px] border-[#C6A46A]">ACTIVE CREDITS</span>
+          <p className="font-serif text-3xl font-bold text-[#79618E] font-mono mt-1">
             {entries.filter(e => e.type === 'credit').length} Records
           </p>
-          <p className="text-[11px] text-[#718096] mt-0.5">Advance deposits on book</p>
+          <p className="text-[11px] text-[#766D7C] mt-0.5">Advance deposits on book</p>
         </div>
-        <div className="card-editorial p-5 bg-[#FFFFFF] border border-[#E5E0D7]">
-          <span className="badge-mono text-[9px] border-[#D6A85F]">OFFSET PROTOCOL</span>
-          <p className="font-serif text-sm font-bold text-[#142B45] mt-1">Automatic Rent Offset</p>
-          <p className="text-[11px] text-[#718096] mt-0.5">Auto-applies against cycle invoices</p>
+        <div className="card-editorial p-5 bg-[#FFFFFF] border border-[#E9E1ED]">
+          <span className="badge-mono text-[9px] border-[#C6A46A]">OFFSET PROTOCOL</span>
+          <p className="font-serif text-sm font-bold text-[#302343] mt-1">Automatic Rent Offset</p>
+          <p className="text-[11px] text-[#766D7C] mt-0.5">Auto-applies against cycle invoices</p>
         </div>
       </div>
 
       {/* Ledger Table */}
-      <div className="card-editorial overflow-hidden bg-[#FFFFFF] border border-[#E5E0D7]">
+      <div className="card-editorial overflow-hidden bg-[#FFFFFF] border border-[#E9E1ED]">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>
-              <tr className="bg-[#142B45] text-[#FFFFFF] font-mono text-[10px] uppercase tracking-wider">
+              <tr className="bg-[#302343] text-[#FFFFFF] font-mono text-[10px] uppercase tracking-wider">
                 <th className="py-3 px-4">Entry ID</th>
                 <th className="py-3 px-4">Date</th>
                 <th className="py-3 px-4">Resident</th>
@@ -94,27 +94,27 @@ export default function AdminAdvancePage() {
                 <th className="py-3 px-4">Description</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#E5E0D7] text-[#263447]">
+            <tbody className="divide-y divide-[#E9E1ED] text-[#332C38]">
               {loading ? (
                 <tr>
-                  <td colSpan={7} className="py-12 text-center text-[#718096] font-mono">
+                  <td colSpan={7} className="py-12 text-center text-[#766D7C] font-mono">
                     Loading advance rent ledger...
                   </td>
                 </tr>
               ) : entries.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="py-12 text-center text-[#718096] font-mono">
+                  <td colSpan={7} className="py-12 text-center text-[#766D7C] font-mono">
                     No advance entries found.
                   </td>
                 </tr>
               ) : (
                 entries.map((e) => (
-                  <tr key={e.id} className="hover:bg-[#F5F1E9]/40 transition-colors">
-                    <td className="py-3 px-4 font-mono font-bold text-[#142B45]">{e.id}</td>
-                    <td className="py-3 px-4 font-mono text-[#718096]">{e.date}</td>
+                  <tr key={e.id} className="hover:bg-[#F8F4FA]/40 transition-colors">
+                    <td className="py-3 px-4 font-mono font-bold text-[#302343]">{e.id}</td>
+                    <td className="py-3 px-4 font-mono text-[#766D7C]">{e.date}</td>
                     <td className="py-3 px-4">
-                      <p className="font-bold text-[#142B45]">{e.resident_name}</p>
-                      <p className="font-mono text-[10px] text-[#718096]">{e.devi_resident_id}</p>
+                      <p className="font-bold text-[#302343]">{e.resident_name}</p>
+                      <p className="font-mono text-[10px] text-[#766D7C]">{e.devi_resident_id}</p>
                     </td>
                     <td className="py-3 px-4">
                       <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-mono font-bold capitalize ${
@@ -126,14 +126,14 @@ export default function AdminAdvancePage() {
                       </span>
                     </td>
                     <td className={`py-3 px-4 text-right font-mono font-bold ${
-                      e.type === 'credit' ? 'text-[#477B70]' : 'text-[#9B1C1C]'
+                      e.type === 'credit' ? 'text-[#79618E]' : 'text-[#9B1C1C]'
                     }`}>
                       {e.type === 'credit' ? '+' : '-'}₹{e.amount.toLocaleString()}
                     </td>
-                    <td className="py-3 px-4 text-right font-mono font-bold text-[#142B45]">
+                    <td className="py-3 px-4 text-right font-mono font-bold text-[#302343]">
                       ₹{e.balance_after.toLocaleString()}
                     </td>
-                    <td className="py-3 px-4 text-[#718096]">{e.description}</td>
+                    <td className="py-3 px-4 text-[#766D7C]">{e.description}</td>
                   </tr>
                 ))
               )}

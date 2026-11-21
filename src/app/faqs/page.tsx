@@ -40,15 +40,15 @@ export default function FaqsPage() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12 bg-[#F5F1E9]">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12 bg-[#F8F4FA]">
       <div className="text-center space-y-3">
-        <span className="badge-mono border-[#D6A85F] text-[#142B45]">
+        <span className="badge-mono border-[#C6A46A] text-[#302343]">
           FREQUENTLY ASKED QUESTIONS
         </span>
-        <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#142B45]">
+        <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#302343]">
           Common Queries &amp; Resident Policies
         </h1>
-        <p className="text-[#263447] text-sm sm:text-base leading-relaxed">
+        <p className="text-[#332C38] text-sm sm:text-base leading-relaxed">
           Everything you need to know about admissions, security, dining, room options, and billing at VARAHI GIRLS HOSTEL.
         </p>
       </div>
@@ -57,13 +57,13 @@ export default function FaqsPage() {
         {faqs.map((faq, idx) => (
           <div
             key={idx}
-            className="card-editorial p-6 rounded-xl bg-[#FFFFFF] border border-[#E5E0D7] space-y-2 shadow-xs"
+            className="card-editorial p-6 rounded-xl bg-[#FFFFFF] border border-[#E9E1ED] space-y-2 shadow-xs"
           >
-            <h3 className="font-serif text-lg font-bold text-[#142B45] flex items-start gap-2.5">
-              <span className="text-[#D6A85F] font-mono text-sm shrink-0">Q{idx + 1}.</span>
+            <h3 className="font-serif text-lg font-bold text-[#302343] flex items-start gap-2.5">
+              <span className="text-[#C6A46A] font-mono text-sm shrink-0">Q{idx + 1}.</span>
               <span>{faq.q}</span>
             </h3>
-            <p className="text-xs sm:text-sm text-[#263447] pl-6 leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#332C38] pl-6 leading-relaxed">
               {faq.a}
             </p>
           </div>
@@ -71,11 +71,11 @@ export default function FaqsPage() {
       </div>
 
       {/* Still Have Questions Card */}
-      <div className="card-editorial p-8 rounded-2xl bg-[#FFFFFF] border border-[#E5E0D7] text-center space-y-4 shadow-sm">
-        <h3 className="font-serif text-2xl font-bold text-[#142B45]">
+      <div className="card-editorial p-8 rounded-2xl bg-[#FFFFFF] border border-[#E9E1ED] text-center space-y-4 shadow-sm">
+        <h3 className="font-serif text-2xl font-bold text-[#302343]">
           Still have a question or need to inspect rooms?
         </h3>
-        <p className="text-xs sm:text-sm text-[#718096] max-w-md mx-auto">
+        <p className="text-xs sm:text-sm text-[#766D7C] max-w-md mx-auto">
           Proprietor E. Bharath Chandra is available directly on call and WhatsApp to assist you.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
@@ -83,7 +83,7 @@ export default function FaqsPage() {
             href={`tel:${VERIFIED_CONTACTS.primary_phone}`}
             className="btn-ghost-luxury py-2.5 px-5 text-xs flex items-center gap-2"
           >
-            <Phone className="w-3.5 h-3.5 text-[#477B70]" />
+            <Phone className="w-3.5 h-3.5 text-[#79618E]" />
             <span>Call: {VERIFIED_CONTACTS.primary_phone}</span>
           </a>
           <a

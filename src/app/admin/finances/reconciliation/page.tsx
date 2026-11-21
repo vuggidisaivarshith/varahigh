@@ -78,15 +78,15 @@ export default function AdminCashReconciliationPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E5E0D7] pb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E9E1ED] pb-4">
         <div>
-          <span className="badge-mono border-[#D6A85F] text-[#142B45]">
+          <span className="badge-mono border-[#C6A46A] text-[#302343]">
             COUNTER CASH VERIFICATION
           </span>
-          <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#142B45] mt-1">
+          <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#302343] mt-1">
             Cash Drawer Reconciliation
           </h1>
-          <p className="text-xs text-[#718096]">
+          <p className="text-xs text-[#766D7C]">
             Compare opening cash, offline receipts, counter payouts, and physical cash drawer counts.
           </p>
         </div>
@@ -101,13 +101,13 @@ export default function AdminCashReconciliationPage() {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 z-50 bg-[#142B45]/40 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="card-editorial max-w-lg w-full p-6 bg-[#FFFFFF] border border-[#E5E0D7] shadow-xl space-y-4">
-            <div className="flex items-center justify-between border-b border-[#E5E0D7] pb-3">
-              <h3 className="font-serif text-lg font-bold text-[#142B45]">Record Cash Reconciliation</h3>
+        <div className="fixed inset-0 z-50 bg-[#302343]/40 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="card-editorial max-w-lg w-full p-6 bg-[#FFFFFF] border border-[#E9E1ED] shadow-xl space-y-4">
+            <div className="flex items-center justify-between border-b border-[#E9E1ED] pb-3">
+              <h3 className="font-serif text-lg font-bold text-[#302343]">Record Cash Reconciliation</h3>
               <button
                 onClick={() => setShowModal(false)}
-                className="text-xs font-mono text-[#718096] hover:text-[#142B45]"
+                className="text-xs font-mono text-[#766D7C] hover:text-[#302343]"
               >
                 Cancel ✕
               </button>
@@ -116,13 +116,13 @@ export default function AdminCashReconciliationPage() {
             <form onSubmit={handleRecordRecon} className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[11px] font-mono font-bold uppercase text-[#142B45] mb-1">
+                  <label className="block text-[11px] font-mono font-bold uppercase text-[#302343] mb-1">
                     Branch
                   </label>
                   <select
                     value={branchCode}
                     onChange={(e) => setBranchCode(parseInt(e.target.value, 10))}
-                    className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-2.5 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+                    className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-2.5 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                   >
                     {DEVI_BRANCHES.map((b) => (
                       <option key={b.branch_code} value={b.branch_code}>
@@ -133,7 +133,7 @@ export default function AdminCashReconciliationPage() {
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-mono font-bold uppercase text-[#142B45] mb-1">
+                  <label className="block text-[11px] font-mono font-bold uppercase text-[#302343] mb-1">
                     Reconciliation Date
                   </label>
                   <input
@@ -141,14 +141,14 @@ export default function AdminCashReconciliationPage() {
                     required
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-2.5 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+                    className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-2.5 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[11px] font-mono font-bold uppercase text-[#142B45] mb-1">
+                  <label className="block text-[11px] font-mono font-bold uppercase text-[#302343] mb-1">
                     Opening Cash Float (₹)
                   </label>
                   <input
@@ -156,12 +156,12 @@ export default function AdminCashReconciliationPage() {
                     required
                     value={openingCash}
                     onChange={(e) => setOpeningCash(e.target.value)}
-                    className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+                    className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-mono font-bold uppercase text-[#142B45] mb-1">
+                  <label className="block text-[11px] font-mono font-bold uppercase text-[#302343] mb-1">
                     Cash Collected (₹) *
                   </label>
                   <input
@@ -170,14 +170,14 @@ export default function AdminCashReconciliationPage() {
                     value={cashCollected}
                     onChange={(e) => setCashCollected(e.target.value)}
                     placeholder="e.g. 14000"
-                    className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+                    className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[11px] font-mono font-bold uppercase text-[#142B45] mb-1">
+                  <label className="block text-[11px] font-mono font-bold uppercase text-[#302343] mb-1">
                     Cash Expenses Paid (₹) *
                   </label>
                   <input
@@ -186,12 +186,12 @@ export default function AdminCashReconciliationPage() {
                     value={cashExpenses}
                     onChange={(e) => setCashExpenses(e.target.value)}
                     placeholder="e.g. 4500"
-                    className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+                    className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-mono font-bold uppercase text-[#142B45] mb-1">
+                  <label className="block text-[11px] font-mono font-bold uppercase text-[#302343] mb-1">
                     Physical Drawer Count (₹) *
                   </label>
                   <input
@@ -200,13 +200,13 @@ export default function AdminCashReconciliationPage() {
                     value={closingActual}
                     onChange={(e) => setClosingActual(e.target.value)}
                     placeholder="e.g. 14500"
-                    className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+                    className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono font-bold uppercase text-[#142B45] mb-1">
+                <label className="block text-[11px] font-mono font-bold uppercase text-[#302343] mb-1">
                   Verification Remarks
                 </label>
                 <input
@@ -214,7 +214,7 @@ export default function AdminCashReconciliationPage() {
                   value={remarks}
                   onChange={(e) => setRemarks(e.target.value)}
                   placeholder="e.g. Physical denomination count matches expected balance."
-                  className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+                  className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                 />
               </div>
 
@@ -240,11 +240,11 @@ export default function AdminCashReconciliationPage() {
       )}
 
       {/* Reconciliations Table */}
-      <div className="card-editorial overflow-hidden bg-[#FFFFFF] border border-[#E5E0D7]">
+      <div className="card-editorial overflow-hidden bg-[#FFFFFF] border border-[#E9E1ED]">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>
-              <tr className="bg-[#142B45] text-[#FFFFFF] font-mono text-[10px] uppercase tracking-wider">
+              <tr className="bg-[#302343] text-[#FFFFFF] font-mono text-[10px] uppercase tracking-wider">
                 <th className="py-3 px-4">Ref No</th>
                 <th className="py-3 px-4">Date</th>
                 <th className="py-3 px-4">Branch</th>
@@ -258,44 +258,44 @@ export default function AdminCashReconciliationPage() {
                 <th className="py-3 px-4">Verified By</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#E5E0D7] text-[#263447]">
+            <tbody className="divide-y divide-[#E9E1ED] text-[#332C38]">
               {loading ? (
                 <tr>
-                  <td colSpan={11} className="py-12 text-center text-[#718096] font-mono">
+                  <td colSpan={11} className="py-12 text-center text-[#766D7C] font-mono">
                     Loading cash reconciliation logs...
                   </td>
                 </tr>
               ) : reconciliations.length === 0 ? (
                 <tr>
-                  <td colSpan={11} className="py-12 text-center text-[#718096] font-mono">
+                  <td colSpan={11} className="py-12 text-center text-[#766D7C] font-mono">
                     No cash reconciliations logged yet.
                   </td>
                 </tr>
               ) : (
                 reconciliations.map((cr) => (
-                  <tr key={cr.id} className="hover:bg-[#F5F1E9]/40 transition-colors">
-                    <td className="py-3 px-4 font-mono font-bold text-[#142B45]">
+                  <tr key={cr.id} className="hover:bg-[#F8F4FA]/40 transition-colors">
+                    <td className="py-3 px-4 font-mono font-bold text-[#302343]">
                       {cr.reconciliation_ref}
                     </td>
-                    <td className="py-3 px-4 font-mono text-[#718096]">{cr.date}</td>
+                    <td className="py-3 px-4 font-mono text-[#766D7C]">{cr.date}</td>
                     <td className="py-3 px-4 font-mono">Branch {cr.branch_code}</td>
-                    <td className="py-3 px-4 text-right font-mono text-[#718096]">
+                    <td className="py-3 px-4 text-right font-mono text-[#766D7C]">
                       ₹{cr.opening_cash.toLocaleString()}
                     </td>
-                    <td className="py-3 px-4 text-right font-mono font-bold text-[#477B70]">
+                    <td className="py-3 px-4 text-right font-mono font-bold text-[#79618E]">
                       +₹{cr.cash_collected.toLocaleString()}
                     </td>
                     <td className="py-3 px-4 text-right font-mono font-bold text-[#9B1C1C]">
                       -₹{cr.cash_expenses.toLocaleString()}
                     </td>
-                    <td className="py-3 px-4 text-right font-mono text-[#718096]">
+                    <td className="py-3 px-4 text-right font-mono text-[#766D7C]">
                       ₹{cr.closing_cash_calculated.toLocaleString()}
                     </td>
-                    <td className="py-3 px-4 text-right font-mono font-bold text-[#142B45]">
+                    <td className="py-3 px-4 text-right font-mono font-bold text-[#302343]">
                       ₹{cr.closing_cash_actual.toLocaleString()}
                     </td>
                     <td className={`py-3 px-4 text-right font-mono font-bold ${
-                      cr.variance === 0 ? 'text-[#477B70]' : 'text-[#9B1C1C]'
+                      cr.variance === 0 ? 'text-[#79618E]' : 'text-[#9B1C1C]'
                     }`}>
                       {cr.variance === 0 ? '₹0' : `₹${cr.variance}`}
                     </td>
@@ -308,7 +308,7 @@ export default function AdminCashReconciliationPage() {
                         {cr.status}
                       </span>
                     </td>
-                    <td className="py-3 px-4 text-[#718096]">{cr.verified_by}</td>
+                    <td className="py-3 px-4 text-[#766D7C]">{cr.verified_by}</td>
                   </tr>
                 ))
               )}

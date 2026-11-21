@@ -129,23 +129,23 @@ export default function AdminPortalLayout({
   };
 
   return (
-    <div className="min-h-screen bg-[#F5F1E9] text-[#142B45] flex flex-col">
+    <div className="min-h-screen bg-[#F8F4FA] text-[#302343] flex flex-col">
       {/* Top Staff Header */}
-      <header className="bg-[#142B45] text-[#FFFFFF] border-b border-[#1F3C5F] sticky top-0 z-50 shadow-xs">
+      <header className="bg-[#302343] text-[#FFFFFF] border-b border-[#45335C] sticky top-0 z-50 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between py-3 gap-3">
             {/* Mobile Sidebar Toggle & Brand */}
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className="lg:hidden p-1.5 rounded-md text-[#E5E0D7] hover:bg-[#1F3C5F]"
+                className="lg:hidden p-1.5 rounded-md text-[#E9E1ED] hover:bg-[#45335C]"
                 aria-label="Toggle admin sidebar"
               >
                 {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
 
               <Link href="/admin" className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-[#FFFFFF] text-[#142B45] flex items-center justify-center font-serif font-black text-sm">
+                <div className="w-8 h-8 rounded-lg bg-[#FFFFFF] text-[#302343] flex items-center justify-center font-serif font-black text-sm">
                   VGH
                 </div>
                 <div>
@@ -153,12 +153,12 @@ export default function AdminPortalLayout({
                     <span className="font-serif text-base font-bold tracking-tight text-[#FFFFFF]">
                       VARAHI GIRLS HOSTEL
                     </span>
-                    <span className="bg-[#D6A85F] text-[#142B45] font-mono text-[9px] font-bold px-1.5 py-0.5 rounded">
+                    <span className="bg-[#C6A46A] text-[#302343] font-mono text-[9px] font-bold px-1.5 py-0.5 rounded">
                       MANAGEMENT ERP
                     </span>
                   </div>
-                  <p className="text-[10.5px] font-mono text-[#E5E0D7]/80">
-                    Active: <strong className="text-[#FFFFFF]">{activeName}</strong> • <span className="text-[#D6A85F]">{activeBranch}</span>
+                  <p className="text-[10.5px] font-mono text-[#E9E1ED]/80">
+                    Active: <strong className="text-[#FFFFFF]">{activeName}</strong> • <span className="text-[#C6A46A]">{activeBranch}</span>
                   </p>
                 </div>
               </Link>
@@ -166,18 +166,18 @@ export default function AdminPortalLayout({
 
             {/* Quick Actions & Role Switcher */}
             <div className="flex items-center flex-wrap gap-2.5 self-start sm:self-auto">
-              <div className="flex items-center gap-1.5 bg-[#1F3C5F] border border-[#142B45] rounded-lg px-2.5 py-1 text-xs">
-                <span className="text-[#E5E0D7] text-[11px] font-mono">Role:</span>
+              <div className="flex items-center gap-1.5 bg-[#45335C] border border-[#302343] rounded-lg px-2.5 py-1 text-xs">
+                <span className="text-[#E9E1ED] text-[11px] font-mono">Role:</span>
                 <select
                   value={staffRolePresets.find(p => p.name === activeName)?.role || 'owner'}
                   onChange={(e) => {
                     const preset = staffRolePresets.find(p => p.role === e.target.value);
                     if (preset) handleSwitchStaff(preset);
                   }}
-                  className="bg-transparent text-[#D6A85F] font-bold text-xs focus:outline-none cursor-pointer"
+                  className="bg-transparent text-[#C6A46A] font-bold text-xs focus:outline-none cursor-pointer"
                 >
                   {staffRolePresets.map((p) => (
-                    <option key={p.role} value={p.role} className="bg-[#142B45] text-[#FFFFFF]">
+                    <option key={p.role} value={p.role} className="bg-[#302343] text-[#FFFFFF]">
                       {p.title} ({p.name})
                     </option>
                   ))}
@@ -202,7 +202,7 @@ export default function AdminPortalLayout({
 
               <Link
                 href="/admin/login"
-                className="text-[#E5E0D7] hover:text-[#FFFFFF] p-1.5 rounded-md hover:bg-[#1F3C5F] transition-colors"
+                className="text-[#E9E1ED] hover:text-[#FFFFFF] p-1.5 rounded-md hover:bg-[#45335C] transition-colors"
                 title="Switch Account"
               >
                 <LogOut className="w-4 h-4" />
@@ -216,14 +216,14 @@ export default function AdminPortalLayout({
       <div className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 flex gap-6">
         {/* Desktop Sidebar (and Drawer on Mobile) */}
         <aside
-          className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#FFFFFF] border-r border-[#E5E0D7] p-4 overflow-y-auto transition-transform duration-200 lg:static lg:block lg:w-64 lg:rounded-xl lg:border lg:shadow-xs lg:overflow-visible ${
+          className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#FFFFFF] border-r border-[#E9E1ED] p-4 overflow-y-auto transition-transform duration-200 lg:static lg:block lg:w-64 lg:rounded-xl lg:border lg:shadow-xs lg:overflow-visible ${
             sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
           }`}
         >
           <div className="space-y-6">
             {navGroups.map((group) => (
               <div key={group.group} className="space-y-1">
-                <p className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#718096] px-2.5 pb-1">
+                <p className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#766D7C] px-2.5 pb-1">
                   {group.group}
                 </p>
                 {group.items.map((item) => {
@@ -236,11 +236,11 @@ export default function AdminPortalLayout({
                       onClick={() => setSidebarOpen(false)}
                       className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-semibold transition-colors ${
                         active
-                          ? 'bg-[#142B45] text-[#FFFFFF] font-bold shadow-xs'
-                          : 'text-[#263447] hover:bg-[#F5F1E9] hover:text-[#142B45]'
+                          ? 'bg-[#302343] text-[#FFFFFF] font-bold shadow-xs'
+                          : 'text-[#332C38] hover:bg-[#F8F4FA] hover:text-[#302343]'
                       }`}
                     >
-                      <Icon className={`w-4 h-4 ${active ? 'text-[#D6A85F]' : 'text-[#718096]'}`} />
+                      <Icon className={`w-4 h-4 ${active ? 'text-[#C6A46A]' : 'text-[#766D7C]'}`} />
                       <span>{item.name}</span>
                     </Link>
                   );

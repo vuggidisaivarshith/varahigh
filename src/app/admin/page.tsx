@@ -36,7 +36,7 @@ export default function AdminOverviewPage() {
             </span>
           </div>
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#0F172A] mt-1">
-            VARAHI GIRLS HOSTEL <span className="italic text-[#365679] font-medium">Operations Hub</span>
+            VARAHI GIRLS HOSTEL <span className="italic text-[#79618E] font-medium">Operations Hub</span>
           </h1>
           <p className="text-xs text-[#334155] mt-1 font-mono">
             Proprietor: <strong>E. Bharath Chandra</strong> (+91 93919 44082) • Shamshabad, Hyderabad (Branch 1 Flagship)
@@ -78,7 +78,7 @@ export default function AdminOverviewPage() {
 
           <Link
             href="/admin/finances"
-            className="text-xs font-bold text-[#365679] hover:underline flex items-center gap-1 font-mono"
+            className="text-xs font-bold text-[#79618E] hover:underline flex items-center gap-1 font-mono"
           >
             Open Full Ledger <ArrowRight className="w-3.5 h-3.5" />
           </Link>
@@ -93,14 +93,14 @@ export default function AdminOverviewPage() {
               <TrendingUp className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-serif text-base font-bold text-[#0F172A] group-hover:text-[#365679]">
+              <h3 className="font-serif text-base font-bold text-[#0F172A] group-hover:text-[#79618E]">
                 Finances Overview
               </h3>
               <p className="text-[11px] text-[#64748B] mt-1 leading-relaxed">
                 Gross invoiced, total collected, outstanding dues & branch revenue summaries.
               </p>
             </div>
-            <span className="text-[11px] font-mono font-bold text-[#365679] flex items-center gap-1 pt-1">
+            <span className="text-[11px] font-mono font-bold text-[#79618E] flex items-center gap-1 pt-1">
               View Stats →
             </span>
           </Link>
@@ -113,14 +113,14 @@ export default function AdminOverviewPage() {
               <FileText className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-serif text-base font-bold text-[#0F172A] group-hover:text-[#365679]">
+              <h3 className="font-serif text-base font-bold text-[#0F172A] group-hover:text-[#79618E]">
                 Rent Invoices
               </h3>
               <p className="text-[11px] text-[#64748B] mt-1 leading-relaxed">
                 Joining-date anchor billing engine, auto-generation, pro-rata calculations & overdue penalties.
               </p>
             </div>
-            <span className="text-[11px] font-mono font-bold text-[#365679] flex items-center gap-1 pt-1">
+            <span className="text-[11px] font-mono font-bold text-[#79618E] flex items-center gap-1 pt-1">
               Manage Invoices →
             </span>
           </Link>
@@ -153,14 +153,14 @@ export default function AdminOverviewPage() {
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-serif text-base font-bold text-[#0F172A] group-hover:text-[#365679]">
+              <h3 className="font-serif text-base font-bold text-[#0F172A] group-hover:text-[#79618E]">
                 Security Deposits
               </h3>
               <p className="text-[11px] text-[#64748B] mt-1 leading-relaxed">
                 Segregated deposit liability accounts, checkout damage deductions & refundable payouts.
               </p>
             </div>
-            <span className="text-[11px] font-mono font-bold text-[#365679] flex items-center gap-1 pt-1">
+            <span className="text-[11px] font-mono font-bold text-[#79618E] flex items-center gap-1 pt-1">
               Deposit Ledger →
             </span>
           </Link>
@@ -173,14 +173,14 @@ export default function AdminOverviewPage() {
               <PieChart className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-serif text-base font-bold text-[#0F172A] group-hover:text-[#365679]">
+              <h3 className="font-serif text-base font-bold text-[#0F172A] group-hover:text-[#79618E]">
                 Financial Reports
               </h3>
               <p className="text-[11px] text-[#64748B] mt-1 leading-relaxed">
                 Branch-wise collection ratios, payment method distributions, defaulters list & CSV exports.
               </p>
             </div>
-            <span className="text-[11px] font-mono font-bold text-[#365679] flex items-center gap-1 pt-1">
+            <span className="text-[11px] font-mono font-bold text-[#79618E] flex items-center gap-1 pt-1">
               Generate Reports →
             </span>
           </Link>
@@ -196,13 +196,13 @@ export default function AdminOverviewPage() {
           <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-800 flex items-center justify-center font-bold group-hover:scale-105 transition-transform">
             <Layers className="w-6 h-6" />
           </div>
-          <h3 className="font-serif text-lg font-bold text-[#0F172A] group-hover:text-[#365679]">
+          <h3 className="font-serif text-lg font-bold text-[#0F172A] group-hover:text-[#79618E]">
             Bed Inventory & Vacancy
           </h3>
           <p className="text-xs text-[#64748B] leading-relaxed">
             Branch ➔ Floor ➔ Room ➔ Bed allocation matrix with double-allocation prevention.
           </p>
-          <span className="text-xs font-mono font-bold text-[#365679] flex items-center gap-1 pt-1">
+          <span className="text-xs font-mono font-bold text-[#79618E] flex items-center gap-1 pt-1">
             Open Bed Matrix <ArrowRight className="w-3.5 h-3.5" />
           </span>
         </Link>
@@ -214,13 +214,13 @@ export default function AdminOverviewPage() {
           <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-800 flex items-center justify-center font-bold group-hover:scale-105 transition-transform">
             <Users className="w-6 h-6" />
           </div>
-          <h3 className="font-serif text-lg font-bold text-[#0F172A] group-hover:text-[#365679]">
+          <h3 className="font-serif text-lg font-bold text-[#0F172A] group-hover:text-[#79618E]">
             Resident Directory
           </h3>
           <p className="text-xs text-[#64748B] leading-relaxed">
             Search active & historical resident records, permanent DEVI IDs, stays & profiles.
           </p>
-          <span className="text-xs font-mono font-bold text-[#365679] flex items-center gap-1 pt-1">
+          <span className="text-xs font-mono font-bold text-[#79618E] flex items-center gap-1 pt-1">
             View Residents <ArrowRight className="w-3.5 h-3.5" />
           </span>
         </Link>
@@ -232,13 +232,13 @@ export default function AdminOverviewPage() {
           <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-800 flex items-center justify-center font-bold group-hover:scale-105 transition-transform">
             <UserCheck className="w-6 h-6" />
           </div>
-          <h3 className="font-serif text-lg font-bold text-[#0F172A] group-hover:text-[#365679]">
+          <h3 className="font-serif text-lg font-bold text-[#0F172A] group-hover:text-[#79618E]">
             Admission & ID Engine
           </h3>
           <p className="text-xs text-[#64748B] leading-relaxed">
             Confirm admission, generate collision-safe IDs (<code className="font-mono text-[11px] font-bold">DV1-1-XXXXX</code>), and assign beds.
           </p>
-          <span className="text-xs font-mono font-bold text-[#365679] flex items-center gap-1 pt-1">
+          <span className="text-xs font-mono font-bold text-[#79618E] flex items-center gap-1 pt-1">
             Admit Resident <ArrowRight className="w-3.5 h-3.5" />
           </span>
         </Link>
@@ -250,13 +250,13 @@ export default function AdminOverviewPage() {
           <div className="w-12 h-12 rounded-xl bg-rose-50 text-rose-800 flex items-center justify-center font-bold group-hover:scale-105 transition-transform">
             <ArrowRightLeft className="w-6 h-6" />
           </div>
-          <h3 className="font-serif text-lg font-bold text-[#0F172A] group-hover:text-[#365679]">
+          <h3 className="font-serif text-lg font-bold text-[#0F172A] group-hover:text-[#79618E]">
             Operations & Transfers
           </h3>
           <p className="text-xs text-[#64748B] leading-relaxed">
             Room/branch transfers preserving permanent IDs, checkouts, and maintenance tickets.
           </p>
-          <span className="text-xs font-mono font-bold text-[#365679] flex items-center gap-1 pt-1">
+          <span className="text-xs font-mono font-bold text-[#79618E] flex items-center gap-1 pt-1">
             Manage Operations <ArrowRight className="w-3.5 h-3.5" />
           </span>
         </Link>
@@ -269,7 +269,7 @@ export default function AdminOverviewPage() {
             <Building2 className="w-5 h-5 text-amber-600" />
             Centralized 5-Branch Network
           </h3>
-          <Link href="/branches" className="text-xs font-mono font-bold text-[#365679] hover:underline">
+          <Link href="/branches" className="text-xs font-mono font-bold text-[#79618E] hover:underline">
             Public Website Directory →
           </Link>
         </div>
@@ -301,7 +301,7 @@ export default function AdminOverviewPage() {
                 <span className="text-[#64748B] font-mono">{b.total_floors} Floors</span>
                 <Link
                   href={`/admin/inventory?branch=${b.branch_code}`}
-                  className="font-mono text-xs font-bold text-[#365679] hover:underline"
+                  className="font-mono text-xs font-bold text-[#79618E] hover:underline"
                 >
                   Inspect Bed Matrix →
                 </Link>

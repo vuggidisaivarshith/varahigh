@@ -32,15 +32,15 @@ export default function AdminComplaintsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E5E0D7] pb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E9E1ED] pb-4">
         <div>
-          <span className="badge-mono border-[#D6A85F] text-[#142B45]">
+          <span className="badge-mono border-[#C6A46A] text-[#302343]">
             MAINTENANCE & RESOLUTION DESK
           </span>
-          <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#142B45] mt-1">
+          <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#302343] mt-1">
             Resident Complaints & Repairs
           </h1>
-          <p className="text-xs text-[#718096]">
+          <p className="text-xs text-[#766D7C]">
             Tracks electrical, plumbing, Wi-Fi, food, and housekeeping tickets raised by residents.
           </p>
         </div>
@@ -49,7 +49,7 @@ export default function AdminComplaintsPage() {
           <select
             value={filterStatus}
             onChange={(e) => setFilterStatus(e.target.value)}
-            className="bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+            className="bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
           >
             <option value="all">All Statuses</option>
             <option value="open">Open Tickets</option>
@@ -60,26 +60,26 @@ export default function AdminComplaintsPage() {
       </div>
 
       {loading ? (
-        <div className="p-12 text-center text-[#718096] text-xs font-mono">
+        <div className="p-12 text-center text-[#766D7C] text-xs font-mono">
           Loading maintenance tickets...
         </div>
       ) : filtered.length === 0 ? (
-        <div className="card-editorial p-12 text-center text-[#718096] text-xs font-mono bg-[#FFFFFF]">
+        <div className="card-editorial p-12 text-center text-[#766D7C] text-xs font-mono bg-[#FFFFFF]">
           No complaints registered under this status.
         </div>
       ) : (
         <div className="space-y-4">
           {filtered.map((c) => (
-            <div key={c.id} className="card-editorial p-5 bg-[#FFFFFF] border border-[#E5E0D7] space-y-3">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#E5E0D7] pb-2.5">
+            <div key={c.id} className="card-editorial p-5 bg-[#FFFFFF] border border-[#E9E1ED] space-y-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#E9E1ED] pb-2.5">
                 <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs font-bold text-[#142B45]">
+                  <span className="font-mono text-xs font-bold text-[#302343]">
                     {c.ticket_number || `TKT-${c.id.slice(-4)}`}
                   </span>
-                  <span className="badge-mono text-[9px] uppercase border-[#D6A85F]">
+                  <span className="badge-mono text-[9px] uppercase border-[#C6A46A]">
                     {c.category}
                   </span>
-                  <span className="font-mono text-[10px] text-[#718096]">
+                  <span className="font-mono text-[10px] text-[#766D7C]">
                     Branch {c.branch_code} • Room {c.room_number}
                   </span>
                 </div>
@@ -98,13 +98,13 @@ export default function AdminComplaintsPage() {
               </div>
 
               <div>
-                <h3 className="font-serif text-base font-bold text-[#142B45]">{c.title}</h3>
-                <p className="text-xs text-[#263447] mt-1 leading-relaxed">{c.description}</p>
+                <h3 className="font-serif text-base font-bold text-[#302343]">{c.title}</h3>
+                <p className="text-xs text-[#332C38] mt-1 leading-relaxed">{c.description}</p>
               </div>
 
-              <div className="pt-2 border-t border-[#E5E0D7] flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#718096] gap-2">
+              <div className="pt-2 border-t border-[#E9E1ED] flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#766D7C] gap-2">
                 <p>
-                  Resident: <strong className="text-[#142B45]">{c.resident_name}</strong> (<span className="font-mono text-[11px]">{c.devi_resident_id}</span>)
+                  Resident: <strong className="text-[#302343]">{c.resident_name}</strong> (<span className="font-mono text-[11px]">{c.devi_resident_id}</span>)
                 </p>
                 <p className="font-mono text-[11px]">
                   Logged: {c.created_at.split('T')[0]}

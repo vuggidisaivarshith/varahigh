@@ -87,15 +87,15 @@ export default function AdminRemindersPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E5E0D7] pb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E9E1ED] pb-4">
         <div>
-          <span className="badge-mono border-[#D6A85F] text-[#142B45]">
+          <span className="badge-mono border-[#C6A46A] text-[#302343]">
             HOSTEL MAINTENANCE & TASK PROTOCOL
           </span>
-          <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#142B45] mt-1">
+          <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#302343] mt-1">
             Operational Reminders & Audits
           </h1>
-          <p className="text-xs text-[#718096]">
+          <p className="text-xs text-[#766D7C]">
             Water filter servicing, diesel generator fuel checks, safety audits, and task reminders.
           </p>
         </div>
@@ -110,13 +110,13 @@ export default function AdminRemindersPage() {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 z-50 bg-[#142B45]/40 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="card-editorial max-w-lg w-full p-6 bg-[#FFFFFF] border border-[#E5E0D7] shadow-xl space-y-4">
-            <div className="flex items-center justify-between border-b border-[#E5E0D7] pb-3">
-              <h3 className="font-serif text-lg font-bold text-[#142B45]">Create Operational Reminder</h3>
+        <div className="fixed inset-0 z-50 bg-[#302343]/40 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="card-editorial max-w-lg w-full p-6 bg-[#FFFFFF] border border-[#E9E1ED] shadow-xl space-y-4">
+            <div className="flex items-center justify-between border-b border-[#E9E1ED] pb-3">
+              <h3 className="font-serif text-lg font-bold text-[#302343]">Create Operational Reminder</h3>
               <button
                 onClick={() => setShowModal(false)}
-                className="text-xs font-mono text-[#718096] hover:text-[#142B45]"
+                className="text-xs font-mono text-[#766D7C] hover:text-[#302343]"
               >
                 Cancel ✕
               </button>
@@ -124,7 +124,7 @@ export default function AdminRemindersPage() {
 
             <form onSubmit={handleCreate} className="space-y-4">
               <div>
-                <label className="block text-[11px] font-mono font-bold uppercase text-[#142B45] mb-1">
+                <label className="block text-[11px] font-mono font-bold uppercase text-[#302343] mb-1">
                   Task / Reminder Title *
                 </label>
                 <input
@@ -133,19 +133,19 @@ export default function AdminRemindersPage() {
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="e.g. Inspect water overhead tanks and geyser circuits"
-                  className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+                  className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[11px] font-mono font-bold uppercase text-[#142B45] mb-1">
+                  <label className="block text-[11px] font-mono font-bold uppercase text-[#302343] mb-1">
                     Branch
                   </label>
                   <select
                     value={branchCode}
                     onChange={(e) => setBranchCode(parseInt(e.target.value, 10))}
-                    className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-2.5 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+                    className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-2.5 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                   >
                     {DEVI_BRANCHES.map((b) => (
                       <option key={b.branch_code} value={b.branch_code}>
@@ -156,13 +156,13 @@ export default function AdminRemindersPage() {
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-mono font-bold uppercase text-[#142B45] mb-1">
+                  <label className="block text-[11px] font-mono font-bold uppercase text-[#302343] mb-1">
                     Category
                   </label>
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value as any)}
-                    className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-2.5 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+                    className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-2.5 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                   >
                     <option value="water_filter">RO Water Filter</option>
                     <option value="diesel_refill">Generator Diesel</option>
@@ -176,7 +176,7 @@ export default function AdminRemindersPage() {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[11px] font-mono font-bold uppercase text-[#142B45] mb-1">
+                  <label className="block text-[11px] font-mono font-bold uppercase text-[#302343] mb-1">
                     Due Date *
                   </label>
                   <input
@@ -184,18 +184,18 @@ export default function AdminRemindersPage() {
                     required
                     value={dueDate}
                     onChange={(e) => setDueDate(e.target.value)}
-                    className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-2.5 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+                    className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-2.5 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-mono font-bold uppercase text-[#142B45] mb-1">
+                  <label className="block text-[11px] font-mono font-bold uppercase text-[#302343] mb-1">
                     Priority
                   </label>
                   <select
                     value={priority}
                     onChange={(e) => setPriority(e.target.value as any)}
-                    className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-2.5 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+                    className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-2.5 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                   >
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
@@ -206,7 +206,7 @@ export default function AdminRemindersPage() {
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono font-bold uppercase text-[#142B45] mb-1">
+                <label className="block text-[11px] font-mono font-bold uppercase text-[#302343] mb-1">
                   Assigned Staff Member
                 </label>
                 <input
@@ -214,7 +214,7 @@ export default function AdminRemindersPage() {
                   value={assignedTo}
                   onChange={(e) => setAssignedTo(e.target.value)}
                   placeholder="e.g. V. Ramesh Babu"
-                  className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+                  className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                 />
               </div>
 
@@ -242,11 +242,11 @@ export default function AdminRemindersPage() {
       {/* Reminders List */}
       <div className="space-y-3">
         {loading ? (
-          <div className="p-12 text-center text-[#718096] text-xs font-mono">
+          <div className="p-12 text-center text-[#766D7C] text-xs font-mono">
             Loading reminders...
           </div>
         ) : reminders.length === 0 ? (
-          <div className="card-editorial p-12 text-center text-[#718096] text-xs font-mono bg-[#FFFFFF]">
+          <div className="card-editorial p-12 text-center text-[#766D7C] text-xs font-mono bg-[#FFFFFF]">
             No pending task reminders.
           </div>
         ) : (
@@ -254,7 +254,7 @@ export default function AdminRemindersPage() {
             <div
               key={r.id}
               className={`card-editorial p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-colors ${
-                r.status === 'completed' ? 'bg-[#F5F1E9]/60 opacity-70' : 'bg-[#FFFFFF]'
+                r.status === 'completed' ? 'bg-[#F8F4FA]/60 opacity-70' : 'bg-[#FFFFFF]'
               }`}
             >
               <div className="flex items-start gap-3">
@@ -262,8 +262,8 @@ export default function AdminRemindersPage() {
                   onClick={() => handleToggle(r.id)}
                   className={`w-6 h-6 rounded-md flex items-center justify-center shrink-0 mt-0.5 border ${
                     r.status === 'completed'
-                      ? 'bg-[#477B70] border-[#477B70] text-[#FFFFFF]'
-                      : 'border-[#E5E0D7] hover:border-[#142B45]'
+                      ? 'bg-[#79618E] border-[#79618E] text-[#FFFFFF]'
+                      : 'border-[#E9E1ED] hover:border-[#302343]'
                   }`}
                 >
                   {r.status === 'completed' && <CheckCircle2 className="w-4 h-4" />}
@@ -271,7 +271,7 @@ export default function AdminRemindersPage() {
 
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <span className="font-mono text-[10px] uppercase font-bold text-[#718096]">
+                    <span className="font-mono text-[10px] uppercase font-bold text-[#766D7C]">
                       Branch {r.branch_code}
                     </span>
                     <span className={`text-[10px] font-mono uppercase px-2 py-0.5 rounded font-bold ${
@@ -279,24 +279,24 @@ export default function AdminRemindersPage() {
                         ? 'bg-[#FDF2F2] text-[#9B1C1C]'
                         : r.priority === 'high'
                         ? 'bg-[#FDF6F0] text-[#9C4221]'
-                        : 'bg-[#F5F1E9] text-[#718096]'
+                        : 'bg-[#F8F4FA] text-[#766D7C]'
                     }`}>
                       {r.priority}
                     </span>
-                    <span className="text-[10px] font-mono text-[#718096]">
+                    <span className="text-[10px] font-mono text-[#766D7C]">
                       {r.category.replace('_', ' ')}
                     </span>
                   </div>
 
                   <p className={`text-sm font-bold ${
-                    r.status === 'completed' ? 'line-through text-[#718096]' : 'text-[#142B45]'
+                    r.status === 'completed' ? 'line-through text-[#766D7C]' : 'text-[#302343]'
                   }`}>
                     {r.title}
                   </p>
 
-                  <p className="text-xs text-[#718096] flex items-center gap-3">
-                    <span>Due: <strong className="text-[#142B45] font-mono">{r.due_date}</strong></span>
-                    <span>Assigned: <strong className="text-[#142B45]">{r.assigned_to}</strong></span>
+                  <p className="text-xs text-[#766D7C] flex items-center gap-3">
+                    <span>Due: <strong className="text-[#302343] font-mono">{r.due_date}</strong></span>
+                    <span>Assigned: <strong className="text-[#302343]">{r.assigned_to}</strong></span>
                   </p>
                 </div>
               </div>

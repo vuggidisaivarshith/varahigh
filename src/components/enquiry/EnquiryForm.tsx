@@ -162,27 +162,27 @@ function EnquiryFormContent() {
   if (submitted) {
     const selectedBranch = VARAHI_BRANCHES.find((b) => b.id === preferredBranchId) || VARAHI_BRANCHES[0];
     return (
-      <div className="card-editorial p-8 sm:p-12 text-center max-w-2xl mx-auto space-y-6 bg-[#FFFFFF] border border-[#E5E0D7]">
-        <div className="w-16 h-16 bg-[#F5F1E9] text-[#477B70] rounded-full flex items-center justify-center mx-auto border border-[#E5E0D7]">
+      <div className="card-editorial p-8 sm:p-12 text-center max-w-2xl mx-auto space-y-6 bg-[#FFFFFF] border border-[#E9E1ED]">
+        <div className="w-16 h-16 bg-[#F8F4FA] text-[#79618E] rounded-full flex items-center justify-center mx-auto border border-[#E9E1ED]">
           <CheckCircle2 className="w-10 h-10" />
         </div>
 
         <div className="space-y-1">
-          <span className="badge-mono border-[#D6A85F] text-[#142B45]">
+          <span className="badge-mono border-[#C6A46A] text-[#302343]">
             REFERENCE: {referenceNumber}
           </span>
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#142B45]">
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#302343]">
             Admission Enquiry Received
           </h2>
-          <p className="text-xs text-[#718096]">
+          <p className="text-xs text-[#766D7C]">
             Thank you, <strong>{fullName}</strong>. Your enquiry details have been forwarded directly to Proprietor <strong>{VERIFIED_CONTACTS.owner_proprietor}</strong>.
           </p>
         </div>
 
         {/* Policy Clarification Notice */}
-        <div className="p-4 rounded-lg bg-[#F5F1E9] border border-[#E5E0D7] text-left text-xs text-[#263447] space-y-2">
-          <div className="flex items-center gap-1.5 font-bold text-[#142B45]">
-            <AlertCircle className="w-4 h-4 text-[#D6A85F]" />
+        <div className="p-4 rounded-lg bg-[#F8F4FA] border border-[#E9E1ED] text-left text-xs text-[#332C38] space-y-2">
+          <div className="flex items-center gap-1.5 font-bold text-[#302343]">
+            <AlertCircle className="w-4 h-4 text-[#C6A46A]" />
             <span>Next Steps for Your Admission:</span>
           </div>
           <p className="leading-relaxed">
@@ -191,21 +191,21 @@ function EnquiryFormContent() {
         </div>
 
         {/* Summary of Request */}
-        <div className="rounded-lg p-4 text-xs text-[#263447] bg-[#FFFFFF] border border-[#E5E0D7] space-y-2 text-left font-mono">
+        <div className="rounded-lg p-4 text-xs text-[#332C38] bg-[#FFFFFF] border border-[#E9E1ED] space-y-2 text-left font-mono">
           <p>
-            <strong className="text-[#142B45]">Hostel:</strong> {selectedBranch?.name || 'Varahi Girls Hostel — Branch 1'}
+            <strong className="text-[#302343]">Hostel:</strong> {selectedBranch?.name || 'Varahi Girls Hostel — Branch 1'}
           </p>
           <p>
-            <strong className="text-[#142B45]">Applicant Category:</strong> {category === 'student' ? 'College Student' : 'Airport / Corporate Professional'}
+            <strong className="text-[#302343]">Applicant Category:</strong> {category === 'student' ? 'College Student' : 'Airport / Corporate Professional'}
           </p>
           <p>
-            <strong className="text-[#142B45]">Sharing Preference:</strong> {sharingPreference.replace('_', ' ').toUpperCase()}
+            <strong className="text-[#302343]">Sharing Preference:</strong> {sharingPreference.replace('_', ' ').toUpperCase()}
           </p>
           <p>
-            <strong className="text-[#142B45]">Expected Move-In:</strong> {expectedJoiningDate}
+            <strong className="text-[#302343]">Expected Move-In:</strong> {expectedJoiningDate}
           </p>
           <p>
-            <strong className="text-[#142B45]">Management Contact:</strong> {VERIFIED_CONTACTS.primary_phone} ({VERIFIED_CONTACTS.owner_proprietor})
+            <strong className="text-[#302343]">Management Contact:</strong> {VERIFIED_CONTACTS.primary_phone} ({VERIFIED_CONTACTS.owner_proprietor})
           </p>
         </div>
 
@@ -236,12 +236,12 @@ function EnquiryFormContent() {
   }
 
   return (
-    <div className="card-editorial max-w-3xl mx-auto overflow-hidden bg-[#FFFFFF] border border-[#E5E0D7] shadow-sm">
+    <div className="card-editorial max-w-3xl mx-auto overflow-hidden bg-[#FFFFFF] border border-[#E9E1ED] shadow-sm">
       {/* Step Indicator Header */}
-      <div className="bg-[#142B45] text-[#FFFFFF] p-6 sm:p-8 border-b border-[#1F3C5F]">
+      <div className="bg-[#302343] text-[#FFFFFF] p-6 sm:p-8 border-b border-[#45335C]">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <span className="font-mono text-[10px] uppercase tracking-wider text-[#D6A85F]">
+            <span className="font-mono text-[10px] uppercase tracking-wider text-[#C6A46A]">
               STEP {step} OF 3
             </span>
             <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#FFFFFF] mt-0.5">
@@ -252,19 +252,19 @@ function EnquiryFormContent() {
           </div>
           <div className="flex items-center gap-1.5 font-mono text-xs">
             <span className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs ${
-              step >= 1 ? 'bg-[#D6A85F] text-[#142B45]' : 'bg-[#1F3C5F] text-[#E5E0D7]'
+              step >= 1 ? 'bg-[#C6A46A] text-[#302343]' : 'bg-[#45335C] text-[#E9E1ED]'
             }`}>
               1
             </span>
-            <span className="w-4 h-0.5 bg-[#1F3C5F]" />
+            <span className="w-4 h-0.5 bg-[#45335C]" />
             <span className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs ${
-              step >= 2 ? 'bg-[#D6A85F] text-[#142B45]' : 'bg-[#1F3C5F] text-[#E5E0D7]'
+              step >= 2 ? 'bg-[#C6A46A] text-[#302343]' : 'bg-[#45335C] text-[#E9E1ED]'
             }`}>
               2
             </span>
-            <span className="w-4 h-0.5 bg-[#1F3C5F]" />
+            <span className="w-4 h-0.5 bg-[#45335C]" />
             <span className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs ${
-              step >= 3 ? 'bg-[#D6A85F] text-[#142B45]' : 'bg-[#1F3C5F] text-[#E5E0D7]'
+              step >= 3 ? 'bg-[#C6A46A] text-[#302343]' : 'bg-[#45335C] text-[#E9E1ED]'
             }`}>
               3
             </span>
@@ -285,7 +285,7 @@ function EnquiryFormContent() {
           <div className="space-y-5">
             {/* Category Selector */}
             <div>
-              <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-2">
+              <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-2">
                 1. Select Applicant Category
               </label>
               <div className="grid grid-cols-2 gap-3">
@@ -294,11 +294,11 @@ function EnquiryFormContent() {
                   onClick={() => setCategory('student')}
                   className={`p-3.5 rounded-lg border text-left text-xs transition-colors flex items-center gap-2.5 ${
                     category === 'student'
-                      ? 'border-[#142B45] bg-[#F5F1E9] text-[#142B45] font-bold'
-                      : 'border-[#E5E0D7] bg-[#FFFFFF] text-[#718096] hover:bg-[#F5F1E9]/40'
+                      ? 'border-[#79618E] bg-[#D9C8E8]/25 text-[#302343] font-bold'
+                      : 'border-[#E9E1ED] bg-[#FFFFFF] text-[#766D7C] hover:bg-[#F8F4FA]/40'
                   }`}
                 >
-                  <User className="w-4 h-4 text-[#D6A85F]" />
+                  <User className="w-4 h-4 text-[#C6A46A]" />
                   <span>College Student</span>
                 </button>
                 <button
@@ -306,26 +306,26 @@ function EnquiryFormContent() {
                   onClick={() => setCategory('airport_employee')}
                   className={`p-3.5 rounded-lg border text-left text-xs transition-colors flex items-center gap-2.5 ${
                     category === 'airport_employee'
-                      ? 'border-[#142B45] bg-[#F5F1E9] text-[#142B45] font-bold'
-                      : 'border-[#E5E0D7] bg-[#FFFFFF] text-[#718096] hover:bg-[#F5F1E9]/40'
+                      ? 'border-[#79618E] bg-[#D9C8E8]/25 text-[#302343] font-bold'
+                      : 'border-[#E9E1ED] bg-[#FFFFFF] text-[#766D7C] hover:bg-[#F8F4FA]/40'
                   }`}
                 >
-                  <Briefcase className="w-4 h-4 text-[#D6A85F]" />
+                  <Briefcase className="w-4 h-4 text-[#C6A46A]" />
                   <span>RGIA Staff / Working Professional</span>
                 </button>
               </div>
             </div>
 
             {/* Note on Women's Residence */}
-            <div className="p-3.5 rounded-lg bg-rose-50/60 border border-rose-200 text-xs text-rose-900 flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-rose-600 shrink-0" />
+            <div className="p-3.5 rounded-lg bg-[#D9C8E8]/20 border border-[#D9C8E8] text-xs text-[#302343] flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-[#79618E] shrink-0" />
               <span>Varahi Girls Hostel is strictly an exclusive, high-security residence for women.</span>
             </div>
 
             {/* Full Name & Phone */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-1.5">
+                <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-1.5">
                   Applicant Full Name *
                 </label>
                 <input
@@ -334,12 +334,12 @@ function EnquiryFormContent() {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="e.g. K. Ananya Reddy"
-                  className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3.5 py-2.5 text-xs text-[#142B45] placeholder-[#718096] focus:outline-none focus:border-[#142B45]"
+                  className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3.5 py-2.5 text-xs text-[#302343] placeholder-[#766D7C] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-1.5">
+                <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-1.5">
                   Applicant Mobile (10 Digits) *
                 </label>
                 <input
@@ -348,14 +348,14 @@ function EnquiryFormContent() {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="e.g. 9849123456"
-                  className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3.5 py-2.5 text-xs text-[#142B45] placeholder-[#718096] focus:outline-none focus:border-[#142B45]"
+                  className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3.5 py-2.5 text-xs text-[#302343] placeholder-[#766D7C] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                 />
               </div>
             </div>
 
             {/* Email */}
             <div>
-              <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-1.5">
+              <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-1.5">
                 Email Address (Optional)
               </label>
               <input
@@ -363,13 +363,13 @@ function EnquiryFormContent() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="e.g. applicant@gmail.com"
-                className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3.5 py-2.5 text-xs text-[#142B45] placeholder-[#718096] focus:outline-none focus:border-[#142B45]"
+                className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3.5 py-2.5 text-xs text-[#302343] placeholder-[#766D7C] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
               />
             </div>
 
             {/* Parent / Emergency Contact */}
-            <div className="p-4 rounded-lg bg-[#F5F1E9] border border-[#E5E0D7] space-y-3">
-              <p className="font-mono text-xs font-bold uppercase text-[#142B45]">
+            <div className="p-4 rounded-lg bg-[#F8F4FA] border border-[#E9E1ED] space-y-3">
+              <p className="font-mono text-xs font-bold uppercase text-[#302343]">
                 Parent / Guardian / Emergency Contact *
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -379,7 +379,7 @@ function EnquiryFormContent() {
                   value={emergencyName}
                   onChange={(e) => setEmergencyName(e.target.value)}
                   placeholder="Contact Name"
-                  className="bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3 py-2 text-xs text-[#142B45] placeholder-[#718096] focus:outline-none focus:border-[#142B45]"
+                  className="bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3 py-2 text-xs text-[#302343] placeholder-[#766D7C] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                 />
                 <input
                   type="tel"
@@ -387,12 +387,12 @@ function EnquiryFormContent() {
                   value={emergencyPhone}
                   onChange={(e) => setEmergencyPhone(e.target.value)}
                   placeholder="Parent / Guardian Phone"
-                  className="bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3 py-2 text-xs text-[#142B45] placeholder-[#718096] focus:outline-none focus:border-[#142B45]"
+                  className="bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3 py-2 text-xs text-[#302343] placeholder-[#766D7C] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                 />
                 <select
                   value={emergencyRelation}
                   onChange={(e) => setEmergencyRelation(e.target.value)}
-                  className="bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+                  className="bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                 >
                   <option value="Parent">Parent</option>
                   <option value="Guardian">Guardian</option>
@@ -412,7 +412,7 @@ function EnquiryFormContent() {
               <div className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-1.5">
+                    <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-1.5">
                       College / University / Academy Name *
                     </label>
                     <input
@@ -421,12 +421,12 @@ function EnquiryFormContent() {
                       value={collegeName}
                       onChange={(e) => setCollegeName(e.target.value)}
                       placeholder="e.g. Vardhaman College of Engineering"
-                      className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3.5 py-2.5 text-xs text-[#142B45] placeholder-[#718096] focus:outline-none focus:border-[#142B45]"
+                      className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3.5 py-2.5 text-xs text-[#302343] placeholder-[#766D7C] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-1.5">
+                    <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-1.5">
                       Degree / Course / Stream *
                     </label>
                     <input
@@ -435,20 +435,20 @@ function EnquiryFormContent() {
                       value={course}
                       onChange={(e) => setCourse(e.target.value)}
                       placeholder="e.g. B.Tech Computer Science / Aviation"
-                      className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3.5 py-2.5 text-xs text-[#142B45] placeholder-[#718096] focus:outline-none focus:border-[#142B45]"
+                      className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3.5 py-2.5 text-xs text-[#302343] placeholder-[#766D7C] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-1.5">
+                    <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-1.5">
                       Academic Year
                     </label>
                     <select
                       value={academicYear}
                       onChange={(e) => setAcademicYear(e.target.value)}
-                      className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3.5 py-2.5 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+                      className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3.5 py-2.5 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                     >
                       <option value="1st Year">1st Year</option>
                       <option value="2nd Year">2nd Year</option>
@@ -459,7 +459,7 @@ function EnquiryFormContent() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-1.5">
+                    <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-1.5">
                       Alternative Parent Phone
                     </label>
                     <input
@@ -467,7 +467,7 @@ function EnquiryFormContent() {
                       value={parentPhone}
                       onChange={(e) => setParentPhone(e.target.value)}
                       placeholder="e.g. 9849012345"
-                      className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3.5 py-2.5 text-xs text-[#142B45] placeholder-[#718096] focus:outline-none focus:border-[#142B45]"
+                      className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3.5 py-2.5 text-xs text-[#302343] placeholder-[#766D7C] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                     />
                   </div>
                 </div>
@@ -476,7 +476,7 @@ function EnquiryFormContent() {
               <div className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-1.5">
+                    <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-1.5">
                       Airline / Workplace / Employer Company *
                     </label>
                     <input
@@ -485,12 +485,12 @@ function EnquiryFormContent() {
                       value={company}
                       onChange={(e) => setCompany(e.target.value)}
                       placeholder="e.g. IndiGo / Air India / AISATS / Corporate"
-                      className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3.5 py-2.5 text-xs text-[#142B45] placeholder-[#718096] focus:outline-none focus:border-[#142B45]"
+                      className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3.5 py-2.5 text-xs text-[#302343] placeholder-[#766D7C] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-1.5">
+                    <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-1.5">
                       Designation / Role *
                     </label>
                     <input
@@ -499,20 +499,20 @@ function EnquiryFormContent() {
                       value={designation}
                       onChange={(e) => setDesignation(e.target.value)}
                       placeholder="e.g. Cabin Crew / Operations Lead / Analyst"
-                      className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3.5 py-2.5 text-xs text-[#142B45] placeholder-[#718096] focus:outline-none focus:border-[#142B45]"
+                      className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3.5 py-2.5 text-xs text-[#302343] placeholder-[#766D7C] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-1.5">
+                    <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-1.5">
                       Shift Timing Pattern
                     </label>
                     <select
                       value={shiftTiming}
                       onChange={(e) => setShiftTiming(e.target.value)}
-                      className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3.5 py-2.5 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+                      className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3.5 py-2.5 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                     >
                       <option value="Rotational Shifts">Rotational Shifts (Day & Night)</option>
                       <option value="Day Shift Only">Regular Day Shift</option>
@@ -522,7 +522,7 @@ function EnquiryFormContent() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-1.5">
+                    <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-1.5">
                       Employee ID / Staff Number (Optional)
                     </label>
                     <input
@@ -530,7 +530,7 @@ function EnquiryFormContent() {
                       value={employeeId}
                       onChange={(e) => setEmployeeId(e.target.value)}
                       placeholder="e.g. 6E-9921"
-                      className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3.5 py-2.5 text-xs text-[#142B45] placeholder-[#718096] focus:outline-none focus:border-[#142B45]"
+                      className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3.5 py-2.5 text-xs text-[#302343] placeholder-[#766D7C] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                     />
                   </div>
                 </div>
@@ -544,17 +544,17 @@ function EnquiryFormContent() {
           <div className="space-y-5">
             {/* Preferred Branch */}
             <div>
-              <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-1.5">
+              <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-1.5">
                 Hostel Location
               </label>
-              <div className="p-3.5 rounded-lg bg-[#F5F1E9] border border-[#E5E0D7] text-xs font-bold text-[#142B45]">
+              <div className="p-3.5 rounded-lg bg-[#F8F4FA] border border-[#E9E1ED] text-xs font-bold text-[#302343]">
                 {availableBranches[0].name} (Shamshabad, Near RGIA)
               </div>
             </div>
 
             {/* Sharing Preference */}
             <div>
-              <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-2">
+              <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-2">
                 Room Sharing Preference
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
@@ -565,8 +565,8 @@ function EnquiryFormContent() {
                     onClick={() => setSharingPreference(sh)}
                     className={`p-3 rounded-lg border text-xs font-mono text-center transition-colors ${
                       sharingPreference === sh
-                        ? 'border-[#142B45] bg-[#F5F1E9] text-[#142B45] font-bold'
-                        : 'border-[#E5E0D7] text-[#718096] hover:bg-[#F5F1E9]/40'
+                        ? 'border-[#79618E] bg-[#D9C8E8]/25 text-[#302343] font-bold'
+                        : 'border-[#E9E1ED] text-[#766D7C] hover:bg-[#F8F4FA]/40'
                     }`}
                   >
                     {sh.replace('_', ' ').toUpperCase()}
@@ -577,7 +577,7 @@ function EnquiryFormContent() {
 
             {/* Expected Joining Date */}
             <div>
-              <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-1.5">
+              <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-1.5">
                 Expected Joining Date *
               </label>
               <input
@@ -585,14 +585,14 @@ function EnquiryFormContent() {
                 required
                 value={expectedJoiningDate}
                 onChange={(e) => setExpectedJoiningDate(e.target.value)}
-                className="w-full bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-3.5 py-2.5 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+                className="w-full bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-3.5 py-2.5 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
               />
             </div>
           </div>
         )}
 
         {/* Navigation Buttons */}
-        <div className="pt-4 border-t border-[#E5E0D7] flex items-center justify-between gap-3">
+        <div className="pt-4 border-t border-[#E9E1ED] flex items-center justify-between gap-3">
           {step > 1 ? (
             <button
               type="button"
@@ -635,7 +635,7 @@ export default function EnquiryForm() {
   return (
     <React.Suspense
       fallback={
-        <div className="card-editorial p-10 text-center text-xs text-[#718096]">
+        <div className="card-editorial p-10 text-center text-xs text-[#766D7C]">
           Loading enquiry form...
         </div>
       }

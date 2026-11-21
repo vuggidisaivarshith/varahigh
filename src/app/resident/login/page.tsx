@@ -116,31 +116,31 @@ export default function ResidentLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F5F1E9] py-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
+    <div className="min-h-screen bg-[#F8F4FA] py-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
       <div className="max-w-md mx-auto w-full space-y-8">
         {/* Brand Header */}
         <div className="text-center space-y-3">
           <Link href="/" className="inline-flex items-center gap-2 mb-2">
-            <div className="w-10 h-10 rounded-lg bg-[#142B45] text-white flex items-center justify-center font-serif font-bold text-lg">
+            <div className="w-10 h-10 rounded-lg bg-[#302343] text-white flex items-center justify-center font-serif font-bold text-lg">
               VGH
             </div>
-            <span className="font-serif text-2xl font-bold text-[#142B45]">VARAHI GIRLS HOSTEL</span>
+            <span className="font-serif text-2xl font-bold text-[#302343]">VARAHI GIRLS HOSTEL</span>
           </Link>
-          <div className="inline-flex items-center gap-1.5 badge-mono border-[#D6A85F] text-[#142B45]">
+          <div className="inline-flex items-center gap-1.5 badge-mono border-[#C6A46A] text-[#302343]">
             <span>RESIDENT SELF-SERVICE PORTAL</span>
           </div>
-          <h1 className="font-serif text-3xl font-bold text-[#142B45]">
+          <h1 className="font-serif text-3xl font-bold text-[#302343]">
             Resident Sign In
           </h1>
-          <p className="text-xs text-[#718096]">
+          <p className="text-xs text-[#766D7C]">
             Sign in to access rent invoices, online UPI payments, advance balance, and digital receipts.
           </p>
         </div>
 
         {/* Login Card */}
-        <div className="card-editorial p-6 sm:p-8 bg-[#FFFFFF] border border-[#E5E0D7] shadow-sm space-y-6">
+        <div className="card-editorial p-6 sm:p-8 bg-[#FFFFFF] border border-[#E9E1ED] shadow-sm space-y-6">
           {/* Dual Auth Switcher Tabs */}
-          <div className="bg-[#F5F1E9] p-1.5 rounded-xl border border-[#E5E0D7] grid grid-cols-2 gap-1.5">
+          <div className="bg-[#F8F4FA] p-1.5 rounded-xl border border-[#E9E1ED] grid grid-cols-2 gap-1.5">
             <button
               type="button"
               onClick={() => {
@@ -149,8 +149,8 @@ export default function ResidentLoginPage() {
               }}
               className={`py-2 px-3 rounded-lg text-xs font-mono font-bold flex items-center justify-center gap-1.5 transition-all ${
                 authMethod === 'otp'
-                  ? 'bg-white text-[#142B45] shadow-xs border border-[#E5E0D7]'
-                  : 'text-[#718096] hover:text-[#142B45]'
+                  ? 'bg-white text-[#302343] shadow-xs border border-[#E9E1ED]'
+                  : 'text-[#766D7C] hover:text-[#302343]'
               }`}
             >
               <Smartphone className="w-3.5 h-3.5" />
@@ -164,8 +164,8 @@ export default function ResidentLoginPage() {
               }}
               className={`py-2 px-3 rounded-lg text-xs font-mono font-bold flex items-center justify-center gap-1.5 transition-all ${
                 authMethod === 'password'
-                  ? 'bg-white text-[#142B45] shadow-xs border border-[#E5E0D7]'
-                  : 'text-[#718096] hover:text-[#142B45]'
+                  ? 'bg-white text-[#302343] shadow-xs border border-[#E9E1ED]'
+                  : 'text-[#766D7C] hover:text-[#302343]'
               }`}
             >
               <KeyRound className="w-3.5 h-3.5" />
@@ -178,7 +178,7 @@ export default function ResidentLoginPage() {
             <div
               className={`p-3.5 rounded-xl text-xs flex items-center gap-2 ${
                 statusMessage.type === 'success'
-                  ? 'bg-[#477B70]/10 border border-[#477B70]/30 text-[#477B70]'
+                  ? 'bg-[#79618E]/10 border border-[#79618E]/30 text-[#79618E]'
                   : 'bg-rose-50 border border-rose-200 text-rose-800'
               }`}
             >
@@ -192,11 +192,11 @@ export default function ResidentLoginPage() {
             !otpSent ? (
               <form onSubmit={handleSendOtp} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-1.5">
+                  <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-1.5">
                     Registered Mobile Number
                   </label>
-                  <div className="flex rounded-xl overflow-hidden border border-[#E5E0D7] bg-[#F5F1E9] focus-within:border-[#D6A85F]">
-                    <span className="px-3.5 py-2.5 text-xs font-mono text-[#718096] bg-[#E5E0D7]/40 flex items-center border-r border-[#E5E0D7]">
+                  <div className="flex rounded-xl overflow-hidden border border-[#E9E1ED] bg-[#F8F4FA] focus-within:border-[#79618E] focus-within:ring-1 focus-within:ring-[#79618E]">
+                    <span className="px-3.5 py-2.5 text-xs font-mono text-[#766D7C] bg-[#E9E1ED]/40 flex items-center border-r border-[#E9E1ED]">
                       +91
                     </span>
                     <input
@@ -205,10 +205,10 @@ export default function ResidentLoginPage() {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="9849111222"
-                      className="w-full bg-transparent px-3 py-2.5 text-xs text-[#142B45] focus:outline-none"
+                      className="w-full bg-transparent px-3 py-2.5 text-xs text-[#302343] focus:outline-none"
                     />
                   </div>
-                  <p className="text-[11px] text-[#718096] mt-1">
+                  <p className="text-[11px] text-[#766D7C] mt-1">
                     Enter the phone number registered during hostel admission.
                   </p>
                 </div>
@@ -226,13 +226,13 @@ export default function ResidentLoginPage() {
               <form onSubmit={handleVerifyOtp} className="space-y-4">
                 <div>
                   <div className="flex justify-between items-center mb-1.5">
-                    <label className="text-xs font-mono font-bold uppercase text-[#142B45]">
+                    <label className="text-xs font-mono font-bold uppercase text-[#302343]">
                       6-Digit Security OTP
                     </label>
                     <button
                       type="button"
                       onClick={() => setOtpSent(false)}
-                      className="text-[11px] text-[#D6A85F] hover:underline font-mono"
+                      className="text-[11px] text-[#79618E] hover:underline font-mono"
                     >
                       Change Number
                     </button>
@@ -244,10 +244,10 @@ export default function ResidentLoginPage() {
                     value={otpCode}
                     onChange={(e) => setOtpCode(e.target.value)}
                     placeholder="Enter 6-digit OTP (e.g. 123456)"
-                    className="w-full bg-[#F5F1E9] border border-[#E5E0D7] rounded-xl px-4 py-2.5 text-center text-sm font-mono tracking-widest text-[#142B45] focus:outline-none focus:border-[#D6A85F]"
+                    className="w-full bg-[#F8F4FA] border border-[#E9E1ED] rounded-xl px-4 py-2.5 text-center text-sm font-mono tracking-widest text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                   />
-                  <p className="text-[11px] text-[#718096] mt-1 text-center font-mono">
-                    Development default OTP is: <strong className="text-[#142B45]">123456</strong>
+                  <p className="text-[11px] text-[#766D7C] mt-1 text-center font-mono">
+                    Development default OTP is: <strong className="text-[#302343]">123456</strong>
                   </p>
                 </div>
 
@@ -265,7 +265,7 @@ export default function ResidentLoginPage() {
             /* Flow 2: Resident ID + Password */
             <form onSubmit={handlePasswordLogin} className="space-y-4">
               <div>
-                <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-1.5">
+                <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-1.5">
                   Permanent Resident ID
                 </label>
                 <input
@@ -274,12 +274,12 @@ export default function ResidentLoginPage() {
                   value={residentId}
                   onChange={(e) => setResidentId(e.target.value)}
                   placeholder="e.g. VG1-1-00001"
-                  className="w-full bg-[#F5F1E9] border border-[#E5E0D7] rounded-xl px-4 py-2.5 text-xs text-[#142B45] font-mono focus:outline-none focus:border-[#D6A85F]"
+                  className="w-full bg-[#F8F4FA] border border-[#E9E1ED] rounded-xl px-4 py-2.5 text-xs text-[#302343] font-mono focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono font-bold uppercase text-[#142B45] mb-1.5">
+                <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-1.5">
                   Account Password
                 </label>
                 <input
@@ -288,7 +288,7 @@ export default function ResidentLoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••••••"
-                  className="w-full bg-[#F5F1E9] border border-[#E5E0D7] rounded-xl px-4 py-2.5 text-xs text-[#142B45] focus:outline-none focus:border-[#D6A85F]"
+                  className="w-full bg-[#F8F4FA] border border-[#E9E1ED] rounded-xl px-4 py-2.5 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                 />
               </div>
 
@@ -304,18 +304,18 @@ export default function ResidentLoginPage() {
           )}
 
           {/* Quick Demo Credentials */}
-          <div className="p-3.5 rounded-lg bg-[#F5F1E9] border border-[#E5E0D7] text-[11px] text-[#263447] space-y-1 font-mono">
-            <p className="font-bold text-[#142B45]">Active Resident Demo Credentials:</p>
-            <p>Mobile: <code className="text-[#142B45]">9849111222</code> (OTP: <code className="text-[#142B45]">123456</code>)</p>
-            <p>Resident ID: <code className="text-[#142B45]">VG1-1-00001</code></p>
-            <p>Password: <code className="text-[#142B45]">VarahiResident@2026!</code></p>
+          <div className="p-3.5 rounded-lg bg-[#F8F4FA] border border-[#E9E1ED] text-[11px] text-[#332C38] space-y-1 font-mono">
+            <p className="font-bold text-[#302343]">Active Resident Demo Credentials:</p>
+            <p>Mobile: <code className="text-[#302343]">9849111222</code> (OTP: <code className="text-[#302343]">123456</code>)</p>
+            <p>Resident ID: <code className="text-[#302343]">VG1-1-00001</code></p>
+            <p>Password: <code className="text-[#302343]">VarahiResident@2026!</code></p>
           </div>
         </div>
 
         {/* Staff Login Link */}
-        <div className="text-center text-xs text-[#718096]">
+        <div className="text-center text-xs text-[#766D7C]">
           Are you a staff member?{' '}
-          <Link href="/admin/login" className="text-[#142B45] font-bold hover:underline">
+          <Link href="/admin/login" className="text-[#302343] font-bold hover:underline">
             Go to Management &amp; Staff Gateway
           </Link>
         </div>

@@ -91,15 +91,15 @@ export default function AdminTransactionsLedgerPage() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E5E0D7] pb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E9E1ED] pb-4">
         <div>
-          <span className="badge-mono border-[#D6A85F] text-[#142B45]">
+          <span className="badge-mono border-[#C6A46A] text-[#302343]">
             IMMUTABLE CENTRAL LEDGER
           </span>
-          <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#142B45] mt-1">
+          <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#302343] mt-1">
             Complete Transactions Ledger
           </h1>
-          <p className="text-xs text-[#718096]">
+          <p className="text-xs text-[#766D7C]">
             Audited financial record for rent receipts, advances, deposits, cash collections, Razorpay settlements, and expenses.
           </p>
         </div>
@@ -110,7 +110,7 @@ export default function AdminTransactionsLedgerPage() {
             className="btn-ghost-luxury text-xs py-2 px-3.5 flex items-center gap-1.5"
             title="Export filtered records to CSV"
           >
-            <Download className="w-3.5 h-3.5 text-[#D6A85F]" />
+            <Download className="w-3.5 h-3.5 text-[#C6A46A]" />
             <span>Export CSV</span>
           </button>
           <Link
@@ -131,16 +131,16 @@ export default function AdminTransactionsLedgerPage() {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="card-editorial p-4 bg-[#FFFFFF] border border-[#E5E0D7] space-y-3">
+      <div className="card-editorial p-4 bg-[#FFFFFF] border border-[#E9E1ED] space-y-3">
         <form onSubmit={handleSearchSubmit} className="flex flex-col md:flex-row items-center gap-3">
           <div className="relative flex-1 w-full">
-            <Search className="w-4 h-4 text-[#718096] absolute left-3 top-3" />
+            <Search className="w-4 h-4 text-[#766D7C] absolute left-3 top-3" />
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search by receipt no, resident ID (DV1-1-XXXXX), name, notes..."
-              className="w-full bg-[#F5F1E9]/50 border border-[#E5E0D7] rounded-lg pl-9 pr-3 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+              className="w-full bg-[#F8F4FA]/50 border border-[#E9E1ED] rounded-lg pl-9 pr-3 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
             />
           </div>
 
@@ -148,7 +148,7 @@ export default function AdminTransactionsLedgerPage() {
             <select
               value={selectedBranch}
               onChange={(e) => setSelectedBranch(e.target.value)}
-              className="bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-2.5 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+              className="bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-2.5 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
             >
               <option value="all">All Branches</option>
               {DEVI_BRANCHES.map((b) => (
@@ -161,7 +161,7 @@ export default function AdminTransactionsLedgerPage() {
             <select
               value={selectedType}
               onChange={(e) => setSelectedType(e.target.value)}
-              className="bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-2.5 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+              className="bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-2.5 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
             >
               <option value="all">All Types</option>
               <option value="rent_receipt">Rent Receipts</option>
@@ -174,7 +174,7 @@ export default function AdminTransactionsLedgerPage() {
             <select
               value={selectedMethod}
               onChange={(e) => setSelectedMethod(e.target.value)}
-              className="bg-[#FFFFFF] border border-[#E5E0D7] rounded-lg px-2.5 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#142B45]"
+              className="bg-[#FFFFFF] border border-[#E9E1ED] rounded-lg px-2.5 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
             >
               <option value="all">All Methods</option>
               <option value="cash">Counter Cash</option>
@@ -194,11 +194,11 @@ export default function AdminTransactionsLedgerPage() {
       </div>
 
       {/* Transactions Table */}
-      <div className="card-editorial overflow-hidden bg-[#FFFFFF] border border-[#E5E0D7]">
+      <div className="card-editorial overflow-hidden bg-[#FFFFFF] border border-[#E9E1ED]">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>
-              <tr className="bg-[#142B45] text-[#FFFFFF] font-mono text-[10px] uppercase tracking-wider">
+              <tr className="bg-[#302343] text-[#FFFFFF] font-mono text-[10px] uppercase tracking-wider">
                 <th className="py-3 px-4">Reference</th>
                 <th className="py-3 px-4">Date</th>
                 <th className="py-3 px-4">Type & Category</th>
@@ -210,16 +210,16 @@ export default function AdminTransactionsLedgerPage() {
                 <th className="py-3 px-4">Recorded By</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#E5E0D7] text-[#263447]">
+            <tbody className="divide-y divide-[#E9E1ED] text-[#332C38]">
               {loading ? (
                 <tr>
-                  <td colSpan={9} className="py-12 text-center text-[#718096] font-mono">
+                  <td colSpan={9} className="py-12 text-center text-[#766D7C] font-mono">
                     Loading transactions ledger...
                   </td>
                 </tr>
               ) : transactions.length === 0 ? (
                 <tr>
-                  <td colSpan={9} className="py-12 text-center text-[#718096] font-mono">
+                  <td colSpan={9} className="py-12 text-center text-[#766D7C] font-mono">
                     No transactions match the selected filters.
                   </td>
                 </tr>
@@ -228,27 +228,27 @@ export default function AdminTransactionsLedgerPage() {
                   const isExpense = t.category === 'expense';
                   const isReversal = t.category === 'reversal';
                   return (
-                    <tr key={t.id} className="hover:bg-[#F5F1E9]/40 transition-colors">
-                      <td className="py-3 px-4 font-mono font-bold text-[#142B45]">
+                    <tr key={t.id} className="hover:bg-[#F8F4FA]/40 transition-colors">
+                      <td className="py-3 px-4 font-mono font-bold text-[#302343]">
                         {t.reference_no}
                       </td>
-                      <td className="py-3 px-4 font-mono text-[#718096]">
+                      <td className="py-3 px-4 font-mono text-[#766D7C]">
                         {t.date}
                       </td>
                       <td className="py-3 px-4">
-                        <span className="font-bold text-[#142B45] capitalize">
+                        <span className="font-bold text-[#302343] capitalize">
                           {t.transaction_type.replace('_', ' ')}
                         </span>
-                        <p className="text-[10px] font-mono text-[#718096] uppercase">{t.category}</p>
+                        <p className="text-[10px] font-mono text-[#766D7C] uppercase">{t.category}</p>
                       </td>
                       <td className="py-3 px-4">
                         {t.resident_name ? (
                           <div>
-                            <p className="font-bold text-[#142B45]">{t.resident_name}</p>
-                            <p className="font-mono text-[10px] text-[#718096]">{t.devi_resident_id}</p>
+                            <p className="font-bold text-[#302343]">{t.resident_name}</p>
+                            <p className="font-mono text-[10px] text-[#766D7C]">{t.devi_resident_id}</p>
                           </div>
                         ) : (
-                          <span className="text-[#718096] italic">{t.notes || '—'}</span>
+                          <span className="text-[#766D7C] italic">{t.notes || '—'}</span>
                         )}
                       </td>
                       <td className="py-3 px-4 font-mono">
@@ -258,8 +258,8 @@ export default function AdminTransactionsLedgerPage() {
                         isExpense
                           ? 'text-[#9B1C1C]'
                           : isReversal
-                          ? 'text-[#718096] line-through'
-                          : 'text-[#477B70]'
+                          ? 'text-[#766D7C] line-through'
+                          : 'text-[#79618E]'
                       }`}>
                         {isExpense ? '-' : '+'}₹{t.amount.toLocaleString()}
                       </td>
@@ -272,12 +272,12 @@ export default function AdminTransactionsLedgerPage() {
                             ? 'bg-[#EBF2F0] text-[#1D4038]'
                             : t.verification_status === 'reversed'
                             ? 'bg-[#FDF2F2] text-[#9B1C1C]'
-                            : 'bg-[#F5F1E9] text-[#718096]'
+                            : 'bg-[#F8F4FA] text-[#766D7C]'
                         }`}>
                           {t.verification_status}
                         </span>
                       </td>
-                      <td className="py-3 px-4 text-[11px] text-[#718096]">
+                      <td className="py-3 px-4 text-[11px] text-[#766D7C]">
                         {t.recording_staff}
                       </td>
                     </tr>

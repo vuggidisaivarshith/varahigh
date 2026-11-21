@@ -70,16 +70,16 @@ export default function FacilitiesPage() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16 bg-[#F5F1E9]">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16 bg-[#F8F4FA]">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto space-y-3">
-        <span className="badge-mono border-[#D6A85F] text-[#142B45]">
+        <span className="badge-mono border-[#C6A46A] text-[#302343]">
           COMPREHENSIVE AMENITIES
         </span>
-        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#142B45]">
+        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#302343]">
           Hostel Amenities at <span className="italic font-normal">VARAHI GIRLS HOSTEL</span>
         </h1>
-        <p className="text-[#263447] text-sm sm:text-base leading-relaxed">
+        <p className="text-[#332C38] text-sm sm:text-base leading-relaxed">
           Every amenity at Varahi Girls Hostel is curated for safety, hygiene, comfort, and peace of mind for female students and working professionals.
         </p>
       </div>
@@ -91,19 +91,19 @@ export default function FacilitiesPage() {
           return (
             <div
               key={idx}
-              className="card-editorial p-6 rounded-2xl bg-[#FFFFFF] border border-[#E5E0D7] flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md transition-shadow"
+              className="card-editorial p-6 rounded-2xl bg-[#FFFFFF] border border-[#E9E1ED] flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="space-y-3">
-                <div className="w-12 h-12 rounded-xl bg-[#F5F1E9] text-[#142B45] flex items-center justify-center font-bold border border-[#E5E0D7]">
-                  <Icon className="w-6 h-6 text-[#D6A85F]" />
+                <div className="w-12 h-12 rounded-xl bg-[#F8F4FA] text-[#302343] flex items-center justify-center font-bold border border-[#E9E1ED]">
+                  <Icon className="w-6 h-6 text-[#C6A46A]" />
                 </div>
-                <span className="badge-mono text-[9px] text-[#477B70] border-[#477B70]/30">
+                <span className="badge-mono text-[9px] text-[#79618E] border-[#79618E]/30">
                   {fac.badge}
                 </span>
-                <h3 className="font-serif text-lg font-bold text-[#142B45]">
+                <h3 className="font-serif text-lg font-bold text-[#302343]">
                   {fac.title}
                 </h3>
-                <p className="text-xs text-[#718096] leading-relaxed">
+                <p className="text-xs text-[#766D7C] leading-relaxed">
                   {fac.desc}
                 </p>
               </div>
@@ -113,14 +113,14 @@ export default function FacilitiesPage() {
       </div>
 
       {/* Visit Banner */}
-      <div className="card-editorial p-8 sm:p-12 rounded-2xl bg-[#FFFFFF] border border-[#E5E0D7] text-center max-w-4xl mx-auto space-y-6">
-        <span className="badge-mono border-[#D6A85F] text-[#142B45]">
+      <div className="card-editorial p-8 sm:p-12 rounded-2xl bg-[#FFFFFF] border border-[#E9E1ED] text-center max-w-4xl mx-auto space-y-6">
+        <span className="badge-mono border-[#C6A46A] text-[#302343]">
           SCHEDULE AN IN-PERSON INSPECTION
         </span>
-        <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#142B45]">
+        <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#302343]">
           Experience Varahi Girls Hostel in Person
         </h2>
-        <p className="text-sm text-[#263447] max-w-xl mx-auto leading-relaxed">
+        <p className="text-sm text-[#332C38] max-w-xl mx-auto leading-relaxed">
           Parents and applicants are warmly welcomed to inspect the rooms, kitchen cleanliness, warden presence, and security measures in Shamshabad.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
@@ -128,7 +128,7 @@ export default function FacilitiesPage() {
             href={`tel:${VERIFIED_CONTACTS.primary_phone}`}
             className="btn-ghost-luxury py-3 px-6 text-xs flex items-center gap-2"
           >
-            <Phone className="w-4 h-4 text-[#477B70]" />
+            <Phone className="w-4 h-4 text-[#79618E]" />
             <span>Call Proprietor ({VERIFIED_CONTACTS.primary_phone})</span>
           </a>
           <a

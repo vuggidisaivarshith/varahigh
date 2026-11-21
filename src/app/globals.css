@@ -1,21 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F5F1E9;
-  --foreground: #263447;
-  --color-primary-navy: #142B45;
-  --color-champagne-gold: #D6A85F;
-  --color-warm-ivory: #F5F1E9;
-  --color-muted-emerald: #477B70;
+  --background: #F8F4FA;
+  --foreground: #332C38;
+  --color-deep-plum: #302343;
+  --color-royal-lavender: #79618E;
+  --color-soft-lilac: #D9C8E8;
+  --color-ivory: #F8F4FA;
+  --color-champagne-gold: #C6A46A;
+  --color-main-text: #332C38;
+  --color-secondary-text: #766D7C;
   --color-white: #FFFFFF;
-  --color-slate-charcoal: #263447;
-  --color-muted-text: #718096;
-  --color-border: #E5E0D7;
+  --color-border: #E9E1ED;
+
+  /* Aliases for backwards compatibility with previous theme tokens */
+  --color-primary-navy: #302343;
+  --color-warm-ivory: #F8F4FA;
+  --color-muted-emerald: #79618E;
+  --color-slate-charcoal: #332C38;
+  --color-muted-text: #766D7C;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-deep-plum: #302343;
+  --color-royal-lavender: #79618E;
+  --color-soft-lilac: #D9C8E8;
+  --color-ivory: #F8F4FA;
+  --color-champagne-gold: #C6A46A;
+  --color-main-text: #332C38;
+  --color-secondary-text: #766D7C;
+  --color-subtle-border: #E9E1ED;
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
   --font-mono: var(--font-mono);
@@ -31,7 +47,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif), Georgia, serif;
-  color: #142B45;
+  color: #302343;
   letter-spacing: -0.02em;
 }
 
@@ -47,10 +63,11 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans), sans-serif;
 }
 
-/* Primary Navy Button */
+/* Primary CTA Button: Royal Lavender background with white text, hover Deep Plum */
 .btn-primary-ink,
-.btn-primary-navy {
-  background-color: #142B45;
+.btn-primary-navy,
+.btn-primary-lavender {
+  background-color: #79618E;
   color: #FFFFFF;
   padding: 0.65rem 1.25rem;
   font-family: var(--font-mono), monospace;
@@ -58,35 +75,64 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 700;
-  border: 1px solid #142B45;
+  border: 1px solid #79618E;
   border-radius: 0.375rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  box-shadow: 0 2px 6px rgba(20, 43, 69, 0.15);
+  box-shadow: 0 2px 6px rgba(48, 35, 67, 0.15);
   transition: all 0.2s ease;
 }
 
 .btn-primary-ink:hover,
-.btn-primary-navy:hover {
-  background-color: #1F3C5F;
-  border-color: #1F3C5F;
+.btn-primary-navy:hover,
+.btn-primary-lavender:hover {
+  background-color: #302343;
+  border-color: #302343;
+  color: #FFFFFF;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(20, 43, 69, 0.25);
+  box-shadow: 0 4px 12px rgba(48, 35, 67, 0.25);
 }
 
-/* Champagne Gold Accent Button */
-.btn-champagne-gold {
-  background-color: #D6A85F;
-  color: #142B45;
+/* Deep Plum Button */
+.btn-deep-plum {
+  background-color: #302343;
+  color: #FFFFFF;
   padding: 0.65rem 1.25rem;
   font-family: var(--font-mono), monospace;
   font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 700;
-  border: 1px solid #C4964D;
+  border: 1px solid #302343;
+  border-radius: 0.375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 6px rgba(48, 35, 67, 0.15);
+  transition: all 0.2s ease;
+}
+
+.btn-deep-plum:hover {
+  background-color: #79618E;
+  border-color: #79618E;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* Champagne Gold Accent Button */
+.btn-champagne-gold {
+  background-color: #C6A46A;
+  color: #302343;
+  padding: 0.65rem 1.25rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 1px solid #B8945A;
   border-radius: 0.375rem;
   display: inline-flex;
   align-items: center;
@@ -96,16 +142,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-champagne-gold:hover {
-  background-color: #C4964D;
+  background-color: #B8945A;
   transform: translateY(-1px);
 }
 
-/* Muted Emerald WhatsApp & Verified Action Button */
+/* Secondary CTA / WhatsApp Button */
 .btn-emerald-cta,
-.btn-muted-emerald {
-  border: 1px solid #477B70;
+.btn-muted-emerald,
+.btn-secondary-cta {
+  border: 1px solid #79618E;
   background-color: #FFFFFF;
-  color: #477B70;
+  color: #79618E;
   padding: 0.55rem 1.15rem;
   font-family: var(--font-mono), monospace;
   font-size: 0.6875rem;
@@ -121,17 +168,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-emerald-cta:hover,
-.btn-muted-emerald:hover {
-  background-color: #477B70;
+.btn-muted-emerald:hover,
+.btn-secondary-cta:hover {
+  background-color: #79618E;
   color: #FFFFFF;
   transform: translateY(-1px);
 }
 
-/* Ghost Luxury Button */
+/* Ghost Luxury Button: Transparent or ivory background with Deep Plum text and subtle border */
 .btn-ghost-luxury {
-  border: 1px solid #E5E0D7;
+  border: 1px solid #E9E1ED;
   background-color: #FFFFFF;
-  color: #142B45;
+  color: #302343;
   padding: 0.55rem 1.15rem;
   font-family: var(--font-mono), monospace;
   font-size: 0.6875rem;
@@ -147,8 +195,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-ghost-luxury:hover {
-  background-color: #F5F1E9;
-  border-color: #D6A85F;
+  background-color: #F8F4FA;
+  border-color: #C6A46A;
+  color: #302343;
   transform: translateY(-1px);
 }
 
@@ -164,24 +213,24 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  border: 1px solid #E5E0D7;
+  border: 1px solid #E9E1ED;
   background-color: #FFFFFF;
-  color: #142B45;
+  color: #302343;
 }
 
-/* Card Styling: Premium Calm Ivory & White */
+/* Card Styling: Premium Calm Ivory & White with Soft Lilac hover */
 .card-glass,
 .card-editorial {
   background-color: #FFFFFF;
-  border: 1px solid #E5E0D7;
+  border: 1px solid #E9E1ED;
   border-radius: 0.75rem;
-  box-shadow: 0 1px 3px rgba(20, 43, 69, 0.04), 0 4px 12px rgba(20, 43, 69, 0.03);
+  box-shadow: 0 1px 3px rgba(48, 35, 67, 0.04), 0 4px 12px rgba(48, 35, 67, 0.03);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .card-glass:hover,
 .card-editorial:hover {
-  border-color: #D6A85F;
+  border-color: #D9C8E8;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(20, 43, 69, 0.06);
+  box-shadow: 0 8px 24px rgba(48, 35, 67, 0.06);
 }

@@ -45,17 +45,17 @@ export default function GalleryPage() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12 bg-[#F5F1E9]">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12 bg-[#F8F4FA]">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E5E0D7] pb-6">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E9E1ED] pb-6">
         <div>
-          <span className="badge-mono border-[#D6A85F] text-[#142B45]">
+          <span className="badge-mono border-[#C6A46A] text-[#302343]">
             CAMPUS &amp; ROOM PREVIEWS
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#142B45] mt-1">
+          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#302343] mt-1">
             Varahi Girls Hostel Visual Showcase
           </h1>
-          <p className="text-[#263447] text-sm mt-1 max-w-xl">
+          <p className="text-[#332C38] text-sm mt-1 max-w-xl">
             Authentic preview of rooms, security enclaves, dining, and facilities at our Shamshabad residence.
           </p>
         </div>
@@ -66,9 +66,9 @@ export default function GalleryPage() {
           rel="noopener noreferrer"
           className="btn-ghost-luxury text-xs py-2.5 px-4 flex items-center gap-1.5 self-start sm:self-auto"
         >
-          <MapPin className="w-4 h-4 text-[#D6A85F]" />
+          <MapPin className="w-4 h-4 text-[#C6A46A]" />
           <span>Google Business Listing ({VERIFIED_CONTACTS.google_rating})</span>
-          <ExternalLink className="w-3 h-3 text-[#718096]" />
+          <ExternalLink className="w-3 h-3 text-[#766D7C]" />
         </a>
       </div>
 
@@ -77,9 +77,9 @@ export default function GalleryPage() {
         {galleryItems.map((item, idx) => (
           <div
             key={idx}
-            className="card-editorial overflow-hidden rounded-2xl bg-[#FFFFFF] border border-[#E5E0D7] flex flex-col group shadow-sm hover:shadow-md transition-shadow"
+            className="card-editorial overflow-hidden rounded-2xl bg-[#FFFFFF] border border-[#E9E1ED] flex flex-col group shadow-sm hover:shadow-md transition-shadow"
           >
-            <div className="relative aspect-4/3 w-full bg-[#142B45] overflow-hidden">
+            <div className="relative aspect-4/3 w-full bg-[#302343] overflow-hidden">
               <Image
                 src={item.image}
                 alt={item.title}
@@ -87,16 +87,16 @@ export default function GalleryPage() {
                 unoptimized
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
-              <span className="absolute top-3 left-3 bg-[#142B45]/85 text-[#F5F1E9] font-mono text-[9px] uppercase tracking-wider px-2.5 py-1 rounded-full border border-[#D6A85F]/50">
+              <span className="absolute top-3 left-3 bg-[#302343]/85 text-[#F8F4FA] font-mono text-[9px] uppercase tracking-wider px-2.5 py-1 rounded-full border border-[#C6A46A]/50">
                 {item.category}
               </span>
             </div>
             <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
               <div>
-                <h3 className="font-serif text-lg font-bold text-[#142B45] group-hover:text-[#D6A85F] transition-colors">
+                <h3 className="font-serif text-lg font-bold text-[#302343] group-hover:text-[#C6A46A] transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-xs text-[#718096] mt-1 leading-relaxed">
+                <p className="text-xs text-[#766D7C] mt-1 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -106,11 +106,11 @@ export default function GalleryPage() {
       </div>
 
       {/* Schedule Inspection CTA */}
-      <div className="card-editorial p-8 rounded-2xl bg-[#FFFFFF] border border-[#E5E0D7] text-center space-y-4">
-        <h3 className="font-serif text-2xl font-bold text-[#142B45]">
+      <div className="card-editorial p-8 rounded-2xl bg-[#FFFFFF] border border-[#E9E1ED] text-center space-y-4">
+        <h3 className="font-serif text-2xl font-bold text-[#302343]">
           Inspect our rooms in person today
         </h3>
-        <p className="text-xs sm:text-sm text-[#718096] max-w-lg mx-auto">
+        <p className="text-xs sm:text-sm text-[#766D7C] max-w-lg mx-auto">
           Contact Proprietor E. Bharath Chandra to schedule a visit or check room availability.
         </p>
         <div className="flex flex-wrap justify-center gap-3 pt-2">

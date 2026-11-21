@@ -11,37 +11,37 @@ export const metadata = {
 
 export default function EnquiryPage() {
   return (
-    <div className="bg-[#F5F1E9] min-h-screen py-14 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#F8F4FA] min-h-screen py-14 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto space-y-10">
         {/* Header */}
         <div className="text-center space-y-3">
-          <span className="badge-mono border-[#D6A85F] text-[#142B45]">
+          <span className="badge-mono border-[#C6A46A] text-[#302343]">
             ONLINE ADMISSION DESK
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#142B45]">
+          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#302343]">
             Apply for Accommodation
           </h1>
-          <p className="text-xs sm:text-sm text-[#263447] max-w-xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#332C38] max-w-xl mx-auto leading-relaxed">
             Fill out the 3-step admission intake form below. Proprietor <strong>{VERIFIED_CONTACTS.owner_proprietor}</strong> and our Shamshabad hostel desk will review vacancy and contact you directly.
           </p>
         </div>
 
         {/* Reassurance Bar */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <div className="p-3.5 rounded-xl bg-[#FFFFFF] border border-[#E5E0D7] text-center space-y-1">
-            <ShieldCheck className="w-4 h-4 text-[#477B70] mx-auto" />
-            <p className="font-serif text-xs font-bold text-[#142B45]">High-Security Residence</p>
-            <p className="text-[10px] text-[#718096]">24/7 CCTV &amp; Resident Warden</p>
+          <div className="p-3.5 rounded-xl bg-[#FFFFFF] border border-[#E9E1ED] text-center space-y-1">
+            <ShieldCheck className="w-4 h-4 text-[#79618E] mx-auto" />
+            <p className="font-serif text-xs font-bold text-[#302343]">High-Security Residence</p>
+            <p className="text-[10px] text-[#766D7C]">24/7 CCTV &amp; Resident Warden</p>
           </div>
-          <div className="p-3.5 rounded-xl bg-[#FFFFFF] border border-[#E5E0D7] text-center space-y-1">
-            <CheckCircle2 className="w-4 h-4 text-[#D6A85F] mx-auto" />
-            <p className="font-serif text-xs font-bold text-[#142B45]">3 Fresh Meals Included</p>
-            <p className="text-[10px] text-[#718096]">South &amp; North Indian Buffet</p>
+          <div className="p-3.5 rounded-xl bg-[#FFFFFF] border border-[#E9E1ED] text-center space-y-1">
+            <CheckCircle2 className="w-4 h-4 text-[#C6A46A] mx-auto" />
+            <p className="font-serif text-xs font-bold text-[#302343]">3 Fresh Meals Included</p>
+            <p className="text-[10px] text-[#766D7C]">South &amp; North Indian Buffet</p>
           </div>
-          <div className="p-3.5 rounded-xl bg-[#FFFFFF] border border-[#E5E0D7] text-center space-y-1">
-            <Phone className="w-4 h-4 text-[#477B70] mx-auto" />
-            <p className="font-serif text-xs font-bold text-[#142B45]">Direct Management</p>
-            <p className="text-[10px] text-[#718096] font-mono">{VERIFIED_CONTACTS.primary_phone}</p>
+          <div className="p-3.5 rounded-xl bg-[#FFFFFF] border border-[#E9E1ED] text-center space-y-1">
+            <Phone className="w-4 h-4 text-[#79618E] mx-auto" />
+            <p className="font-serif text-xs font-bold text-[#302343]">Direct Management</p>
+            <p className="text-[10px] text-[#766D7C] font-mono">{VERIFIED_CONTACTS.primary_phone}</p>
           </div>
         </div>
 

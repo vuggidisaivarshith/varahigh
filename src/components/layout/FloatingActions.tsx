@@ -16,11 +16,11 @@ export default function FloatingActions() {
         href={VERIFIED_CONTACTS.google_map_link}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-12 h-12 rounded-full bg-[#142B45] hover:bg-[#1F3C5F] text-[#D6A85F] flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all group relative border border-[#D6A85F]/50"
+        className="w-12 h-12 rounded-full bg-[#302343] hover:bg-[#79618E] text-[#C6A46A] flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all group relative border border-[#C6A46A]/50"
         aria-label="Google Maps Location Pin"
       >
-        <MapPin className="w-5 h-5 text-[#D6A85F]" />
-        <span className="absolute right-14 bg-[#142B45] text-white font-mono text-[10px] tracking-wider uppercase font-bold px-3 py-1.5 rounded border border-[#1F3C5F] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg pointer-events-none">
+        <MapPin className="w-5 h-5 text-[#C6A46A]" />
+        <span className="absolute right-14 bg-[#302343] text-white font-mono text-[10px] tracking-wider uppercase font-bold px-3 py-1.5 rounded border border-[#45335C] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg pointer-events-none">
           Google Maps Location
         </span>
       </a>
@@ -30,11 +30,11 @@ export default function FloatingActions() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-12 h-12 rounded-full bg-[#059669] hover:bg-emerald-500 text-white flex items-center justify-center shadow-lg shadow-emerald-600/30 hover:scale-110 active:scale-95 transition-all group relative border border-emerald-400"
+        className="w-12 h-12 rounded-full bg-[#79618E] hover:bg-[#302343] text-white flex items-center justify-center shadow-lg shadow-[#79618E]/30 hover:scale-110 active:scale-95 transition-all group relative border border-[#C6A46A]/50"
         aria-label="Chat on WhatsApp with Varahi Girls Hostel"
       >
-        <MessageCircle className="w-6 h-6" />
-        <span className="absolute right-14 bg-[#142B45] text-white font-mono text-[10px] tracking-wider uppercase font-bold px-3 py-1.5 rounded border border-[#1F3C5F] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg pointer-events-none">
+        <MessageCircle className="w-6 h-6 text-white" />
+        <span className="absolute right-14 bg-[#302343] text-white font-mono text-[10px] tracking-wider uppercase font-bold px-3 py-1.5 rounded border border-[#45335C] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg pointer-events-none">
           WhatsApp: {VERIFIED_CONTACTS.primary_phone}
         </span>
       </a>
@@ -42,11 +42,11 @@ export default function FloatingActions() {
       {/* Direct Phone Call */}
       <a
         href={`tel:${VERIFIED_CONTACTS.primary_phone}`}
-        className="w-12 h-12 rounded-full bg-[#142B45] hover:bg-[#1F3C5F] text-white flex items-center justify-center shadow-lg shadow-slate-900/30 hover:scale-110 active:scale-95 transition-all group relative border border-[#1F3C5F]"
+        className="w-12 h-12 rounded-full bg-[#302343] hover:bg-[#79618E] text-white flex items-center justify-center shadow-lg shadow-[#302343]/30 hover:scale-110 active:scale-95 transition-all group relative border border-[#C6A46A]/50"
         aria-label="Call Varahi Girls Hostel Management"
       >
-        <Phone className="w-5 h-5 text-[#D6A85F]" />
-        <span className="absolute right-14 bg-[#142B45] text-white font-mono text-[10px] tracking-wider uppercase font-bold px-3 py-1.5 rounded border border-[#1F3C5F] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg pointer-events-none">
+        <Phone className="w-5 h-5 text-[#C6A46A]" />
+        <span className="absolute right-14 bg-[#302343] text-white font-mono text-[10px] tracking-wider uppercase font-bold px-3 py-1.5 rounded border border-[#45335C] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg pointer-events-none">
           Call: {VERIFIED_CONTACTS.primary_phone}
         </span>
       </a>

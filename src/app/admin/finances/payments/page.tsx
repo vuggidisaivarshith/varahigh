@@ -165,17 +165,17 @@ function PaymentsManagementContent() {
   });
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 bg-[#F5F1E9] min-h-screen">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 bg-[#F8F4FA] min-h-screen">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#E5E0D7] pb-6">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#E9E1ED] pb-6">
         <div>
-          <span className="badge-mono border-[#D6A85F] text-[#142B45]">
+          <span className="badge-mono border-[#C6A46A] text-[#302343]">
             PAYMENT COLLECTION & RECONCILIATION
           </span>
-          <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#142B45] mt-2">
+          <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#302343] mt-2">
             Omnichannel Payment Ledger
           </h1>
-          <p className="text-xs text-[#718096] mt-1">
+          <p className="text-xs text-[#766D7C] mt-1">
             Record Cash & Direct UPI collections, reconcile bank credits, and audit verified transactions.
           </p>
         </div>
@@ -203,21 +203,21 @@ function PaymentsManagementContent() {
       {/* Record Offline Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 flex items-center justify-center p-4">
-          <div className="card-editorial p-6 sm:p-8 max-w-lg w-full space-y-5 bg-white border border-[#E5E0D7] shadow-xl">
-            <h3 className="font-serif text-xl font-bold text-[#142B45] flex items-center gap-2">
-              <CreditCard className="w-5 h-5 text-[#477B70]" />
+          <div className="card-editorial p-6 sm:p-8 max-w-lg w-full space-y-5 bg-white border border-[#E9E1ED] shadow-xl">
+            <h3 className="font-serif text-xl font-bold text-[#302343] flex items-center gap-2">
+              <CreditCard className="w-5 h-5 text-[#79618E]" />
               Record Offline Collection
             </h3>
 
             <form onSubmit={handleRecordPayment} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold text-[#142B45] mb-1">
+                <label className="block text-xs font-bold text-[#302343] mb-1">
                   Select Resident *
                 </label>
                 <select
                   value={residentId}
                   onChange={(e) => setResidentId(e.target.value)}
-                  className="w-full bg-[#F5F1E9] border border-[#E5E0D7] rounded-xl px-4 py-2.5 text-xs text-[#142B45] focus:outline-none focus:border-[#D6A85F] font-mono"
+                  className="w-full bg-[#F8F4FA] border border-[#E9E1ED] rounded-xl px-4 py-2.5 text-xs text-[#302343] focus:outline-none focus:border-[#C6A46A] font-mono"
                 >
                   {residents.map((r) => (
                     <option key={r.id} value={r.id}>
@@ -229,7 +229,7 @@ function PaymentsManagementContent() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-[#142B45] mb-1">
+                  <label className="block text-xs font-bold text-[#302343] mb-1">
                     Amount Collected (INR) *
                   </label>
                   <input
@@ -238,18 +238,18 @@ function PaymentsManagementContent() {
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
                     placeholder="e.g. 7000"
-                    className="w-full bg-[#F5F1E9] border border-[#E5E0D7] rounded-xl px-4 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#D6A85F] font-mono font-bold"
+                    className="w-full bg-[#F8F4FA] border border-[#E9E1ED] rounded-xl px-4 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#C6A46A] font-mono font-bold"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#142B45] mb-1">
+                  <label className="block text-xs font-bold text-[#302343] mb-1">
                     Payment Method *
                   </label>
                   <select
                     value={paymentMethod}
                     onChange={(e) => setPaymentMethod(e.target.value as any)}
-                    className="w-full bg-[#F5F1E9] border border-[#E5E0D7] rounded-xl px-4 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#D6A85F]"
+                    className="w-full bg-[#F8F4FA] border border-[#E9E1ED] rounded-xl px-4 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#C6A46A]"
                   >
                     <option value="direct_upi">Direct QR / PhonePe / GPay</option>
                     <option value="cash">Cash Collection</option>
@@ -259,7 +259,7 @@ function PaymentsManagementContent() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-[#142B45] mb-1">
+                <label className="block text-xs font-bold text-[#302343] mb-1">
                   Transaction Reference / UTR Number
                 </label>
                 <input
@@ -267,18 +267,18 @@ function PaymentsManagementContent() {
                   value={reference}
                   onChange={(e) => setReference(e.target.value)}
                   placeholder="e.g. UPI/123456789012 or Cash Voucher No."
-                  className="w-full bg-[#F5F1E9] border border-[#E5E0D7] rounded-xl px-4 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#D6A85F] font-mono"
+                  className="w-full bg-[#F8F4FA] border border-[#E9E1ED] rounded-xl px-4 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#C6A46A] font-mono"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-[#142B45] mb-1">
+                <label className="block text-xs font-bold text-[#302343] mb-1">
                   Verification Status *
                 </label>
                 <select
                   value={verificationStatus}
                   onChange={(e) => setVerificationStatus(e.target.value as any)}
-                  className="w-full bg-[#F5F1E9] border border-[#E5E0D7] rounded-xl px-4 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#D6A85F]"
+                  className="w-full bg-[#F8F4FA] border border-[#E9E1ED] rounded-xl px-4 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#C6A46A]"
                 >
                   <option value="verified">Verified against received bank credit</option>
                   <option value="pending">Pending bank statement clearance</option>
@@ -286,7 +286,7 @@ function PaymentsManagementContent() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-[#142B45] mb-1">
+                <label className="block text-xs font-bold text-[#302343] mb-1">
                   Collector / Staff Name *
                 </label>
                 <input
@@ -294,7 +294,7 @@ function PaymentsManagementContent() {
                   required
                   value={collectorName}
                   onChange={(e) => setCollectorName(e.target.value)}
-                  className="w-full bg-[#F5F1E9] border border-[#E5E0D7] rounded-xl px-4 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#D6A85F]"
+                  className="w-full bg-[#F8F4FA] border border-[#E9E1ED] rounded-xl px-4 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#C6A46A]"
                 />
               </div>
 
@@ -322,19 +322,19 @@ function PaymentsManagementContent() {
       {/* Reversal Modal */}
       {reversalTarget && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 flex items-center justify-center p-4">
-          <div className="card-editorial p-6 sm:p-8 max-w-lg w-full space-y-5 bg-white border border-[#E5E0D7] shadow-xl">
+          <div className="card-editorial p-6 sm:p-8 max-w-lg w-full space-y-5 bg-white border border-[#E9E1ED] shadow-xl">
             <h3 className="font-serif text-xl font-bold text-rose-700 flex items-center gap-2">
               <RotateCcw className="w-5 h-5 text-rose-600" />
               Reverse Verified Transaction
             </h3>
-            <p className="text-xs text-[#718096]">
+            <p className="text-xs text-[#766D7C]">
               You are reversing receipt <strong>{reversalTarget.receipt_number}</strong> for <strong>₹{reversalTarget.amount.toLocaleString()}</strong> ({reversalTarget.resident_name}).
               Financial records are never deleted; an offsetting reversal entry will be written to the ledger.
             </p>
 
             <form onSubmit={handleExecuteReversal} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold text-[#142B45] mb-1">
+                <label className="block text-xs font-bold text-[#302343] mb-1">
                   Reason for Reversal / Adjustment *
                 </label>
                 <textarea
@@ -343,7 +343,7 @@ function PaymentsManagementContent() {
                   value={reversalReason}
                   onChange={(e) => setReversalReason(e.target.value)}
                   placeholder="e.g. Bank chargeback, duplicate manual entry, or cheque return..."
-                  className="w-full bg-[#F5F1E9] border border-[#E5E0D7] rounded-xl p-3 text-xs text-[#142B45] focus:outline-none focus:border-[#D6A85F]"
+                  className="w-full bg-[#F8F4FA] border border-[#E9E1ED] rounded-xl p-3 text-xs text-[#302343] focus:outline-none focus:border-[#C6A46A]"
                 />
               </div>
 
@@ -369,29 +369,29 @@ function PaymentsManagementContent() {
       )}
 
       {/* Filter Toolbar */}
-      <div className="card-editorial p-4 sm:p-5 space-y-4 bg-white border border-[#E5E0D7]">
+      <div className="card-editorial p-4 sm:p-5 space-y-4 bg-white border border-[#E9E1ED]">
         <div className="flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
-            <Search className="w-4 h-4 text-[#718096] absolute left-3.5 top-3" />
+            <Search className="w-4 h-4 text-[#766D7C] absolute left-3.5 top-3" />
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search by receipt number (e.g. RCPT-2026-001), Resident ID, transaction reference..."
-              className="w-full bg-[#F5F1E9] border border-[#E5E0D7] rounded-xl pl-10 pr-4 py-2.5 text-xs text-[#142B45] focus:outline-none focus:border-[#D6A85F]"
+              className="w-full bg-[#F8F4FA] border border-[#E9E1ED] rounded-xl pl-10 pr-4 py-2.5 text-xs text-[#302343] focus:outline-none focus:border-[#C6A46A]"
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-[#E5E0D7]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-[#E9E1ED]">
           <div>
-            <label className="block text-[11px] font-mono font-bold text-[#718096] mb-1 uppercase">
+            <label className="block text-[11px] font-mono font-bold text-[#766D7C] mb-1 uppercase">
               Payment Method
             </label>
             <select
               value={methodFilter}
               onChange={(e) => setMethodFilter(e.target.value)}
-              className="w-full bg-[#F5F1E9] border border-[#E5E0D7] rounded-lg px-3 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#D6A85F]"
+              className="w-full bg-[#F8F4FA] border border-[#E9E1ED] rounded-lg px-3 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#C6A46A]"
             >
               <option value="all">All Payment Methods</option>
               <option value="online_upi">Online UPI / Razorpay</option>
@@ -402,13 +402,13 @@ function PaymentsManagementContent() {
           </div>
 
           <div>
-            <label className="block text-[11px] font-mono font-bold text-[#718096] mb-1 uppercase">
+            <label className="block text-[11px] font-mono font-bold text-[#766D7C] mb-1 uppercase">
               Verification Status
             </label>
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="w-full bg-[#F5F1E9] border border-[#E5E0D7] rounded-lg px-3 py-2 text-xs text-[#142B45] focus:outline-none focus:border-[#D6A85F]"
+              className="w-full bg-[#F8F4FA] border border-[#E9E1ED] rounded-lg px-3 py-2 text-xs text-[#302343] focus:outline-none focus:border-[#C6A46A]"
             >
               <option value="all">All Statuses</option>
               <option value="verified">Verified & Captured</option>
@@ -419,37 +419,37 @@ function PaymentsManagementContent() {
       </div>
 
       {/* Payments Table */}
-      <div className="card-editorial bg-white border border-[#E5E0D7] overflow-hidden">
-        <div className="p-4 bg-[#F5F1E9] border-b border-[#E5E0D7] flex items-center justify-between">
-          <span className="text-xs font-mono font-bold text-[#142B45]">
+      <div className="card-editorial bg-white border border-[#E9E1ED] overflow-hidden">
+        <div className="p-4 bg-[#F8F4FA] border-b border-[#E9E1ED] flex items-center justify-between">
+          <span className="text-xs font-mono font-bold text-[#302343]">
             TOTAL TRANSACTIONS ({filteredPayments.length})
           </span>
         </div>
 
         {loading ? (
-          <div className="p-12 text-center text-xs text-[#718096]">
+          <div className="p-12 text-center text-xs text-[#766D7C]">
             Loading payments...
           </div>
         ) : filteredPayments.length === 0 ? (
-          <div className="p-12 text-center text-xs text-[#718096]">
+          <div className="p-12 text-center text-xs text-[#766D7C]">
             No payments found.
           </div>
         ) : (
-          <div className="divide-y divide-[#E5E0D7]">
+          <div className="divide-y divide-[#E9E1ED]">
             {filteredPayments.map((p) => (
               <div
                 key={p.id}
                 className={`p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-colors ${
-                  p.is_reversed ? 'opacity-60 bg-slate-50' : 'hover:bg-[#F5F1E9]/50'
+                  p.is_reversed ? 'opacity-60 bg-slate-50' : 'hover:bg-[#F8F4FA]/50'
                 }`}
               >
                 <div className="space-y-1.5">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="font-bold text-sm text-[#142B45] font-mono">{p.receipt_number}</span>
+                    <span className="font-bold text-sm text-[#302343] font-mono">{p.receipt_number}</span>
                     <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-200">
                       {p.devi_resident_id}
                     </span>
-                    <span className="text-xs font-semibold text-[#142B45]">{p.resident_name}</span>
+                    <span className="text-xs font-semibold text-[#302343]">{p.resident_name}</span>
                     <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded uppercase ${
                       p.is_reversed
                         ? 'bg-rose-50 text-rose-800 border border-rose-200'
@@ -461,18 +461,18 @@ function PaymentsManagementContent() {
                     </span>
                   </div>
 
-                  <p className="text-xs text-[#718096]">
-                    Method: <strong className="text-[#142B45] uppercase">{p.payment_method.replace('_', ' ')}</strong> • Date: {p.payment_date} • Collector: {p.collector_name}
+                  <p className="text-xs text-[#766D7C]">
+                    Method: <strong className="text-[#302343] uppercase">{p.payment_method.replace('_', ' ')}</strong> • Date: {p.payment_date} • Collector: {p.collector_name}
                   </p>
-                  <p className="text-[11px] font-mono text-[#718096]">
+                  <p className="text-[11px] font-mono text-[#766D7C]">
                     Ref: {p.transaction_reference}
                   </p>
-                  {p.remarks && <p className="text-[11px] text-[#718096] italic">&quot;{p.remarks}&quot;</p>}
+                  {p.remarks && <p className="text-[11px] text-[#766D7C] italic">&quot;{p.remarks}&quot;</p>}
                 </div>
 
                 <div className="flex items-center gap-4 self-start sm:self-center">
                   <div className="text-right">
-                    <p className={`font-serif text-lg font-bold font-mono ${p.amount < 0 ? 'text-rose-600' : 'text-[#477B70]'}`}>
+                    <p className={`font-serif text-lg font-bold font-mono ${p.amount < 0 ? 'text-rose-600' : 'text-[#79618E]'}`}>
                       {p.amount < 0 ? '-' : '+'}₹{Math.abs(p.amount).toLocaleString()}
                     </p>
                   </div>
@@ -481,7 +481,7 @@ function PaymentsManagementContent() {
                     <button
                       type="button"
                       onClick={() => setReversalTarget(p)}
-                      className="px-3 py-1.5 rounded-lg border border-[#E5E0D7] bg-[#F5F1E9] hover:bg-rose-50 hover:text-rose-700 text-[#718096] text-xs font-semibold transition-colors"
+                      className="px-3 py-1.5 rounded-lg border border-[#E9E1ED] bg-[#F8F4FA] hover:bg-rose-50 hover:text-rose-700 text-[#766D7C] text-xs font-semibold transition-colors"
                       title="Reverse transaction"
                     >
                       Reverse
@@ -499,7 +499,7 @@ function PaymentsManagementContent() {
 
 export default function AdminPaymentsPage() {
   return (
-    <Suspense fallback={<div className="p-8 text-center text-xs text-[#718096]">Loading payment ledger...</div>}>
+    <Suspense fallback={<div className="p-8 text-center text-xs text-[#766D7C]">Loading payment ledger...</div>}>
       <PaymentsManagementContent />
     </Suspense>
   );

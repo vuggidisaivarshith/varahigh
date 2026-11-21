@@ -91,19 +91,19 @@ export default function ResidentPortalLayout({
   // If no resident is authenticated, show login prompt
   if (!loading && !resident) {
     return (
-      <div className="min-h-screen bg-[#F5F1E9] py-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
-        <div className="card-editorial max-w-md mx-auto p-8 bg-[#FFFFFF] text-center space-y-5 border border-[#E5E0D7]">
-          <div className="w-12 h-12 rounded-xl bg-[#F5F1E9] text-[#142B45] flex items-center justify-center mx-auto border border-[#E5E0D7]">
-            <Lock className="w-6 h-6 text-[#D6A85F]" />
+      <div className="min-h-screen bg-[#F8F4FA] py-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
+        <div className="card-editorial max-w-md mx-auto p-8 bg-[#FFFFFF] text-center space-y-5 border border-[#E9E1ED]">
+          <div className="w-12 h-12 rounded-xl bg-[#F8F4FA] text-[#302343] flex items-center justify-center mx-auto border border-[#E9E1ED]">
+            <Lock className="w-6 h-6 text-[#C6A46A]" />
           </div>
           <div className="space-y-1">
-            <span className="badge-mono border-[#D6A85F] text-[#142B45]">
+            <span className="badge-mono border-[#C6A46A] text-[#302343]">
               AUTHENTICATION REQUIRED
             </span>
-            <h2 className="font-serif text-2xl font-bold text-[#142B45]">
+            <h2 className="font-serif text-2xl font-bold text-[#302343]">
               Resident Portal Access
             </h2>
-            <p className="text-xs text-[#718096] leading-relaxed">
+            <p className="text-xs text-[#766D7C] leading-relaxed">
               Please sign in with your permanent Varahi Resident ID or registered mobile number to access your room details, invoices, and payment ledger.
             </p>
           </div>
@@ -118,12 +118,12 @@ export default function ResidentPortalLayout({
   }
 
   return (
-    <div className="min-h-screen bg-[#F5F1E9] text-[#142B45] flex flex-col">
+    <div className="min-h-screen bg-[#F8F4FA] text-[#302343] flex flex-col">
       {/* Resident Top Identity Banner */}
-      <div className="bg-[#142B45] text-[#FFFFFF] py-4 px-4 sm:px-6 lg:px-8 border-b border-[#1F3C5F]">
+      <div className="bg-[#302343] text-[#FFFFFF] py-4 px-4 sm:px-6 lg:px-8 border-b border-[#45335C]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[#D6A85F] text-[#142B45] font-serif font-black text-xl flex items-center justify-center shadow-xs">
+            <div className="w-12 h-12 rounded-xl bg-[#C6A46A] text-[#302343] font-serif font-black text-xl flex items-center justify-center shadow-xs">
               {resident?.full_name?.slice(0, 2).toUpperCase() || 'VG'}
             </div>
             <div>
@@ -131,16 +131,16 @@ export default function ResidentPortalLayout({
                 <h2 className="text-lg font-serif font-bold text-[#FFFFFF]">
                   {resident?.full_name}
                 </h2>
-                <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#D6A85F]/20 text-[#D6A85F] border border-[#D6A85F]/40">
+                <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#C6A46A]/20 text-[#C6A46A] border border-[#C6A46A]/40">
                   {resident?.resident_id}
                 </span>
                 <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-                  resident?.category === 'student' ? 'bg-[#FFFFFF]/20 text-[#FFFFFF]' : 'bg-[#477B70]/30 text-[#477B70]'
+                  resident?.category === 'student' ? 'bg-[#FFFFFF]/20 text-[#FFFFFF]' : 'bg-[#79618E]/30 text-[#79618E]'
                 }`}>
                   {resident?.category === 'student' ? '🎓 College Student' : '✈️ RGIA Aviation Staff'}
                 </span>
               </div>
-              <p className="text-xs text-[#E5E0D7]/80 mt-1 font-mono">
+              <p className="text-xs text-[#E9E1ED]/80 mt-1 font-mono">
                 Branch {resident?.current_branch_code} • Floor {resident?.current_floor_number} • Room {resident?.current_room_number} (Bed {resident?.current_bed_number})
               </p>
             </div>
@@ -158,7 +158,7 @@ export default function ResidentPortalLayout({
 
             <button
               onClick={handleSignOut}
-              className="p-2 rounded-lg text-[#E5E0D7] hover:text-[#FFFFFF] hover:bg-[#1F3C5F] transition-colors flex items-center gap-1 text-xs"
+              className="p-2 rounded-lg text-[#E9E1ED] hover:text-[#FFFFFF] hover:bg-[#45335C] transition-colors flex items-center gap-1 text-xs"
               title="Sign Out"
             >
               <LogOut className="w-4 h-4" />
@@ -169,7 +169,7 @@ export default function ResidentPortalLayout({
       </div>
 
       {/* Subnavigation Bar with Clear Payment & Ledger Tabs */}
-      <div className="bg-[#FFFFFF] border-b border-[#E5E0D7] sticky top-0 z-40 shadow-xs">
+      <div className="bg-[#FFFFFF] border-b border-[#E9E1ED] sticky top-0 z-40 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center space-x-1 overflow-x-auto py-2.5 scrollbar-none">
             {portalNav.map((item) => {
@@ -181,10 +181,10 @@ export default function ResidentPortalLayout({
                   href={item.href}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
                     active
-                      ? 'bg-[#142B45] text-[#FFFFFF] shadow-xs'
+                      ? 'bg-[#302343] text-[#FFFFFF] shadow-xs'
                       : item.highlight
-                      ? 'text-[#477B70] bg-[#F5F1E9] hover:bg-[#E5E0D7] font-bold'
-                      : 'text-[#718096] hover:text-[#142B45] hover:bg-[#F5F1E9]'
+                      ? 'text-[#79618E] bg-[#F8F4FA] hover:bg-[#E9E1ED] font-bold'
+                      : 'text-[#766D7C] hover:text-[#302343] hover:bg-[#F8F4FA]'
                   }`}
                 >
                   <Icon className="w-3.5 h-3.5" />
