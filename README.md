@@ -62,8 +62,8 @@
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/vuggidisaivarshith/varahigs.git
-cd varahigs
+git clone https://github.com/vuggidisaivarshith/varahigh.git
+cd varahigh
 
 # Install dependencies
 npm install

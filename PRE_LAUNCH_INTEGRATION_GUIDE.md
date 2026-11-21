@@ -5,7 +5,7 @@
 **Flagship Property:** DEVI MANSION — Varahi Luxury Girls Hostel (Street 8, Rallaguda Road, Shamshabad)  
 **Primary Contact:** +91 93919 44082 / +91 93919 44082  
 **Production Domain:** https://hostels-erp.vercel.app/  
-**Repository:** https://github.com/vuggidisaivarshith/varahigs  
+**Repository:** https://github.com/vuggidisaivarshith/varahigh  
 
 ---
 
