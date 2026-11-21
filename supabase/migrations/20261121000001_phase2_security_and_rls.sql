@@ -1,7 +1,7 @@
 -- =====================================================================
--- DEVI HOSTELS — PHASE 2 & 3: SECURITY, RLS & PRODUCTION SCHEMA HARDENING
+-- VARAHI GIRLS HOSTEL — PHASE 2 & 3: SECURITY, RLS & PRODUCTION SCHEMA HARDENING
 -- Location: Shamshabad, Hyderabad, Telangana, India
--- Proprietor: MARPINA PRADEEP
+-- Proprietor: E. BHARATH CHANDRA
 -- =====================================================================
 
 -- 1. FIX & UPDATE VERIFIED BRANCH INFORMATION
@@ -9,7 +9,7 @@ UPDATE public.branches
 SET name = 'DEVI MANSION — Devi Luxury Boys Hostel (The Boys Town)',
     address_line1 = 'Street Number 8, Rallaguda Road, Madhura Nagar',
     address_line2 = 'Near RGIA Airport Hub, Shamshabad',
-    contact_phone = '+91 99898 97705',
+    contact_phone = '+91 93919 44082',
     contact_email = 'devimansion@devihostels.com',
     facilities = ARRAY[
         'Free In-House Fitness Gym',
@@ -27,7 +27,7 @@ SET name = 'DEVI MANSION — Devi Luxury Boys Hostel (The Boys Town)',
 WHERE branch_code = 1;
 
 UPDATE public.branches
-SET contact_phone = '+91 99898 97705'
+SET contact_phone = '+91 93919 44082'
 WHERE branch_code IN (2, 3, 4, 5);
 
 -- 2. ENFORCE PERMANENT RESIDENT ID REGEX CONSTRAINT

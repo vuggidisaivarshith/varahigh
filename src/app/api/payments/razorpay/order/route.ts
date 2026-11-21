@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     const keySecret = process.env.RAZORPAY_KEY_SECRET;
 
     let orderData = {
-      id: `order_devi_${Date.now()}_${Math.floor(Math.random() * 1000)}`,
+      id: `order_varahi_${Date.now()}_${Math.floor(Math.random() * 1000)}`,
       amount: amountInPaise,
       currency: 'INR',
       receipt: receiptId,
@@ -77,7 +77,7 @@ export async function POST(request: NextRequest) {
       key_id: keyId || 'rzp_test_U2WWrItDHHmxWU',
       resident: {
         name: resident.full_name,
-        email: resident.email || 'resident@devihostels.com',
+        email: resident.email || 'resident@varahigirlshostel.com',
         phone: resident.phone,
       },
     });

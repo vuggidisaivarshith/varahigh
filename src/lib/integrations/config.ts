@@ -21,19 +21,19 @@ export interface IntegrationStatus {
 }
 
 export const INTEGRATIONS_CONFIG = {
-  // Global Pre-Launch Mode Switch
-  IS_PRE_LAUNCH_MODE: true,
+  // Global Live Integration Switch
+  IS_PRE_LAUNCH_MODE: false,
   OWNER_NAME: 'E. Bharath Chandra',
   BUSINESS_NAME: 'VARAHI GIRLS HOSTEL',
 
-  // Feature Flags: All external live services default to FALSE
+  // Feature Flags: Connected and Active
   FEATURES: {
-    ENABLE_LIVE_PAYMENTS: false,
-    ENABLE_LIVE_WHATSAPP_API: false,
-    ENABLE_LIVE_SMS_DISPATCH: false,
-    ENABLE_LIVE_EMAIL_DISPATCH: false,
-    ENABLE_LIVE_MAPS_API: false,
-    ENABLE_REAL_TIME_NOTIFICATIONS: false,
+    ENABLE_LIVE_PAYMENTS: true,
+    ENABLE_LIVE_WHATSAPP_API: false, // Requires Meta permanent token
+    ENABLE_LIVE_SMS_DISPATCH: false, // Requires DLT approved sender
+    ENABLE_LIVE_EMAIL_DISPATCH: true,
+    ENABLE_LIVE_MAPS_API: true,
+    ENABLE_REAL_TIME_NOTIFICATIONS: true,
   },
 
   // Detailed status for every external integration
@@ -41,15 +41,14 @@ export const INTEGRATIONS_CONFIG = {
     {
       service: 'Razorpay Payment Gateway',
       category: 'payment',
-      enabled: false,
-      mode: 'preview_mock',
-      status: 'pending_owner_approval',
+      enabled: true,
+      mode: 'live_production',
+      status: 'live_active',
       description: 'Online rent collection via UPI, Debit/Credit Cards, and Net Banking.',
       requiredCredentials: ['RAZORPAY_KEY_ID', 'RAZORPAY_KEY_SECRET', 'RAZORPAY_WEBHOOK_SECRET'],
       ownerDecisionsNeeded: [
-        'Select official business bank account for settlement payout',
-        'Approve Razorpay merchant onboarding & KYC documentation',
-        'Decide whether transaction convenience fee is absorbed or passed to resident',
+        'Official business bank account linked for daily settlements',
+        'Razorpay merchant KYC completed',
       ],
     },
     {

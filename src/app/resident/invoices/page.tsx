@@ -37,6 +37,20 @@ export default function ResidentInvoicesPage() {
     setPaySuccess(null);
   };
 
+  const loadRazorpayScript = (): Promise<boolean> => {
+    return new Promise((resolve) => {
+      if (typeof window !== 'undefined' && (window as any).Razorpay) {
+        resolve(true);
+        return;
+      }
+      const script = document.createElement('script');
+      script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+      script.onload = () => resolve(true);
+      script.onerror = () => resolve(false);
+      document.body.appendChild(script);
+    });
+  };
+
   const handleProcessPayment = async () => {
     if (!selectedInvoice || !resident) return;
     if (payAmount <= 0) {
@@ -67,8 +81,78 @@ export default function ResidentInvoicesPage() {
       }
 
       const order = orderJson.order;
+      const rzpKey = orderJson.key_id || process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
+      const scriptLoaded = await loadRazorpayScript();
 
-      // Step 2: Verify Payment (Simulating completion with signature)
+      // If Razorpay JS SDK loaded and real Razorpay order ID exists, launch modal
+      if (
+        scriptLoaded &&
+        typeof window !== 'undefined' &&
+        (window as any).Razorpay &&
+        rzpKey &&
+        order.id &&
+        !order.id.startsWith('order_varahi_')
+      ) {
+        const options = {
+          key: rzpKey,
+          amount: order.amount,
+          currency: order.currency || 'INR',
+          name: 'VARAHI GIRLS HOSTEL',
+          description: `Rent payment for ${selectedInvoice.invoice_number}`,
+          order_id: order.id,
+          prefill: {
+            name: resident.full_name,
+            contact: resident.phone,
+            email: resident.email,
+          },
+          theme: {
+            color: '#302343',
+          },
+          handler: async function (response: any) {
+            const verifyRes = await fetch('/api/payments/razorpay/verify', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_signature: response.razorpay_signature,
+                resident_id: resident.id,
+                invoice_id: selectedInvoice.id,
+                amount: payAmount,
+                method: paymentMethod,
+              }),
+            });
+
+            const verifyJson = await verifyRes.json();
+            if (!verifyJson.success) {
+              setPayError(verifyJson.error || 'Payment verification failed.');
+              setIsProcessing(false);
+              return;
+            }
+
+            setPaySuccess(
+              `Payment of ₹${payAmount.toLocaleString()} completed successfully! Receipt #${verifyJson.payment?.receipt_number || 'GEN'}`
+            );
+            await fetchInvoices();
+            setTimeout(() => {
+              setSelectedInvoice(null);
+              setPaySuccess(null);
+              setIsProcessing(false);
+            }, 2500);
+          },
+          modal: {
+            ondismiss: function () {
+              setIsProcessing(false);
+            },
+          },
+        };
+
+        const rzp = new (window as any).Razorpay(options);
+        rzp.open();
+        return;
+      }
+
+      // Fallback / Sandbox direct verify simulation
       const mockPaymentId = `pay_sim_${Date.now()}`;
       const verifyRes = await fetch('/api/payments/razorpay/verify', {
         method: 'POST',

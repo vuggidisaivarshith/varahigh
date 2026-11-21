@@ -1,8 +1,8 @@
 -- =====================================================================
--- DEVI HOSTELS — PHASE 1 INITIAL DATABASE MIGRATION
+-- VARAHI GIRLS HOSTEL — PHASE 1 INITIAL DATABASE MIGRATION
 -- Multi-Branch Centralized Hostel Management & Accounting Schema
 -- Location: Shamshabad, Hyderabad, Telangana, India
--- Owner: MARPINA PRADEEP
+-- Owner: E. BHARATH CHANDRA
 -- =====================================================================
 
 -- Enable essential extensions
@@ -31,8 +31,8 @@ CREATE TABLE IF NOT EXISTS public.branches (
     city TEXT NOT NULL DEFAULT 'Shamshabad, Hyderabad',
     state TEXT NOT NULL DEFAULT 'Telangana',
     pincode TEXT NOT NULL DEFAULT '501218',
-    contact_phone TEXT NOT NULL DEFAULT '+91 98480 12345',
-    contact_email TEXT DEFAULT 'contact@devihostels.com',
+    contact_phone TEXT NOT NULL DEFAULT '+91 93919 44082',
+    contact_email TEXT DEFAULT 'contact@varahigirlshostel.com',
     total_floors INT NOT NULL DEFAULT 4 CHECK (total_floors BETWEEN 1 AND 10),
     facilities TEXT[] DEFAULT ARRAY[
         'High-Speed Wi-Fi',
@@ -383,11 +383,11 @@ CREATE TABLE IF NOT EXISTS public.audit_logs (
 
 INSERT INTO public.branches (branch_code, name, gender_category, address_line1, address_line2, city, state, pincode, contact_phone, total_floors)
 VALUES 
-    (1, 'DEVI Hostels — Boys Hostel Branch 1', 'boys', 'Main Airport Approach Road, Near Shamshabad Bus Station', 'Opp. HP Petrol Bunk', 'Shamshabad, Hyderabad', 'Telangana', '501218', '+91 98480 12345', 4),
-    (2, 'DEVI Hostels — Boys Hostel Branch 2', 'boys', 'Plot 45, Airport Staff Enclave, Near RGIA Cargo Circle', 'Beside Airline Crew Quarters', 'Shamshabad, Hyderabad', 'Telangana', '501218', '+91 98480 12345', 4),
-    (3, 'DEVI Hostels — Boys Hostel Branch 3', 'boys', 'Rallaguda Main Road, Near Vardhaman Engineering College Junction', 'Near Shamshabad Flyover', 'Shamshabad, Hyderabad', 'Telangana', '501218', '+91 98480 12345', 4),
-    (4, 'DEVI Hostels — Boys Hostel Branch 4', 'boys', 'Madhura Nagar, Aviation Transit Zone', 'Near Shamshabad Police Station', 'Shamshabad, Hyderabad', 'Telangana', '501218', '+91 98480 12345', 4),
-    (5, 'DEVI Hostels — Girls Hostel Branch 1', 'girls', 'Gated High-Security Avenue, Near RGIA Airport Road', 'Dedicated Bio-Metric Entrance & CCTV Monitoring', 'Shamshabad, Hyderabad', 'Telangana', '501218', '+91 98480 12345', 5)
+    (1, 'DEVI Hostels — Boys Hostel Branch 1', 'boys', 'Main Airport Approach Road, Near Shamshabad Bus Station', 'Opp. HP Petrol Bunk', 'Shamshabad, Hyderabad', 'Telangana', '501218', '+91 93919 44082', 4),
+    (2, 'DEVI Hostels — Boys Hostel Branch 2', 'boys', 'Plot 45, Airport Staff Enclave, Near RGIA Cargo Circle', 'Beside Airline Crew Quarters', 'Shamshabad, Hyderabad', 'Telangana', '501218', '+91 93919 44082', 4),
+    (3, 'DEVI Hostels — Boys Hostel Branch 3', 'boys', 'Rallaguda Main Road, Near Vardhaman Engineering College Junction', 'Near Shamshabad Flyover', 'Shamshabad, Hyderabad', 'Telangana', '501218', '+91 93919 44082', 4),
+    (4, 'DEVI Hostels — Boys Hostel Branch 4', 'boys', 'Madhura Nagar, Aviation Transit Zone', 'Near Shamshabad Police Station', 'Shamshabad, Hyderabad', 'Telangana', '501218', '+91 93919 44082', 4),
+    (5, 'DEVI Hostels — Girls Hostel Branch 1', 'girls', 'Gated High-Security Avenue, Near RGIA Airport Road', 'Dedicated Bio-Metric Entrance & CCTV Monitoring', 'Shamshabad, Hyderabad', 'Telangana', '501218', '+91 93919 44082', 5)
 ON CONFLICT (branch_code) DO UPDATE 
 SET name = EXCLUDED.name,
     gender_category = EXCLUDED.gender_category,

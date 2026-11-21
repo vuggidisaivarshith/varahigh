@@ -44,33 +44,43 @@ export default function HomePage() {
             Premium, high-security accommodation designed exclusively for female college students, working women, and RGIA airport staff in Shamshabad, Hyderabad.
           </p>
 
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5">
             <Link
               href="/branches/1"
-              className="btn-champagne-gold py-3 px-8 text-xs w-full sm:w-auto shadow-md flex items-center justify-center gap-2"
+              className="btn-champagne-gold py-3 px-6 text-xs w-full sm:w-auto shadow-md flex items-center justify-center gap-2 font-bold"
             >
               <span>Explore Hostel & Rooms</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
+
+            {/* BIG PROMINENT LOGIN BUTTON IN HERO */}
+            <Link
+              href="/login"
+              className="bg-[#302343] hover:bg-[#79618E] text-[#FFFFFF] font-mono text-xs uppercase font-bold py-3 px-6 rounded-md shadow-md border-2 border-[#C6A46A] flex items-center justify-center gap-2 transition-all w-full sm:w-auto hover:scale-105 active:scale-95"
+            >
+              <Lock className="w-4 h-4 text-[#C6A46A]" />
+              <span>Resident &amp; Staff Login</span>
+            </Link>
+
             <a
               href={`https://wa.me/${VERIFIED_CONTACTS.whatsapp_number}?text=${encodeURIComponent(
                 'Hello Varahi Girls Hostel Management (E. Bharath Chandra), I am enquiring about room availability in Shamshabad.'
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-ghost-luxury py-3 px-8 text-xs w-full sm:w-auto flex items-center justify-center gap-2 bg-[#FFFFFF]/10 hover:bg-[#FFFFFF]/20 text-[#FFFFFF] border-[#E9E1ED]/30"
+              className="btn-ghost-luxury py-3 px-6 text-xs w-full sm:w-auto flex items-center justify-center gap-2 bg-[#FFFFFF]/10 hover:bg-[#FFFFFF]/20 text-[#FFFFFF] border-[#E9E1ED]/30"
             >
               <MessageCircle className="w-4 h-4 text-[#D9C8E8]" />
-              <span>Enquire on WhatsApp</span>
+              <span>WhatsApp</span>
             </a>
             <a
               href={VERIFIED_CONTACTS.google_map_link}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-ghost-luxury py-3 px-6 text-xs w-full sm:w-auto flex items-center justify-center gap-2 bg-[#FFFFFF]/10 hover:bg-[#FFFFFF]/20 text-[#FFFFFF] border-[#C6A46A]/40"
+              className="btn-ghost-luxury py-3 px-5 text-xs w-full sm:w-auto flex items-center justify-center gap-2 bg-[#FFFFFF]/10 hover:bg-[#FFFFFF]/20 text-[#FFFFFF] border-[#C6A46A]/40"
             >
               <MapPin className="w-4 h-4 text-[#C6A46A]" />
-              <span>Google Location Pin</span>
+              <span>Location Pin</span>
             </a>
           </div>
         </div>

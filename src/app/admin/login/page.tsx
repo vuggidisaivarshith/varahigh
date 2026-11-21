@@ -120,7 +120,7 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="btn-primary-navy w-full py-3 text-xs flex items-center justify-center gap-2"
+              className="btn-primary-navy w-full py-3.5 text-sm font-bold flex items-center justify-center gap-2 shadow-md hover:scale-[1.01] active:scale-98 transition-all min-h-[48px]"
             >
               <span>{loading ? 'Authenticating...' : 'Sign In to Operations Hub'}</span>
               <ArrowRight className="w-4 h-4" />

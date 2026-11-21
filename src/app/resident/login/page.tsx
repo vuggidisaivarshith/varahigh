@@ -216,7 +216,7 @@ export default function ResidentLoginPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="btn-primary-navy w-full py-3 text-xs flex items-center justify-center gap-2"
+                  className="btn-primary-navy w-full py-3.5 text-sm font-bold flex items-center justify-center gap-2 shadow-md hover:scale-[1.01] active:scale-98 transition-all min-h-[48px]"
                 >
                   <span>{loading ? 'Sending Code...' : 'Send Verification OTP'}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -254,7 +254,7 @@ export default function ResidentLoginPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="btn-emerald-cta w-full py-3 text-xs flex items-center justify-center gap-2"
+                  className="btn-emerald-cta w-full py-3.5 text-sm font-bold flex items-center justify-center gap-2 shadow-md hover:scale-[1.01] active:scale-98 transition-all min-h-[48px]"
                 >
                   <span>{loading ? 'Verifying...' : 'Verify OTP & Open Portal'}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -295,7 +295,7 @@ export default function ResidentLoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="btn-primary-navy w-full py-3 text-xs flex items-center justify-center gap-2"
+                className="btn-primary-navy w-full py-3.5 text-sm font-bold flex items-center justify-center gap-2 shadow-md hover:scale-[1.01] active:scale-98 transition-all min-h-[48px]"
               >
                 <span>{loading ? 'Authenticating...' : 'Sign In with Resident ID'}</span>
                 <ArrowRight className="w-4 h-4" />

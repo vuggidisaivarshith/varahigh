@@ -12,6 +12,7 @@ import {
   Shield,
   User,
   MapPin,
+  Lock,
 } from 'lucide-react';
 import { VERIFIED_CONTACTS } from '@/lib/data/branches';
 
@@ -27,7 +28,6 @@ export default function Navbar() {
     { name: 'Facilities', href: '/facilities' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Portal Login', href: '/login' },
   ];
 
   const isActive = (path: string) => {
@@ -65,9 +65,9 @@ export default function Navbar() {
             </a>
             <Link
               href="/login"
-              className="text-[#E9E1ED] hover:text-[#FFFFFF] flex items-center gap-1 transition-colors pl-2 border-l border-[#45335C]"
+              className="bg-[#79618E] hover:bg-[#C6A46A] hover:text-[#302343] text-[#FFFFFF] font-bold py-1 px-3 rounded-full flex items-center gap-1.5 transition-all shadow-xs border border-[#C6A46A]/50"
             >
-              <User className="w-3 h-3 text-[#C6A46A]" />
+              <User className="w-3 h-3" />
               <span>Portal Login</span>
             </Link>
           </div>
@@ -97,7 +97,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links (Royal Lavender Active & Champagne Gold Hover) */}
+          {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center space-x-1">
             {navLinks.map((link) => (
               <Link
@@ -114,7 +114,7 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Primary Action Buttons */}
+          {/* Primary Action Buttons — Featuring Big, Accessible Portal Login Button */}
           <div className="hidden sm:flex items-center space-x-3">
             <a
               href={`https://wa.me/${VERIFIED_CONTACTS.whatsapp_number}?text=${encodeURIComponent(
@@ -127,16 +127,33 @@ export default function Navbar() {
               <MessageCircle className="w-3.5 h-3.5" />
               <span>WhatsApp</span>
             </a>
+            
             <Link
               href="/enquiry"
-              className="btn-primary-navy text-xs py-2 px-4"
+              className="btn-ghost-luxury text-xs py-2.5 px-4 font-bold"
             >
               Apply Online
             </Link>
+
+            {/* BIG, PROMINENT PORTAL LOGIN BUTTON */}
+            <Link
+              href="/login"
+              className="bg-[#302343] hover:bg-[#79618E] text-[#FFFFFF] font-mono text-xs uppercase font-bold py-2.5 px-4.5 rounded-lg flex items-center gap-2 border border-[#C6A46A]/60 shadow-md hover:scale-105 active:scale-95 transition-all"
+            >
+              <User className="w-4 h-4 text-[#C6A46A]" />
+              <span>Portal Login</span>
+            </Link>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Quick Login & Menu Button */}
           <div className="flex lg:hidden items-center space-x-2">
+            <Link
+              href="/login"
+              className="bg-[#302343] hover:bg-[#79618E] text-[#FFFFFF] text-xs font-mono font-bold py-2 px-3 rounded-lg flex items-center gap-1.5 border border-[#C6A46A]/60 shadow-xs active:scale-95 transition-all"
+            >
+              <User className="w-3.5 h-3.5 text-[#C6A46A]" />
+              <span>Login</span>
+            </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg text-[#302343] hover:bg-[#F8F4FA] border border-[#E9E1ED]"
@@ -150,7 +167,17 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {isOpen && (
-        <div className="lg:hidden border-t border-[#E9E1ED] bg-[#FFFFFF] px-4 pt-3 pb-6 space-y-3">
+        <div className="lg:hidden border-t border-[#E9E1ED] bg-[#FFFFFF] px-4 pt-4 pb-6 space-y-4">
+          {/* BIG PROMINENT LOGIN BUTTON FOR MOBILE USERS */}
+          <Link
+            href="/login"
+            onClick={() => setIsOpen(false)}
+            className="w-full bg-[#302343] hover:bg-[#79618E] text-[#FFFFFF] font-mono text-sm uppercase font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-2.5 border border-[#C6A46A] shadow-md transition-all active:scale-98"
+          >
+            <User className="w-5 h-5 text-[#C6A46A]" />
+            <span>Resident &amp; Staff Login</span>
+          </Link>
+
           <div className="space-y-1">
             {navLinks.map((link) => (
               <Link
@@ -168,7 +195,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="pt-4 border-t border-[#E9E1ED] flex flex-col gap-2">
+          <div className="pt-3 border-t border-[#E9E1ED] flex flex-col gap-2.5">
             <a
               href={`tel:${VERIFIED_CONTACTS.primary_phone}`}
               className="btn-ghost-luxury py-2.5 text-xs text-center flex items-center justify-center gap-2"
@@ -179,7 +206,7 @@ export default function Navbar() {
             <Link
               href="/enquiry"
               onClick={() => setIsOpen(false)}
-              className="btn-primary-navy py-2.5 text-xs text-center"
+              className="btn-primary-navy py-2.5 text-xs text-center font-bold"
             >
               Admission Enquiry
             </Link>

@@ -1,7 +1,7 @@
 -- =====================================================================
--- DEVI HOSTELS — PHASE 4: CONSOLIDATED PRODUCTION DATABASE SCHEMA & RLS
+-- VARAHI GIRLS HOSTEL — PHASE 4: CONSOLIDATED PRODUCTION DATABASE SCHEMA & RLS
 -- Centralized 5-Branch Management ERP for Shamshabad, Hyderabad
--- Proprietor: MARPINA PRADEEP
+-- Proprietor: E. BHARATH CHANDRA
 -- =====================================================================
 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";

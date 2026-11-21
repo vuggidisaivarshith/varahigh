@@ -78,8 +78,9 @@ export default function UnifiedPortalLoginPage() {
 
             <Link
               href="/resident/login"
-              className="btn-emerald-cta w-full py-3.5 text-xs text-center flex items-center justify-center gap-2"
+              className="w-full bg-[#79618E] hover:bg-[#302343] text-[#FFFFFF] font-mono text-sm uppercase font-bold py-4 px-6 rounded-xl text-center flex items-center justify-center gap-2.5 shadow-md hover:scale-[1.02] active:scale-98 transition-all min-h-[52px]"
             >
+              <User className="w-4 h-4 text-[#C6A46A]" />
               <span>Resident Sign In</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -122,10 +123,11 @@ export default function UnifiedPortalLoginPage() {
 
             <Link
               href="/admin/login"
-              className="btn-primary-navy w-full py-3.5 text-xs text-center flex items-center justify-center gap-2"
+              className="w-full bg-[#302343] hover:bg-[#79618E] text-[#FFFFFF] font-mono text-sm uppercase font-bold py-4 px-6 rounded-xl text-center flex items-center justify-center gap-2.5 shadow-md hover:scale-[1.02] active:scale-98 transition-all border border-[#C6A46A]/50 min-h-[52px]"
             >
-              <Lock className="w-3.5 h-3.5 text-[#C6A46A]" />
+              <Lock className="w-4 h-4 text-[#C6A46A]" />
               <span>Administrative Sign In</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
