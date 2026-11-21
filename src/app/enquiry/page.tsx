@@ -1,0 +1,53 @@
+import React from 'react';
+import EnquiryForm from '@/components/enquiry/EnquiryForm';
+import { ShieldCheck, Phone, MapPin, CheckCircle2 } from 'lucide-react';
+import { VARAHI_BRANCHES, VERIFIED_CONTACTS } from '@/lib/data/branches';
+
+export const metadata = {
+  title: 'Admission Enquiry — VARAHI GIRLS HOSTEL Shamshabad',
+  description:
+    'Submit an online admission enquiry for Varahi Girls Hostel (Branch 1) in Shamshabad, Hyderabad near RGIA. Single, 2, 3, and 4 sharing AC/Non-AC rooms for female students and working professionals.',
+};
+
+export default function EnquiryPage() {
+  return (
+    <div className="bg-[#F5F1E9] min-h-screen py-14 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto space-y-10">
+        {/* Header */}
+        <div className="text-center space-y-3">
+          <span className="badge-mono border-[#D6A85F] text-[#142B45]">
+            ONLINE ADMISSION DESK
+          </span>
+          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#142B45]">
+            Apply for Accommodation
+          </h1>
+          <p className="text-xs sm:text-sm text-[#263447] max-w-xl mx-auto leading-relaxed">
+            Fill out the 3-step admission intake form below. Proprietor <strong>{VERIFIED_CONTACTS.owner_proprietor}</strong> and our Shamshabad hostel desk will review vacancy and contact you directly.
+          </p>
+        </div>
+
+        {/* Reassurance Bar */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div className="p-3.5 rounded-xl bg-[#FFFFFF] border border-[#E5E0D7] text-center space-y-1">
+            <ShieldCheck className="w-4 h-4 text-[#477B70] mx-auto" />
+            <p className="font-serif text-xs font-bold text-[#142B45]">High-Security Residence</p>
+            <p className="text-[10px] text-[#718096]">24/7 CCTV &amp; Resident Warden</p>
+          </div>
+          <div className="p-3.5 rounded-xl bg-[#FFFFFF] border border-[#E5E0D7] text-center space-y-1">
+            <CheckCircle2 className="w-4 h-4 text-[#D6A85F] mx-auto" />
+            <p className="font-serif text-xs font-bold text-[#142B45]">3 Fresh Meals Included</p>
+            <p className="text-[10px] text-[#718096]">South &amp; North Indian Buffet</p>
+          </div>
+          <div className="p-3.5 rounded-xl bg-[#FFFFFF] border border-[#E5E0D7] text-center space-y-1">
+            <Phone className="w-4 h-4 text-[#477B70] mx-auto" />
+            <p className="font-serif text-xs font-bold text-[#142B45]">Direct Management</p>
+            <p className="text-[10px] text-[#718096] font-mono">{VERIFIED_CONTACTS.primary_phone}</p>
+          </div>
+        </div>
+
+        {/* The Form */}
+        <EnquiryForm />
+      </div>
+    </div>
+  );
+}
