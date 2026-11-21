@@ -21,7 +21,7 @@ export default function Footer() {
               Looking for safe, hygienic & modern accommodation near RGIA?
             </h3>
             <p className="text-[#332C38] text-sm max-w-2xl mt-1.5 leading-relaxed">
-              Attached bathrooms, 24/7 CCTV surveillance, resident lady warden, 3-times daily homely food, high-speed Wi-Fi, and 100% generator power backup. Just minutes from Rajiv Gandhi International Airport and major Shamshabad colleges.
+              Attached bathrooms, 24/7 CCTV surveillance, resident lady warden, 3-times daily homely food, and high-speed Wi-Fi. Just minutes from Rajiv Gandhi International Airport and major Shamshabad colleges.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
@@ -81,31 +81,27 @@ export default function Footer() {
           {/* Col 2: Room & Sharing Options */}
           <div className="space-y-3">
             <h4 className="font-mono text-xs uppercase tracking-widest text-[#FFFFFF] font-bold border-b border-[#45335C] pb-2">
-              Room Options
+              Room Options (Non-AC)
             </h4>
             <ul className="space-y-2 text-xs">
               <li className="flex items-center justify-between text-[#E9E1ED]/90">
-                <span>Single Sharing (Private Room)</span>
-                <span className="font-mono text-[10px] text-[#C6A46A]">AC / Non-AC</span>
-              </li>
-              <li className="flex items-center justify-between text-[#E9E1ED]/90">
-                <span>2-Sharing Executive Room</span>
-                <span className="font-mono text-[10px] text-[#C6A46A]">Attached Bath</span>
-              </li>
-              <li className="flex items-center justify-between text-[#E9E1ED]/90">
                 <span>3-Sharing Comfort Room</span>
-                <span className="font-mono text-[10px] text-[#C6A46A]">Student Choice</span>
+                <span className="font-mono text-[10px] text-[#C6A46A] font-bold">₹6,000 / mo</span>
               </li>
               <li className="flex items-center justify-between text-[#E9E1ED]/90">
                 <span>4-Sharing Economy Room</span>
-                <span className="font-mono text-[10px] text-[#C6A46A]">Budget Friendly</span>
+                <span className="font-mono text-[10px] text-[#C6A46A] font-bold">₹5,500 / mo</span>
+              </li>
+              <li className="flex items-center justify-between text-[#E9E1ED]/90">
+                <span>5-Sharing Economy Room</span>
+                <span className="font-mono text-[10px] text-[#C6A46A] font-bold">₹5,500 / mo</span>
               </li>
               <li className="pt-2">
                 <Link
-                  href="/branches/1"
+                  href="/branches"
                   className="text-xs font-mono text-[#C6A46A] hover:underline flex items-center gap-1"
                 >
-                  <span>View Branch 1 Specifications</span>
+                  <span>View Room Specifications</span>
                   <ArrowRight className="w-3 h-3 text-[#C6A46A]" />
                 </Link>
               </li>
@@ -175,7 +171,12 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#C6A46A] shrink-0" />
-                <span className="font-mono">contact@varahigirlshostel.com</span>
+                <a
+                  href={`mailto:${VERIFIED_CONTACTS.contact_email}`}
+                  className="font-mono text-[11px] hover:text-[#C6A46A] break-all"
+                >
+                  {VERIFIED_CONTACTS.contact_email}
+                </a>
               </div>
               <div className="pt-2">
                 <a

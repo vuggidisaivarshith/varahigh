@@ -107,7 +107,7 @@ async function handleCronReminders(request: NextRequest) {
         reminderSent = true;
         reminderType = 'OVERDUE_7_DAYS_BRANCH_ESCALATION';
       } else if (diffDays >= 15 && diffDays % 5 === 0) {
-        // 15+ Days past due: critical escalation to owner Marpina Pradeep
+        // 15+ Days past due: critical escalation to owner E. Bharath Chandra
         await sendNotification({
           resident_id: resident.id,
           template: 'overdue_escalation',

@@ -685,3 +685,143 @@ export function checkoutResident(
 
   return { success: true };
 }
+
+export interface BulkResidentInput {
+  full_name: string;
+  phone: string;
+  email?: string;
+  category?: CustomerCategory;
+  gender?: Gender;
+  aadhaar_last_four?: string;
+  emergency_contact_name?: string;
+  emergency_contact_phone?: string;
+  emergency_contact_relation?: string;
+  admission_date?: string;
+  agreed_monthly_rent?: number;
+  current_floor_number?: number;
+  current_room_number?: string;
+  current_bed_number?: string;
+  student_college_name?: string;
+  student_course?: string;
+  student_year?: string;
+  employee_company?: string;
+  employee_designation?: string;
+  security_deposit?: number;
+  advance_balance?: number;
+  outstanding_balance?: number;
+}
+
+export function bulkImportResidents(rows: BulkResidentInput[]): {
+  success: boolean;
+  imported: number;
+  skipped: number;
+  errors: string[];
+  residents: Resident[];
+} {
+  seedInitialResidents();
+  const errors: string[] = [];
+  const newlyCreated: Resident[] = [];
+  let skipped = 0;
+
+  for (let i = 0; i < rows.length; i++) {
+    const row = rows[i];
+    const rowIdx = i + 1;
+
+    if (!row.full_name || !row.full_name.trim()) {
+      errors.push(`Row ${rowIdx}: Missing full name.`);
+      skipped++;
+      continue;
+    }
+
+    const cleanPhone = (row.phone || '').replace(/\D/g, '');
+    if (cleanPhone.length < 10) {
+      errors.push(`Row ${rowIdx} (${row.full_name}): Invalid phone number "${row.phone}".`);
+      skipped++;
+      continue;
+    }
+
+    // Check existing phone
+    const existing = residentsStore.find((r) => r.phone.replace(/\D/g, '') === cleanPhone);
+    if (existing) {
+      errors.push(`Row ${rowIdx} (${row.full_name}): Resident with phone ${cleanPhone} already exists (${existing.resident_id}).`);
+      skipped++;
+      continue;
+    }
+
+    const floor = Number(row.current_floor_number) || 1;
+    const room = String(row.current_room_number || `${floor}01`);
+    const bedNo = String(row.current_bed_number || `${room}-A`);
+    const bedId = `bed-1-${room}-${bedNo.split('-').pop() || 'A'}`;
+
+    const { residentId, sequenceNumber } = generateVarahiResidentId(1, floor);
+    const internalId = `res-${Date.now()}-${i}`;
+    const admDate = row.admission_date || new Date().toISOString().split('T')[0];
+    const rent = Number(row.agreed_monthly_rent) || 5500;
+    const deposit = Number(row.security_deposit) || 3000;
+    const advance = Number(row.advance_balance) || 0;
+    const outstanding = Number(row.outstanding_balance) || 0;
+
+    const newRes: Resident = {
+      id: internalId,
+      resident_id: residentId,
+      initial_branch_code: 1,
+      initial_floor_number: floor,
+      sequence_number: sequenceNumber,
+      category: row.category === 'airport_employee' ? 'airport_employee' : 'student',
+      full_name: row.full_name.trim(),
+      phone: cleanPhone,
+      email: row.email || `${cleanPhone}@varahigirlshostel.com`,
+      gender: 'female',
+      password_hash: hashPassword('VarahiResident@2026!'),
+      aadhaar_last_four: row.aadhaar_last_four || '0000',
+      emergency_contact_name: row.emergency_contact_name || 'Guardian',
+      emergency_contact_phone: (row.emergency_contact_phone || cleanPhone).replace(/\D/g, ''),
+      emergency_contact_relation: row.emergency_contact_relation || 'Parent',
+      admission_date: admDate,
+      billing_anchor_day: new Date(admDate).getDate() || 1,
+      agreed_monthly_rent: rent,
+      status: 'active',
+      current_branch_code: 1,
+      current_floor_number: floor,
+      current_room_number: room,
+      current_bed_id: bedId,
+      current_bed_number: bedNo,
+      student_college_name: row.student_college_name || (row.category !== 'airport_employee' ? 'Shamshabad Degree College' : undefined),
+      student_course: row.student_course || (row.category !== 'airport_employee' ? 'Degree' : undefined),
+      student_year: row.student_year || '1st Year',
+      employee_company: row.employee_company,
+      employee_designation: row.employee_designation,
+      outstanding_balance: outstanding,
+      advance_balance: advance,
+      security_deposit: deposit,
+      next_payment_due_date: admDate,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+
+    residentsStore.unshift(newRes);
+    newlyCreated.push(newRes);
+
+    staysStore.unshift({
+      id: `stay-${Date.now()}-${i}`,
+      resident_id: internalId,
+      devi_resident_id: residentId,
+      resident_name: newRes.full_name,
+      branch_code: 1,
+      floor_number: floor,
+      room_number: room,
+      bed_number: bedNo,
+      check_in_date: admDate,
+      is_current: true,
+      remarks: 'Bulk import from Excel/CSV sheet',
+    });
+  }
+
+  return {
+    success: newlyCreated.length > 0,
+    imported: newlyCreated.length,
+    skipped,
+    errors,
+    residents: newlyCreated,
+  };
+}

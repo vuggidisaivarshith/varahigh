@@ -94,7 +94,7 @@ export default function AdminLoginPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="bharath@varahigirlshostel.com"
+                  placeholder="enabothulabharathchandrabharat@gmail.com"
                   className="w-full bg-[#F8F4FA] border border-[#E9E1ED] rounded-xl pl-10 pr-4 py-2.5 text-xs text-[#302343] focus:outline-none focus:border-[#79618E] focus:ring-1 focus:ring-[#79618E]"
                 />
               </div>
@@ -130,7 +130,7 @@ export default function AdminLoginPage() {
           {/* Quick Credential Hint for Local Dev */}
           <div className="p-3.5 rounded-lg bg-[#F8F4FA] border border-[#E9E1ED] text-[11px] text-[#332C38] space-y-1 font-mono">
             <p className="font-bold text-[#302343]">Default Owner Credentials:</p>
-            <p>Email: <code className="text-[#302343]">bharath@varahigirlshostel.com</code></p>
+            <p>Email: <code className="text-[#302343]">enabothulabharathchandrabharat@gmail.com</code></p>
             <p>Password: <code className="text-[#302343]">VarahiHostels@Bharath2026!</code></p>
           </div>
         </div>

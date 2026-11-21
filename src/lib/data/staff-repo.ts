@@ -19,6 +19,17 @@ let staffStore: StaffMember[] = [
   {
     id: 'staff-001',
     full_name: 'E. Bharath Chandra',
+    email: 'enabothulabharathchandrabharat@gmail.com',
+    phone: '+91 93919 44082',
+    role: 'owner',
+    assigned_branch_codes: [1],
+    status: 'active',
+    password_hash: hashPassword('VarahiHostels@Bharath2026!'),
+    created_at: '2026-01-01',
+  },
+  {
+    id: 'staff-001-alias',
+    full_name: 'E. Bharath Chandra',
     email: 'bharath@varahigirlshostel.com',
     phone: '+91 93919 44082',
     role: 'owner',

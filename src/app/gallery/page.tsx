@@ -39,7 +39,7 @@ export default function GalleryPage() {
     {
       title: 'Study Lounge & Common Area',
       category: 'Student & Study',
-      description: 'Peaceful ambience with high-speed fiber Wi-Fi and power backup for late-night exam prep.',
+      description: 'Peaceful ambience with high-speed fiber Wi-Fi for late-night study and work.',
       image: '/images/branches/branch1-main.svg',
     },
   ];

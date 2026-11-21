@@ -69,8 +69,8 @@ export default function ContactPage() {
                 <Mail className="w-5 h-5 text-[#C6A46A] shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-[#302343] text-sm block mb-0.5">Official Email:</strong>
-                  <a href="mailto:contact@varahigirlshostel.com" className="text-[#332C38] hover:text-[#302343] font-mono">
-                    contact@varahigirlshostel.com
+                  <a href={`mailto:${VERIFIED_CONTACTS.contact_email}`} className="text-[#332C38] hover:text-[#302343] font-mono break-all">
+                    {VERIFIED_CONTACTS.contact_email}
                   </a>
                 </div>
               </div>

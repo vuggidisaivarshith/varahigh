@@ -171,7 +171,7 @@ export default function FinancialReportsPage() {
   }, [activeTab]);
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 p-6 md:p-10">
+    <div className="min-h-screen bg-[#F8F4FA] text-[#332C38] p-6 md:p-10">
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Header Breadcrumbs */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-slate-800 pb-6">
@@ -397,7 +397,7 @@ export default function FinancialReportsPage() {
                       <span>⚠️</span> Pending Rent Dues & Defaulters
                     </h3>
                     <p className="text-xs text-rose-300/80 mt-1">
-                      All unpaid and partially paid rent invoices across all 5 branches requiring collection follow-ups.
+                      All unpaid and partially paid rent invoices for Branch 1 requiring collection follow-ups.
                     </p>
                   </div>
                   <div className="text-right">
@@ -596,20 +596,20 @@ export default function FinancialReportsPage() {
                 {statement && (
                   <div className="rounded-2xl border border-slate-700 bg-slate-900/90 p-8 space-y-8 print:border-black print:bg-white print:text-black">
                     {/* Official Statement Letterhead */}
-                    <div className="border-b border-slate-800 pb-6 flex flex-col md:flex-row md:items-start md:justify-between gap-6 print:border-black">
+                    <div className="border-b border-[#E9E1ED] pb-6 flex flex-col md:flex-row md:items-start md:justify-between gap-6 print:border-black">
                       <div>
                         <div className="flex items-center gap-3">
-                          <span className="text-2xl font-black tracking-wider text-amber-500 print:text-black">
-                            DEVI HOSTELS
+                          <span className="text-2xl font-serif font-bold tracking-wider text-[#302343] print:text-black">
+                            VARAHI GIRLS HOSTEL
                           </span>
-                          <span className="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono print:border print:border-black print:text-black">
+                          <span className="text-xs px-2 py-0.5 rounded bg-[#302343] text-white font-mono print:border print:border-black print:text-black">
                             FINANCIAL ACCOUNT STATEMENT
                           </span>
                         </div>
-                        <p className="text-xs text-slate-400 mt-2 max-w-sm print:text-gray-700">
-                          Proprietor: MARPINA PRADEEP <br />
+                        <p className="text-xs text-[#766D7C] mt-2 max-w-sm print:text-gray-700 font-mono">
+                          Proprietor: E. BHARATH CHANDRA <br />
                           Shamshabad, Hyderabad, Telangana, India. <br />
-                          Airport Road, Near RGIA
+                          Near RGIA • Phone: +91 93919 44082
                         </p>
                       </div>
 

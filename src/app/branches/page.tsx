@@ -51,19 +51,19 @@ export default function BranchesPage() {
         <div className="card-editorial p-6 rounded-xl bg-[#FFFFFF] border border-[#E9E1ED] flex flex-col justify-between space-y-4">
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="badge-mono text-[9px] text-[#302343]">AC ROOMS</span>
-              <span className="text-xs font-mono font-bold text-[#79618E]">From ₹8,500/mo</span>
+              <span className="badge-mono text-[9px] text-[#302343]">3-SHARING COMFORT</span>
+              <span className="text-xs font-mono font-bold text-[#79618E]">₹6,000/mo</span>
             </div>
             <h3 className="font-serif text-xl font-bold text-[#302343]">
-              Executive AC Sharing
+              3-Sharing Non-AC Room
             </h3>
             <p className="text-xs text-[#766D7C] mt-1 leading-relaxed">
-              Equipped with split air conditioning, attached washrooms with hot water geysers, comfortable mattresses, and individual study desks.
+              Spacious three-person sharing with attached private washroom, hot water geyser, individual study desk, lockable wardrobe, and 3-times daily buffet meals.
             </p>
           </div>
           <div className="pt-3 border-t border-[#E9E1ED]">
             <Link href="/enquiry" className="btn-primary-navy text-xs py-2 px-4 w-full text-center block">
-              Apply for AC Room
+              Apply for 3-Sharing (₹6,000)
             </Link>
           </div>
         </div>
@@ -71,20 +71,20 @@ export default function BranchesPage() {
         <div className="card-editorial p-6 rounded-xl bg-[#FFFFFF] border border-[#E9E1ED] flex flex-col justify-between space-y-4">
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="badge-mono text-[9px] text-[#302343]">NON-AC ROOMS</span>
-              <span className="text-xs font-mono font-bold text-[#79618E]">From ₹7,000/mo</span>
+              <span className="badge-mono text-[9px] text-[#302343]">4 &amp; 5 SHARING ECONOMY</span>
+              <span className="text-xs font-mono font-bold text-[#79618E]">₹5,500/mo</span>
             </div>
             <h3 className="font-serif text-xl font-bold text-[#302343]">
-              Standard Sharing Rooms
+              4 &amp; 5-Sharing Non-AC Rooms
             </h3>
             <p className="text-xs text-[#766D7C] mt-1 leading-relaxed">
-              Airy rooms with large windows, attached bathroom, high-speed fiber Wi-Fi, 3-times daily buffet meals, and power backup.
+              Well-ventilated sharing accommodation with attached washroom, hot water geyser, high-speed fiber Wi-Fi, daily housekeeping, and 3-times daily nutritious meals.
             </p>
           </div>
           <div className="pt-3 border-t border-[#E9E1ED]">
             <a
               href={`https://wa.me/${VERIFIED_CONTACTS.whatsapp_number}?text=${encodeURIComponent(
-                'Hello Varahi Girls Hostel Management (E. Bharath Chandra), I would like to check non-AC bed availability.'
+                'Hello Varahi Girls Hostel Management (E. Bharath Chandra), I would like to check 4/5-sharing bed availability (₹5,500/mo).'
               )}`}
               target="_blank"
               rel="noopener noreferrer"

@@ -20,6 +20,7 @@ import {
   MapPin,
   Lock,
   HeartHandshake,
+  Clock,
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -138,33 +139,39 @@ export default function HomePage() {
           {/* Room sharing cards */}
           <div className="card-editorial p-6 rounded-xl bg-[#FFFFFF] border border-[#E9E1ED] flex flex-col justify-between space-y-4">
             <div>
-              <span className="badge-mono text-[9px] mb-2 text-[#79618E] bg-[#D9C8E8]/30 border-[#D9C8E8]">
-                AC & NON-AC
-              </span>
+              <div className="flex items-center justify-between mb-2">
+                <span className="badge-mono text-[9px] text-[#79618E] bg-[#D9C8E8]/30 border-[#D9C8E8]">
+                  3-SHARING COMFORT
+                </span>
+                <span className="text-xs font-mono font-bold text-[#79618E]">₹6,000/mo</span>
+              </div>
               <h3 className="font-serif text-xl font-bold text-[#302343]">
-                Single & 2-Sharing Executive Rooms
+                3-Sharing Non-AC Room
               </h3>
               <p className="text-xs text-[#766D7C] mt-1 leading-relaxed">
-                Spacious premium rooms with attached modern bathrooms, individual study desks, full-length wardrobes, and 24/7 hot water supply.
+                Spacious room with attached washroom, hot water geyser, individual study desk, lockable wardrobe, high-speed Wi-Fi, and 3-times daily buffet meals.
               </p>
             </div>
             <div className="pt-3 border-t border-[#E9E1ED]">
               <Link href="/enquiry" className="btn-primary-navy text-xs py-2 px-4 w-full text-center block">
-                Reserve a Bed
+                Apply for 3-Sharing (₹6,000)
               </Link>
             </div>
           </div>
 
           <div className="card-editorial p-6 rounded-xl bg-[#FFFFFF] border border-[#E9E1ED] flex flex-col justify-between space-y-4">
             <div>
-              <span className="badge-mono text-[9px] mb-2 text-[#C6A46A] bg-[#F8F4FA] border-[#C6A46A]/50">
-                BUDGET FRIENDLY
-              </span>
+              <div className="flex items-center justify-between mb-2">
+                <span className="badge-mono text-[9px] text-[#C6A46A] bg-[#F8F4FA] border-[#C6A46A]/50">
+                  4 &amp; 5 SHARING ECONOMY
+                </span>
+                <span className="text-xs font-mono font-bold text-[#79618E]">₹5,500/mo</span>
+              </div>
               <h3 className="font-serif text-xl font-bold text-[#302343]">
-                3-Sharing & 4-Sharing Comfort Rooms
+                4 &amp; 5-Sharing Non-AC Rooms
               </h3>
               <p className="text-xs text-[#766D7C] mt-1 leading-relaxed">
-                Well-ventilated sharing layouts optimal for university students with individual locker storage and high-speed Wi-Fi access.
+                Well-ventilated sharing layouts with attached washroom, geyser, daily housekeeping, Wi-Fi, and wholesome 3-times daily meals.
               </p>
             </div>
             <div className="pt-3 border-t border-[#E9E1ED]">
@@ -216,13 +223,13 @@ export default function HomePage() {
           </div>
           <div className="card-editorial p-4 bg-[#FFFFFF] text-center space-y-2">
             <Sparkles className="w-5 h-5 mx-auto text-[#C6A46A]" />
-            <p className="font-serif text-xs font-bold text-[#302343]">Power Backup</p>
-            <p className="text-[10px] text-[#766D7C]">Generator & Inverter</p>
+            <p className="font-serif text-xs font-bold text-[#302343]">Housekeeping</p>
+            <p className="text-[10px] text-[#766D7C]">Daily clean rooms</p>
           </div>
           <div className="card-editorial p-4 bg-[#FFFFFF] text-center space-y-2">
-            <Car className="w-5 h-5 mx-auto text-[#79618E]" />
-            <p className="font-serif text-xs font-bold text-[#302343]">Vehicle Parking</p>
-            <p className="text-[10px] text-[#766D7C]">Gated & monitored</p>
+            <Clock className="w-5 h-5 mx-auto text-[#79618E]" />
+            <p className="font-serif text-xs font-bold text-[#302343]">Washing Machines</p>
+            <p className="text-[10px] text-[#766D7C]">Automatic laundry</p>
           </div>
         </div>
       </section>

@@ -191,68 +191,71 @@ export default function ResidentInvoicesPage() {
   };
 
   return (
-    <div className="space-y-8">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div className="space-y-8 bg-[#F8F4FA]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E9E1ED] pb-4">
         <div>
-          <h1 className="text-2xl font-bold text-white">Monthly Rent Invoices</h1>
-          <p className="text-xs text-slate-400">
-            Individual joining-date billing records for Resident ID: <span className="font-mono text-amber-400 font-bold">{resident?.resident_id}</span>
+          <span className="badge-mono border-[#C6A46A] text-[#302343] bg-[#FFFFFF]">
+            BILLING &amp; PAYMENT DESK
+          </span>
+          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-[#302343] mt-1">Monthly Rent Invoices</h1>
+          <p className="text-xs text-[#766D7C]">
+            Individual joining-date billing records for Resident ID: <span className="font-mono text-[#79618E] font-bold">{resident?.resident_id}</span>
           </p>
         </div>
       </div>
 
-      <div className="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl">
-        <div className="p-4 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
-          <span className="text-xs font-bold text-slate-300">
+      <div className="bg-[#FFFFFF] border border-[#E9E1ED] rounded-2xl overflow-hidden shadow-xs">
+        <div className="p-4 bg-[#F8F4FA] border-b border-[#E9E1ED] flex items-center justify-between">
+          <span className="text-xs font-mono font-bold text-[#302343]">
             All Invoices ({invoices.length})
           </span>
-          <span className="text-xs text-slate-400">
-            Billing Anchor: <strong>{resident?.billing_anchor_day}th of every month</strong>
+          <span className="text-xs text-[#766D7C] font-mono">
+            Billing Anchor: <strong className="text-[#302343]">{resident?.billing_anchor_day}th of every month</strong>
           </span>
         </div>
 
         {invoices.length === 0 ? (
-          <div className="p-12 text-center text-xs text-slate-500">
+          <div className="p-12 text-center text-xs text-[#766D7C]">
             No rent invoices found.
           </div>
         ) : (
-          <div className="divide-y divide-slate-800">
+          <div className="divide-y divide-[#E9E1ED]">
             {invoices.map((inv) => (
               <div
                 key={inv.id}
-                className="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-850 transition-colors"
+                className="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-[#F8F4FA]/60 transition-colors"
               >
                 <div className="space-y-1.5">
                   <div className="flex items-center gap-2">
-                    <span className="font-bold text-sm text-white">{inv.invoice_number}</span>
+                    <span className="font-bold text-sm text-[#302343]">{inv.invoice_number}</span>
                     <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full capitalize ${
                       inv.status === 'paid'
-                        ? 'bg-emerald-500/20 text-emerald-300'
-                        : 'bg-rose-500/20 text-rose-300'
+                        ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                        : 'bg-rose-50 text-rose-700 border border-rose-200'
                     }`}>
                       {inv.status}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-400">
-                    Billing Period: <strong>{inv.billing_period_start}</strong> to <strong>{inv.billing_period_end}</strong>
+                  <p className="text-xs text-[#766D7C]">
+                    Billing Period: <strong className="text-[#302343]">{inv.billing_period_start}</strong> to <strong className="text-[#302343]">{inv.billing_period_end}</strong>
                   </p>
-                  <p className="text-xs text-slate-400">
-                    Payment Due Date: <span className="text-amber-400 font-semibold">{inv.due_date}</span>
+                  <p className="text-xs text-[#766D7C]">
+                    Payment Due Date: <span className="text-[#79618E] font-semibold">{inv.due_date}</span>
                   </p>
                 </div>
 
                 <div className="flex items-center gap-4 self-start sm:self-center">
                   <div className="text-right">
-                    <p className="text-[10px] uppercase font-bold text-slate-400">Total Payable</p>
-                    <p className="text-lg font-black text-white font-mono">
-                      ₹{inv.total_payable.toLocaleString()}
+                    <p className="text-[10px] uppercase font-mono font-bold text-[#766D7C]">Total Payable</p>
+                    <p className="text-lg font-bold text-[#302343] font-mono">
+                      ₹{inv.total_payable.toLocaleString('en-IN')}
                     </p>
                     {inv.balance_due > 0 ? (
-                      <p className="text-xs text-rose-400 font-semibold">
-                        Due: ₹{inv.balance_due.toLocaleString()}
+                      <p className="text-xs text-rose-600 font-semibold font-mono">
+                        Due: ₹{inv.balance_due.toLocaleString('en-IN')}
                       </p>
                     ) : (
-                      <p className="text-xs text-emerald-400 font-semibold">
+                      <p className="text-xs text-emerald-600 font-semibold">
                         Paid in Full
                       </p>
                     )}
@@ -262,7 +265,7 @@ export default function ResidentInvoicesPage() {
                     {inv.balance_due > 0 && (
                       <button
                         onClick={() => handleOpenPayModal(inv)}
-                        className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold flex items-center gap-1.5 transition shadow-lg shadow-amber-500/20"
+                        className="px-4 py-2 rounded-xl bg-[#79618E] hover:bg-[#302343] text-[#FFFFFF] text-xs font-bold flex items-center gap-1.5 transition shadow-xs"
                       >
                         <CreditCard className="w-3.5 h-3.5" />
                         Pay Online
@@ -270,9 +273,9 @@ export default function ResidentInvoicesPage() {
                     )}
                     <Link
                       href="/resident/receipts"
-                      className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                      className="px-4 py-2 rounded-xl bg-[#F8F4FA] hover:bg-[#E9E1ED] border border-[#E9E1ED] text-[#302343] text-xs font-semibold flex items-center gap-1.5 transition-colors"
                     >
-                      <FileText className="w-3.5 h-3.5 text-amber-400" />
+                      <FileText className="w-3.5 h-3.5 text-[#C6A46A]" />
                       Receipt
                     </Link>
                   </div>
@@ -285,43 +288,43 @@ export default function ResidentInvoicesPage() {
 
       {/* Online Payment Modal */}
       {selectedInvoice && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-in fade-in">
-          <div className="w-full max-w-md rounded-3xl bg-slate-900 border border-slate-700 shadow-2xl p-6 space-y-6">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#302343]/60 backdrop-blur-xs animate-in fade-in">
+          <div className="w-full max-w-md rounded-2xl bg-[#FFFFFF] border border-[#E9E1ED] shadow-2xl p-6 space-y-6">
+            <div className="flex items-center justify-between border-b border-[#E9E1ED] pb-4">
               <div className="flex items-center gap-2">
-                <span className="p-2 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                  <CreditCard className="w-5 h-5" />
+                <span className="p-2 rounded-xl bg-[#F8F4FA] text-[#79618E] border border-[#E9E1ED]">
+                  <CreditCard className="w-5 h-5 text-[#C6A46A]" />
                 </span>
                 <div>
-                  <h3 className="font-bold text-white text-base">Pay Rent Online</h3>
-                  <p className="text-xs text-slate-400">{selectedInvoice.invoice_number}</p>
+                  <h3 className="font-serif font-bold text-[#302343] text-base">Pay Rent Online</h3>
+                  <p className="text-xs text-[#766D7C] font-mono">{selectedInvoice.invoice_number}</p>
                 </div>
               </div>
               <button
                 onClick={() => setSelectedInvoice(null)}
-                className="text-slate-400 hover:text-white transition"
+                className="text-[#766D7C] hover:text-[#302343] transition p-1"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             {paySuccess ? (
-              <div className="p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center space-y-3">
-                <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto" />
-                <h4 className="font-bold text-white text-base">Payment Verified!</h4>
-                <p className="text-xs text-emerald-300">{paySuccess}</p>
+              <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-3">
+                <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
+                <h4 className="font-serif font-bold text-emerald-900 text-base">Payment Verified!</h4>
+                <p className="text-xs text-emerald-700">{paySuccess}</p>
               </div>
             ) : (
               <div className="space-y-4">
                 {payError && (
-                  <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs flex items-center gap-2">
+                  <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center gap-2">
                     <AlertCircle className="w-4 h-4 shrink-0" />
                     <span>{payError}</span>
                   </div>
                 )}
 
                 <div>
-                  <label className="block text-xs uppercase font-medium text-slate-400 mb-1">
+                  <label className="block text-xs uppercase font-mono font-bold text-[#302343] mb-1">
                     Amount to Pay (₹)
                   </label>
                   <input
@@ -329,21 +332,21 @@ export default function ResidentInvoicesPage() {
                     value={payAmount}
                     onChange={(e) => setPayAmount(Number(e.target.value))}
                     max={selectedInvoice.balance_due}
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white font-mono font-bold text-lg focus:outline-none focus:border-amber-500"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#F8F4FA] border border-[#E9E1ED] text-[#302343] font-mono font-bold text-lg focus:outline-none focus:border-[#79618E]"
                   />
-                  <p className="text-[11px] text-slate-500 mt-1">
-                    Total balance due: ₹{selectedInvoice.balance_due.toLocaleString()}
+                  <p className="text-[11px] text-[#766D7C] mt-1 font-mono">
+                    Total balance due: ₹{selectedInvoice.balance_due.toLocaleString('en-IN')}
                   </p>
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase font-medium text-slate-400 mb-2">
+                  <label className="block text-xs uppercase font-mono font-bold text-[#302343] mb-2">
                     Select Payment Gateway Method
                   </label>
                   <div className="grid grid-cols-3 gap-2">
                     {[
                       { id: 'upi', label: '⚡ Instant UPI', desc: 'GPay/PhonePe' },
-                      { id: 'card', label: '💳 Debit / Credit', desc: 'All Cards' },
+                      { id: 'card', label: '💳 Cards', desc: 'Debit / Credit' },
                       { id: 'netbanking', label: '🏦 Net Banking', desc: '50+ Banks' },
                     ].map((m) => (
                       <button
@@ -352,19 +355,19 @@ export default function ResidentInvoicesPage() {
                         onClick={() => setPaymentMethod(m.id as any)}
                         className={`p-3 rounded-xl text-left border transition text-xs ${
                           paymentMethod === m.id
-                            ? 'bg-amber-500/10 border-amber-500 text-amber-300'
-                            : 'bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700'
+                            ? 'bg-[#D9C8E8]/30 border-[#79618E] text-[#302343] font-bold shadow-xs'
+                            : 'bg-[#F8F4FA] border-[#E9E1ED] text-[#766D7C] hover:border-[#79618E]/50'
                         }`}
                       >
-                        <p className="font-semibold text-white">{m.label}</p>
-                        <p className="text-[10px] text-slate-500 mt-0.5">{m.desc}</p>
+                        <p className="font-bold text-[#302343]">{m.label}</p>
+                        <p className="text-[10px] text-[#766D7C] mt-0.5">{m.desc}</p>
                       </button>
                     ))}
                   </div>
                 </div>
 
-                <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-400 flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                <div className="p-3 rounded-xl bg-[#F8F4FA] border border-[#E9E1ED] text-xs text-[#766D7C] flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
                   <span>256-bit encrypted Razorpay / Cashfree PCI-DSS compliant checkout.</span>
                 </div>
 
@@ -372,9 +375,9 @@ export default function ResidentInvoicesPage() {
                   type="button"
                   disabled={isProcessing}
                   onClick={handleProcessPayment}
-                  className="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-sm tracking-wide transition shadow-lg shadow-amber-500/20 disabled:opacity-50"
+                  className="w-full py-3 rounded-xl bg-[#79618E] hover:bg-[#302343] text-[#FFFFFF] font-bold text-sm tracking-wide transition shadow-xs disabled:opacity-50"
                 >
-                  {isProcessing ? 'Verifying Transaction...' : `Pay ₹${payAmount.toLocaleString()} Now`}
+                  {isProcessing ? 'Verifying Transaction...' : `Pay ₹${payAmount.toLocaleString('en-IN')} Now`}
                 </button>
               </div>
             )}

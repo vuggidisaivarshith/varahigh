@@ -6,7 +6,7 @@ import { VARAHI_BRANCHES, VERIFIED_CONTACTS } from '@/lib/data/branches';
 export const metadata = {
   title: 'Admission Enquiry — VARAHI GIRLS HOSTEL Shamshabad',
   description:
-    'Submit an online admission enquiry for Varahi Girls Hostel (Branch 1) in Shamshabad, Hyderabad near RGIA. Single, 2, 3, and 4 sharing AC/Non-AC rooms for female students and working professionals.',
+    'Submit an online admission enquiry for Varahi Girls Hostel (Branch 1) in Shamshabad, Hyderabad near RGIA. 3, 4, and 5-sharing Non-AC rooms for female students and working professionals.',
 };
 
 export default function EnquiryPage() {

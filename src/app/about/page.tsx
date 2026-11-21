@@ -51,14 +51,14 @@ export default function AboutPage() {
               When we established VARAHI GIRLS HOSTEL in Shamshabad, our core mission was clear: create a residence where parents have total peace of mind and residents feel entirely safe, respected, and comfortable.
             </p>
             <p className="text-sm text-[#332C38] leading-relaxed">
-              Equipped with 24/7 CCTV surveillance, a dedicated resident lady warden, multi-stage RO drinking water, power backup, and fresh home-style South and North Indian meals cooked 3 times daily, Varahi Girls Hostel provides an ideal home for college students and working professionals near Rajiv Gandhi International Airport (RGIA).
+              Equipped with 24/7 CCTV surveillance, a dedicated resident lady warden, daily housekeeping, and fresh home-style South and North Indian meals cooked 3 times daily, Varahi Girls Hostel provides an ideal home for college students and working professionals near Rajiv Gandhi International Airport (RGIA).
             </p>
             <div className="pt-4 flex flex-wrap items-center gap-6 text-xs text-[#766D7C] border-t border-[#E9E1ED] font-mono">
               <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4 text-[#C6A46A]" /> Shamshabad, Hyderabad</span>
               <a href={`tel:${VERIFIED_CONTACTS.primary_phone}`} className="flex items-center gap-1.5 hover:text-[#302343] font-bold text-[#302343]">
                 <Phone className="w-4 h-4 text-[#79618E]" /> {VERIFIED_CONTACTS.primary_phone}
               </a>
-              <span className="flex items-center gap-1.5"><Mail className="w-4 h-4 text-[#C6A46A]" /> contact@varahigirlshostel.com</span>
+              <span className="flex items-center gap-1.5"><Mail className="w-4 h-4 text-[#C6A46A]" /> {VERIFIED_CONTACTS.contact_email}</span>
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function AboutPage() {
           </div>
           <h4 className="font-serif text-lg font-bold text-[#302343]">Complete Amenities</h4>
           <p className="text-xs text-[#766D7C] leading-relaxed">
-            Attached bathrooms with 24/7 hot water geysers, high-speed fiber Wi-Fi, generator power backup, and automatic laundry facilities.
+            Attached bathrooms with 24/7 hot water geysers, high-speed fiber Wi-Fi, daily housekeeping, and automatic laundry facilities.
           </p>
         </div>
       </div>

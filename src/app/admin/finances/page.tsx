@@ -53,8 +53,8 @@ export default function AdminFinancesPage() {
           <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#302343] mt-2">
             Central Financial Dashboard
           </h1>
-          <p className="text-xs text-[#766D7C] mt-1">
-            Proprietor: <strong className="text-[#302343]">MARPINA PRADEEP</strong> • Shamshabad 5-Branch Centralized Financial Ledger
+          <p className="text-xs text-[#766D7C] mt-1 font-mono">
+            Proprietor: <strong className="text-[#302343]">E. BHARATH CHANDRA</strong> • Shamshabad Branch 1 Financial Ledger
           </p>
         </div>
 

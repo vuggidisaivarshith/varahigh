@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { DEVI_BRANCHES } from '@/lib/data/branches';
+import { VARAHI_BRANCHES } from '@/lib/data/branches';
 import { Bed, Room, Floor, BedStatus } from '@/types/database';
 import {
   Layers,
@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 
 export default function AdminInventoryPage() {
-  const [selectedBranch, setSelectedBranch] = useState<number>(1);
+  const [selectedBranch] = useState<number>(1);
   const [selectedFloor, setSelectedFloor] = useState<number>(1);
   const [floors, setFloors] = useState<Floor[]>([]);
   const [rooms, setRooms] = useState<Room[]>([]);
@@ -30,9 +30,9 @@ export default function AdminInventoryPage() {
     setLoading(true);
     try {
       const [fRes, rRes, bRes, vRes] = await Promise.all([
-        fetch(`/api/inventory/floors?branch_code=${selectedBranch}`),
-        fetch(`/api/inventory/rooms?branch_code=${selectedBranch}&floor_number=${selectedFloor}`),
-        fetch(`/api/inventory/beds?branch_code=${selectedBranch}`),
+        fetch(`/api/inventory/floors?branch_code=1`),
+        fetch(`/api/inventory/rooms?branch_code=1&floor_number=${selectedFloor}`),
+        fetch(`/api/inventory/beds?branch_code=1`),
         fetch('/api/inventory/vacancy-summary'),
       ]);
 
@@ -56,98 +56,80 @@ export default function AdminInventoryPage() {
 
   useEffect(() => {
     fetchInventory();
-  }, [selectedBranch, selectedFloor]);
+  }, [selectedFloor]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 bg-[#F8F4FA]">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-6">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#E9E1ED] pb-6">
         <div>
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded border border-amber-500/30">
-            Hostel Operations
+          <span className="badge-mono border-[#C6A46A] text-[#302343] bg-[#FFFFFF]">
+            HOSTEL INVENTORY &amp; VACANCY (BRANCH 1)
           </span>
-          <h1 className="text-2xl sm:text-3xl font-black text-white mt-1">
-            Room & Bed Inventory Management
+          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-[#302343] mt-1">
+            Room &amp; Bed Inventory Tracker
           </h1>
-          <p className="text-xs text-slate-400">
-            Branch ➔ Floor ➔ Room ➔ Bed allocation hierarchy & live vacancy tracker.
+          <p className="text-xs text-[#766D7C]">
+            Floor ➔ Room ➔ Bed allocation hierarchy &amp; real-time occupancy status.
           </p>
         </div>
 
         <div className="flex items-center gap-3">
           <Link
             href="/admin/admissions"
-            className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs shadow-md transition-all flex items-center gap-1.5"
+            className="px-4 py-2 rounded-xl bg-[#79618E] hover:bg-[#302343] text-[#FFFFFF] font-bold text-xs shadow-xs transition-all flex items-center gap-1.5"
           >
             <User className="w-4 h-4" /> New Admission
           </Link>
           <Link
             href="/admin/residents"
-            className="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 font-semibold text-xs hover:bg-slate-800"
+            className="px-4 py-2 rounded-xl bg-[#FFFFFF] border border-[#E9E1ED] text-[#302343] font-semibold text-xs hover:bg-[#F8F4FA] shadow-xs"
           >
             Residents Directory
           </Link>
         </div>
       </div>
 
-      {/* Vacancy Summary Cards across 5 branches */}
-      {vacancySummary && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-          {vacancySummary.branches.map((b: any) => (
-            <div
-              key={b.branch_code}
-              onClick={() => setSelectedBranch(b.branch_code)}
-              className={`p-3.5 rounded-2xl border cursor-pointer transition-all ${
-                selectedBranch === b.branch_code
-                  ? 'bg-amber-500/10 border-amber-500 ring-2 ring-amber-500/30'
-                  : 'bg-slate-900 border-slate-800 hover:border-slate-700'
-              }`}
-            >
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] font-bold text-amber-400">
-                  CODE {b.branch_code}
-                </span>
-                <span className="text-[10px] font-bold text-emerald-400">
-                  {b.occupancy_rate_percentage}% Full
-                </span>
-              </div>
-              <h4 className="text-xs font-bold text-white mt-1 truncate">
-                Branch {b.branch_code}
-              </h4>
-              <div className="mt-2 text-[11px] text-slate-400 space-y-0.5">
-                <p>Vacant: <strong className="text-emerald-400">{b.vacant_beds}</strong></p>
-                <p>Occupied: <strong className="text-white">{b.occupied_beds}</strong></p>
-              </div>
-            </div>
-          ))}
-
-          {/* Overall Total Card */}
-          <div className="p-3.5 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
-            <span className="text-[10px] font-bold uppercase text-slate-400">Total Network</span>
-            <div>
-              <p className="text-xl font-black text-white">
-                {vacancySummary.totals.total_beds} Beds
-              </p>
-              <p className="text-[11px] text-emerald-400 font-semibold mt-0.5">
-                {vacancySummary.totals.total_vacant} Vacant Beds
-              </p>
-            </div>
-          </div>
+      {/* Quick Summary Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+        <div className="card-editorial p-4 bg-[#FFFFFF] border border-[#E9E1ED] space-y-1">
+          <p className="text-[11px] font-mono font-bold uppercase text-[#766D7C]">Campus</p>
+          <p className="font-serif text-2xl font-bold text-[#302343]">Branch 1</p>
+          <p className="text-[10px] text-[#79618E] font-mono">Girls Residence Only</p>
         </div>
-      )}
+        <div className="card-editorial p-4 bg-[#FFFFFF] border border-[#E9E1ED] space-y-1">
+          <p className="text-[11px] font-mono font-bold uppercase text-[#766D7C]">Total Capacity</p>
+          <p className="font-serif text-2xl font-bold text-[#302343]">
+            {vacancySummary?.totals?.total_beds || beds.length || 60} Beds
+          </p>
+          <p className="text-[10px] text-[#766D7C] font-mono">5 Residential Floors</p>
+        </div>
+        <div className="card-editorial p-4 bg-[#FFFFFF] border border-[#E9E1ED] space-y-1">
+          <p className="text-[11px] font-mono font-bold uppercase text-[#766D7C]">Vacant Beds</p>
+          <p className="font-serif text-2xl font-bold text-emerald-700">
+            {beds.filter(b => b.status === 'vacant').length} Available
+          </p>
+          <p className="text-[10px] text-emerald-700 font-mono">Ready for Check-in</p>
+        </div>
+        <div className="card-editorial p-4 bg-[#FFFFFF] border border-[#E9E1ED] space-y-1">
+          <p className="text-[11px] font-mono font-bold uppercase text-[#766D7C]">Room Types</p>
+          <p className="font-serif text-2xl font-bold text-[#302343]">3, 4 &amp; 5 Sharing</p>
+          <p className="text-[10px] text-[#79618E] font-mono">₹6,000 / ₹5,500 Non-AC</p>
+        </div>
+      </div>
 
       {/* Floor Filter Tabs */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-wrap items-center justify-between gap-4">
+      <div className="bg-[#FFFFFF] border border-[#E9E1ED] rounded-2xl p-4 flex flex-wrap items-center justify-between gap-4 shadow-xs">
         <div className="flex items-center gap-2 overflow-x-auto">
-          <span className="text-xs font-bold text-slate-400 mr-2">Select Floor:</span>
+          <span className="text-xs font-mono font-bold text-[#302343] mr-2">Select Floor:</span>
           {floors.map((f) => (
             <button
               key={f.id}
               onClick={() => setSelectedFloor(f.floor_number)}
               className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
                 selectedFloor === f.floor_number
-                  ? 'bg-amber-500 text-slate-950 shadow-md'
-                  : 'bg-slate-950 border border-slate-800 text-slate-300 hover:text-white'
+                  ? 'bg-[#79618E] text-[#FFFFFF] shadow-xs'
+                  : 'bg-[#F8F4FA] border border-[#E9E1ED] text-[#766D7C] hover:text-[#302343]'
               }`}
             >
               Floor {f.floor_number}
@@ -155,29 +137,29 @@ export default function AdminInventoryPage() {
           ))}
         </div>
 
-        <div className="flex items-center gap-3 text-xs">
-          <span className="flex items-center gap-1.5 text-emerald-400">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" /> Vacant
+        <div className="flex items-center gap-3 text-xs font-mono font-medium">
+          <span className="flex items-center gap-1.5 text-emerald-700">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-600" /> Vacant
           </span>
-          <span className="flex items-center gap-1.5 text-rose-400">
-            <span className="w-2.5 h-2.5 rounded-full bg-rose-400" /> Occupied
+          <span className="flex items-center gap-1.5 text-rose-700">
+            <span className="w-2.5 h-2.5 rounded-full bg-rose-600" /> Occupied
           </span>
-          <span className="flex items-center gap-1.5 text-amber-400">
-            <span className="w-2.5 h-2.5 rounded-full bg-amber-400" /> Maintenance
+          <span className="flex items-center gap-1.5 text-amber-700">
+            <span className="w-2.5 h-2.5 rounded-full bg-amber-600" /> Maintenance
           </span>
         </div>
       </div>
 
       {/* Rooms and Beds Grid */}
       <div className="space-y-6">
-        <h3 className="text-lg font-bold text-white flex items-center gap-2">
-          <Layers className="w-5 h-5 text-amber-500" />
-          Branch {selectedBranch} • Floor {selectedFloor} Rooms & Beds
+        <h3 className="text-lg font-serif font-bold text-[#302343] flex items-center gap-2">
+          <Layers className="w-5 h-5 text-[#79618E]" />
+          Floor {selectedFloor} Rooms &amp; Bed Occupancy
         </h3>
 
         {loading ? (
-          <div className="p-12 text-center text-xs text-slate-500">
-            Loading floor rooms & bed matrix...
+          <div className="p-12 text-center text-xs text-[#766D7C]">
+            Loading floor rooms &amp; bed matrix...
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -187,30 +169,28 @@ export default function AdminInventoryPage() {
               return (
                 <div
                   key={room.id}
-                  className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4 shadow-xl hover:border-slate-700 transition-all flex flex-col justify-between"
+                  className="bg-[#FFFFFF] border border-[#E9E1ED] rounded-2xl p-5 space-y-4 shadow-xs hover:border-[#79618E]/40 transition-all flex flex-col justify-between"
                 >
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="font-mono text-base font-black text-white">
+                      <span className="font-mono text-base font-bold text-[#302343]">
                         Room {room.room_number}
                       </span>
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${
-                        room.has_ac ? 'bg-blue-500/20 text-blue-300' : 'bg-slate-800 text-slate-400'
-                      }`}>
-                        {room.has_ac ? '❄️ AC' : 'Non-AC'}
+                      <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-[#F8F4FA] text-[#79618E] border border-[#E9E1ED]">
+                        Non-AC
                       </span>
                     </div>
 
-                    <div className="flex items-center justify-between text-xs text-slate-400">
+                    <div className="flex items-center justify-between text-xs text-[#766D7C]">
                       <span>{room.room_type.replace('_', ' ')}</span>
-                      <span className="font-mono font-bold text-amber-400">
-                        ₹{room.monthly_rate_per_bed.toLocaleString()}
+                      <span className="font-mono font-bold text-[#302343]">
+                        ₹{room.monthly_rate_per_bed.toLocaleString('en-IN')}
                       </span>
                     </div>
 
                     {/* Beds in Room */}
                     <div className="pt-2 space-y-2">
-                      <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                      <p className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#766D7C]">
                         Beds ({roomBeds.length}):
                       </p>
                       {roomBeds.map((bed) => (
@@ -218,24 +198,24 @@ export default function AdminInventoryPage() {
                           key={bed.id}
                           className={`p-2.5 rounded-xl border text-xs flex items-center justify-between ${
                             bed.status === 'occupied'
-                              ? 'bg-rose-500/10 border-rose-500/30 text-rose-300'
+                              ? 'bg-rose-50 border-rose-200 text-rose-800'
                               : bed.status === 'maintenance'
-                              ? 'bg-amber-500/10 border-amber-500/30 text-amber-300'
-                              : 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300'
+                              ? 'bg-amber-50 border-amber-200 text-amber-800'
+                              : 'bg-emerald-50 border-emerald-200 text-emerald-800'
                           }`}
                         >
                           <div>
-                            <span className="font-bold font-mono text-white block">
+                            <span className="font-bold font-mono text-[#302343] block">
                               Bed {bed.bed_number}
                             </span>
                             {bed.current_resident_name && (
-                              <p className="text-[11px] text-slate-300 truncate max-w-[130px]">
+                              <p className="text-[11px] text-[#766D7C] truncate max-w-[130px]">
                                 {bed.current_resident_name}
                               </p>
                             )}
                           </div>
 
-                          <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-slate-950/80">
+                          <span className="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded-full bg-[#FFFFFF] border border-[#E9E1ED]">
                             {bed.status}
                           </span>
                         </div>
@@ -243,13 +223,13 @@ export default function AdminInventoryPage() {
                     </div>
                   </div>
 
-                  <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-xs">
-                    <span className="text-slate-400">
+                  <div className="pt-3 border-t border-[#E9E1ED] flex items-center justify-between text-xs">
+                    <span className="text-[#766D7C] font-mono">
                       Capacity: {room.bed_capacity} Beds
                     </span>
                     <Link
-                      href={`/admin/admissions?branch=${selectedBranch}&room=${room.room_number}`}
-                      className="text-amber-400 font-bold hover:underline"
+                      href={`/admin/admissions?room=${room.room_number}`}
+                      className="text-[#79618E] font-bold hover:underline"
                     >
                       Allocate Bed →
                     </Link>

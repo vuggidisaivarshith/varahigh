@@ -38,7 +38,7 @@ function PaymentsManagementContent() {
   const [amount, setAmount] = useState('');
   const [paymentMethod, setPaymentMethod] = useState<'cash' | 'direct_upi' | 'bank_transfer'>('direct_upi');
   const [reference, setReference] = useState('');
-  const [collectorName, setCollectorName] = useState('Marpina Pradeep (Owner)');
+  const [collectorName, setCollectorName] = useState('E. Bharath Chandra (Owner)');
   const [verificationStatus, setVerificationStatus] = useState<'verified' | 'pending'>('verified');
   const [remarks, setRemarks] = useState('');
   const [submitting, setSubmitting] = useState(false);
@@ -133,7 +133,7 @@ function PaymentsManagementContent() {
         body: JSON.stringify({
           payment_id: reversalTarget.id,
           reversal_reason: reversalReason,
-          actor_name: 'Marpina Pradeep (Owner)',
+          actor_name: 'E. Bharath Chandra (Owner)',
         }),
       });
 

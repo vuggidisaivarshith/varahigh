@@ -43,10 +43,8 @@ function EnquiryFormContent() {
   const [emergencyRelation, setEmergencyRelation] = useState('Parent');
 
   // Stay Preferences
-  const [preferredBranchId, setPreferredBranchId] = useState(
-    initialBranch ? `b${initialBranch}-girls-branch-${initialBranch}` : VARAHI_BRANCHES[0].id
-  );
-  const [sharingPreference, setSharingPreference] = useState<RoomSharing>('2_sharing');
+  const [preferredBranchId, setPreferredBranchId] = useState(VARAHI_BRANCHES[0].id);
+  const [sharingPreference, setSharingPreference] = useState<RoomSharing>('3_sharing');
   const [expectedJoiningDate, setExpectedJoiningDate] = useState(
     new Date(Date.now() + 86400000 * 3).toISOString().split('T')[0]
   );
@@ -555,21 +553,26 @@ function EnquiryFormContent() {
             {/* Sharing Preference */}
             <div>
               <label className="block text-xs font-mono font-bold uppercase text-[#302343] mb-2">
-                Room Sharing Preference
+                Room Sharing Preference (Non-AC)
               </label>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                {(['single', '2_sharing', '3_sharing', '4_sharing'] as RoomSharing[]).map((sh) => (
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                {[
+                  { id: '3_sharing', label: '3-Sharing', price: '₹6,000 / mo' },
+                  { id: '4_sharing', label: '4-Sharing', price: '₹5,500 / mo' },
+                  { id: '5_sharing', label: '5-Sharing', price: '₹5,500 / mo' },
+                ].map((sh) => (
                   <button
-                    key={sh}
+                    key={sh.id}
                     type="button"
-                    onClick={() => setSharingPreference(sh)}
-                    className={`p-3 rounded-lg border text-xs font-mono text-center transition-colors ${
-                      sharingPreference === sh
-                        ? 'border-[#79618E] bg-[#D9C8E8]/25 text-[#302343] font-bold'
-                        : 'border-[#E9E1ED] text-[#766D7C] hover:bg-[#F8F4FA]/40'
+                    onClick={() => setSharingPreference(sh.id as RoomSharing)}
+                    className={`p-3 rounded-lg border text-xs font-mono text-center transition-all ${
+                      sharingPreference === sh.id
+                        ? 'border-[#79618E] bg-[#D9C8E8]/30 text-[#302343] font-bold shadow-xs'
+                        : 'border-[#E9E1ED] text-[#766D7C] hover:bg-[#F8F4FA]/60'
                     }`}
                   >
-                    {sh.replace('_', ' ').toUpperCase()}
+                    <div className="font-bold text-[#302343]">{sh.label}</div>
+                    <div className="text-[11px] text-[#79618E] mt-0.5">{sh.price}</div>
                   </button>
                 ))}
               </div>

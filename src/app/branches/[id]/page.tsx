@@ -165,7 +165,7 @@ export default async function BranchDetailPage({
                   <span className="text-xs font-normal text-[#766D7C] font-mono"> / month</span>
                 </p>
                 <p className="text-[11px] text-[#766D7C] mt-1">
-                  All-inclusive: 3 buffet meals, Wi-Fi, 24/7 hot water, power backup, and housekeeping.
+                  All-inclusive: 3 buffet meals, Wi-Fi, 24/7 hot water geyser, and daily housekeeping.
                 </p>
               </div>
 

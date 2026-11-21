@@ -45,21 +45,15 @@ export default function FacilitiesPage() {
     },
     {
       icon: Sparkles,
-      title: 'Generator & Inverter Power Backup',
-      desc: 'Heavy-duty power backup system ensuring uninterrupted lighting, fans, Wi-Fi connectivity, and essential electrical outlets during grid cuts.',
-      badge: '100% RELIABILITY',
+      title: 'Daily Housekeeping & Sanitization',
+      desc: 'Regular daily cleaning of rooms, corridors, and washrooms ensuring high hygiene standards and spotless living quarters.',
+      badge: 'DAILY CLEANING',
     },
     {
-      icon: Car,
-      title: 'Gated Two-Wheeler Parking',
-      desc: 'Dedicated on-premise vehicle parking area secured behind main gates with continuous CCTV monitoring and security lighting.',
-      badge: 'SAFE ON-PREMISE',
-    },
-    {
-      icon: HeartHandshake,
-      title: 'Multi-Stage RO Mineral Drinking Water',
-      desc: 'Certified commercial RO water filtration units installed on floors ensuring 100% safe, pure, and temperature-controlled drinking water.',
-      badge: 'PURE & TESTED',
+      icon: CheckCircle2,
+      title: 'Dedicated Study Tables & Wardrobes',
+      desc: 'Individual study desks and personal lockable steel wardrobes provided for every resident for comfortable study and secure storage.',
+      badge: 'DEDICATED STORAGE',
     },
     {
       icon: Clock,

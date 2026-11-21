@@ -28,15 +28,13 @@
 - **24/7 Resident Lady Warden:** In-house warden oversight at all times.
 - **Biometric Access & Multi-Angle CCTV:** 42+ HD security cameras with cloud recording.
 - **Strict Night Curfew & Digital Movement Logs:** Instant parent/guardian notifications for entry/exit.
-- **Full Power Backup & RO Drinking Water:** Dedicated diesel generator + multi-stage water filtration.
+- **Daily Housekeeping & Sanitization:** Regular professional cleaning of all rooms and common areas.
 - **High-Speed Fiber Wi-Fi:** 300 Mbps unlimited connectivity across all floors and study zones.
 
-### 2. Room Sharing Options & Transparent Pricing
-- **Single Luxury Room (AC):** ₹10,000 / month (Private bath, study desk, ergonomic chair, wardrobe)
-- **2-Sharing Room (AC):** ₹8,500 / month
-- **2-Sharing Room (Non-AC):** ₹7,000 / month
-- **3-Sharing Room (Comfort):** ₹6,500 / month
-- **4-Sharing Budget Friendly:** ₹5,500 / month
+### 2. Room Sharing Options & Transparent Pricing (Non-AC)
+- **3-Sharing Comfort Room:** ₹6,000 / month (Attached washroom, geyser, study desk, wardrobe, 3 buffet meals)
+- **4-Sharing Economy Room:** ₹5,500 / month (Attached washroom, geyser, study desk, wardrobe, 3 buffet meals)
+- **5-Sharing Economy Room:** ₹5,500 / month (Attached washroom, geyser, study desk, wardrobe, 3 buffet meals)
 - *All packages include 3 home-style hygienic South & North Indian meals daily, high-speed Wi-Fi, daily housekeeping, and hot water geysers.*
 
 ### 3. Integrated ERP & Digital Portals

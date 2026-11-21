@@ -37,7 +37,7 @@ assert(envValidation.valid, 'Server environment validation succeeds');
 const testStaffPayload: StaffSessionPayload = {
   type: 'staff',
   staffId: 'staff-001',
-  name: 'MARPINA PRADEEP',
+  name: 'E. BHARATH CHANDRA',
   email: 'pradeep@devihostels.com',
   role: 'owner',
   assignedBranchCodes: [1, 2, 3, 4, 5],
@@ -48,7 +48,7 @@ const signedToken = createSessionToken(testStaffPayload);
 assert(signedToken.includes('.'), 'Session token contains payload and cryptographic signature');
 
 const verified = verifySessionToken<StaffSessionPayload>(signedToken);
-assert(verified !== null && verified.name === 'MARPINA PRADEEP', 'Valid session token decodes correctly');
+assert(verified !== null && verified.name === 'E. BHARATH CHANDRA', 'Valid session token decodes correctly');
 
 // Tamper test: Alter one character in payload
 const parts = signedToken.split('.');
